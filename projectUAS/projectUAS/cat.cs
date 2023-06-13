@@ -40,7 +40,7 @@ namespace projectUAS
             base.Owner.Coins += (int)(0.5*50*100);
         }
 
-        public void sleep()
+        public void Sleep()
         {
             base.Happiness += 20;
             base.Energy += 70;
@@ -48,7 +48,7 @@ namespace projectUAS
             base.Owner.Coins += (int)(0.5 * 70 * 100);
         }
 
-        public void bath()
+        public void Bath()
         {
             base.Health += 30;
             base.Owner.Coins += (int)(0.5 * 30 * 100);
