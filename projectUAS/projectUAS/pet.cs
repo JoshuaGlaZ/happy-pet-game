@@ -82,7 +82,7 @@ namespace projectUAS
             else { return "unhappy"; }
         }
 
-        public void getToy()
+        public void GetToy()
         {
 
         }
