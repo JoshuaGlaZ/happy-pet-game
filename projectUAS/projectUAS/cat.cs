@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace projectUAS
 {
@@ -52,6 +53,18 @@ namespace projectUAS
         {
             base.Health += 30;
             base.Owner.Coins += (int)(0.5 * 30 * 100);
+        }
+
+        public void vacinate()
+        {
+            if (VaccStatus) { throw new Exception("Already vaccinated"); }
+            else if(base.Owner.Coins < 1000) { throw new Exception("Not Enough Coins.\nVaccinate = 1000Coins"); }
+            else
+            {
+                base.Health += 40;
+                base.Happiness -= 10;
+                base.Owner.Coins -= 1000;
+            }
         }
         #endregion
     }
