@@ -38,7 +38,7 @@ namespace happy_pet_game_2019
             {
                 if (value == "")
                 {
-                    throw new Exception("Nama tidak boleh kosong");
+                    throw new Exception("Name cannot be empty");
                 }
                 else
                 {
@@ -46,11 +46,7 @@ namespace happy_pet_game_2019
                 }
             }
         }
-        public Image Image 
-        {
-            get => image; 
-            set => image = value; 
-        }
+        public Image Image { get => image; set => image = value; }
         public int Health 
         {
             get => health; 
@@ -108,14 +104,8 @@ namespace happy_pet_game_2019
                 }
             }
         }
-        public Toy Toy 
-        {
-            get => toy; set => toy = value; 
-        }
-        public Player Owner 
-        {
-            get => owner; set => owner = value; 
-        }
+        public Toy Toy { get => toy; set => toy = value;  }
+        public Player Owner  { get => owner; set => owner = value;  }
 
         public Player Player
         {
@@ -125,13 +115,6 @@ namespace happy_pet_game_2019
             }
         }
 
-        public Toy Toy1
-        {
-            get => default;
-            set
-            {
-            }
-        }
         #endregion
 
         #region Methods

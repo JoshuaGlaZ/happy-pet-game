@@ -30,6 +30,22 @@ namespace happy_pet_game_2019
         public string Benefit { get => benefit; set => benefit = value; }
         public Image Image { get => image; set => image = value; }
         public int Price { get => price; set => price = value; }
+
+        public Player Player
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Pet Pet
+        {
+            get => default;
+            set
+            {
+            }
+        }
         #endregion
 
         #region Methods

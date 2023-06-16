@@ -3,25 +3,28 @@
   <Class Name="happy_pet_game_2019.Pet">
     <Position X="7.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAkCgCABAAgiAQAAAAEgAwAEAAMABAAAQAEAQAAAAg=</HashCode>
+      <HashCode>AAAkCgCABAAgiAQAAAAEgAwAEAAMABAAAQAAAQAAAAg=</HashCode>
       <FileName>Pet.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Player" />
-      <Property Name="Toy1" />
     </ShowAsAssociation>
   </Class>
   <Class Name="happy_pet_game_2019.Toy">
     <Position X="10.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABABAAAAAQAAAAAAAAAAAAYAEAAEABAAAAAAAAAQAAA=</HashCode>
+      <HashCode>ABABAAAAAQAACAAAAAAAAAYAEAAEABAAAAAAAQAQAAA=</HashCode>
       <FileName>Toy.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Player" />
+      <Property Name="Pet" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="happy_pet_game_2019.Player">
     <Position X="5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAIAAEACAQAAAAMAAAACAEAAABAAAA=</HashCode>
+      <HashCode>IAAAAEAAAAAAAAAIAAEACAQAAAAMAAAASAEAACBAAAg=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -33,7 +36,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="happy_pet_game_2019.Cat">
-    <Position X="3.75" Y="6" Width="1.5" />
+    <Position X="3.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAgAACAAQAAgAAAAAAAAAAAAAAAAAQAgAAAAAAAAAA=</HashCode>
       <FileName>Cat.cs</FileName>
@@ -45,6 +48,16 @@
       <HashCode>AAAgAAAAAQAAAgAAAAAAAAAAgAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>Chamaleon.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="happy_pet_game_2019.Consumable">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQCAAAAAgAAAAAQAEEAECBBAAAgAAQAAAAA=</HashCode>
+      <FileName>Consumable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Player" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
