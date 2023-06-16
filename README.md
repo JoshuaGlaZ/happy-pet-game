@@ -7,6 +7,9 @@
 > Branch joshua digunakan untuk codingan mandiri yang sesuai dengan branch main + fitur tertentu <br>
 **Sebelum commit pada branch alex dan joshua, jangan lupa untuk melakukan pull request agar branch alex dan joshua tetap terupdate di branch main**
 
+### Compare and pull request
+**base: main** (Dari main) **compare: joshua/alex** (Ke joshua/alex)
+
 ### Upload Folder Project
 Untuk mengupload / mengupdate project di directory ini, lakukan cara berikut
 1. Pastikan berada di branch benar
