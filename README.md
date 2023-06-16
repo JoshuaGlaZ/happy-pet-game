@@ -2,8 +2,8 @@
 
 ## Project OOP
 
-> Branch main digunakan untuk hasil akhir project dengan versi Visual Studio 2019
-> Branch alex digunakan untuk codingan mandiri yang sesuai dengan branch main + fitur tertentu 
+> Branch main digunakan untuk hasil akhir project dengan versi Visual Studio 2019 <br>
+> Branch alex digunakan untuk codingan mandiri yang sesuai dengan branch main + fitur tertentu <br>
 > Branch joshua digunakan untuk codingan mandiri yang sesuai dengan branch main + fitur tertentu 
 **Sebelum commit pada branch alex dan joshua, jangan lupa untuk melakukan pull request agar branch alex dan joshua tetap terupdate di branch main**
 
