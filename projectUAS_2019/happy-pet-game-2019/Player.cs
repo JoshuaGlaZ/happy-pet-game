@@ -12,16 +12,16 @@ namespace happy_pet_game_2019
         private DateTime lastplay;
         private List<Toy> toyList;
         private List<Consumable> consumableList;
-        private List<Pet> petList;
+        private Pet choosenPet;
 
-        public Player(string name, int coins, DateTime lastplay, List<Toy> toyList, List<Consumable> consumableList, List<Pet> petList)
+        public Player(string name, int coins, DateTime lastplay, Pet pet )
         {
             Name = name;
             Coins = coins;
             Lastplay = lastplay;
             ToyList = new List<Toy>();
             ConsumableList = new List<Consumable>();
-            PetList = new List<Pet>();
+            ChoosenPet = pet;
         }
 
         public string Name 
@@ -38,9 +38,9 @@ namespace happy_pet_game_2019
         }
         public int Coins { get => coins; set => coins = value; }
         public DateTime Lastplay { get => lastplay; set => lastplay = value;  }
-        public List<Toy> ToyList  {  get => toyList; set => toyList = value; }
-        public List<Consumable> ConsumableList { get => consumableList; set => consumableList = value; }
-        public List<Pet> PetList { get => petList; set => petList = value; }
+        public List<Toy> ToyList  {  get => toyList; private set => toyList = value; }
+        public List<Consumable> ConsumableList { get => consumableList; private set => consumableList = value; }
+        public Pet ChoosenPet { get => choosenPet; set => choosenPet = value; }
 
 
         #region Methods
@@ -52,6 +52,15 @@ namespace happy_pet_game_2019
             }
             else { throw new Exception("Not enough coins.\nPrice = " + NewToy.Price); }
         }
+        public string DisplayToy()
+        {
+            string data = "";
+            foreach (Toy toyInList in ToyList)
+            {
+                data += toyInList.ToString();
+            }
+            return data;
+        }
         public void BuyConsumable(Consumable NewConsumable)
         {
             if (this.Coins >= NewConsumable.Price)
@@ -59,6 +68,19 @@ namespace happy_pet_game_2019
                 consumableList.Add(NewConsumable); Coins -= NewConsumable.Price;
             }
             else { throw new Exception("Not enough coins.\nPrice = " + NewConsumable.Price); }
+        }
+        public string DisplayConsumable()
+        {
+            string data = "";
+            foreach (Consumable consumableInList in ConsumableList)
+            {
+                data += consumableInList.ToString();
+            }
+            return data;
+        }
+        public void ChangePet(Pet petToChange)
+        {
+            this.ChoosenPet = petToChange;
         }
         #endregion
     }

@@ -10,6 +10,7 @@ namespace happy_pet_game_2019
     {
         #region DataMembers
         private string name;
+        private string type;
         private string benefit;
         private Image image;
         private int price;
@@ -30,30 +31,27 @@ namespace happy_pet_game_2019
         public string Benefit { get => benefit; set => benefit = value; }
         public Image Image { get => image; set => image = value; }
         public int Price { get => price; set => price = value; }
-
-        public Player Player
+        public string Type
         {
-            get => default;
+            get => type;
             set
             {
-            }
-        }
-
-        public Pet Pet
-        {
-            get => default;
-            set
-            {
+                if (value == "cat".ToUpper() || value == "fish".ToUpper() || value == "chamaleon".ToUpper())
+                {
+                    type = value;
+                }
+                else { throw new Exception("Not registered type"); }
             }
         }
         #endregion
 
         #region Methods
-        public string DisplayDate()
+        public override string ToString()
         {
             return this.Name + "\n" +
-                   this.Price + "\n" +
-                   this.Benefit + "%";
+                   this.Type + "\n" + 
+                   this.Benefit + "%\n" + 
+                   this.Price + "\n";
         }
         #endregion
     }

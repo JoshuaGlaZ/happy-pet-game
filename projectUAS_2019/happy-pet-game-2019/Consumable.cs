@@ -40,10 +40,7 @@ namespace happy_pet_game_2019
                 {
                     throw new Exception("Name cannot be empty");
                 }
-                else
-                {
-                    name = value;
-                }
+                else { name = value; }
             }
         }
         public Image Image { get => image; set => image = value; }
@@ -54,15 +51,13 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Methods
-
-        #endregion
-
-        public Player Player
+        public override string ToString()
         {
-            get => default;
-            set
-            {
-            }
+            return this.Name + "\n" +
+                   this.HealthBonus + "\n" +
+                   this.EnerygBonus + "\n" +
+                   this.HappinessBonus + "\n";
         }
+        #endregion
     }
 }

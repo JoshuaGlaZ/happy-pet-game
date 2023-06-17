@@ -24,12 +24,15 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Methods
-        public override string DisplayData()
+        public override string ToString()
         {
             string condition = VaccStatus ? "True" : "False"; //if (VaccStatus) { condition = "True"; } else { condition = "False"; }
             return base.ToString() + "\nVaccine Status : " + condition;
         }
-
+        public override void Feed(Consumable consumable)
+        {
+            base.Feed(consumable);
+        }
         public void Play()
         {
             base.Happiness += 50;
@@ -37,9 +40,9 @@ namespace happy_pet_game_2019
             base.Owner.Coins += (int)(0.5 * 50 * 100);
         }
 
-        public void Sleep()
+        public override void Sleep()
         {
-            base.Happiness += 20;
+            base.Health += 20;
             base.Energy += 70;
             base.Owner.Coins += (int)(0.5 * 20 * 100);
             base.Owner.Coins += (int)(0.5 * 70 * 100);
@@ -61,6 +64,14 @@ namespace happy_pet_game_2019
                 base.Happiness -= 10;
                 base.Owner.Coins -= 1000;
             }
+        }
+        public override void GetToy(Toy EquipedToy)
+        {
+            if (EquipedToy.Type == "cat".ToUpper())
+            {
+                base.Toy = EquipedToy;
+            }
+            else { throw new Exception("Toy isn't compatible to Cat"); }
         }
         #endregion
     }

@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace happy_pet_game_2019
 {
-    public class Pet
+    public abstract class Pet
     {
         #region DataMembers
         private string name;
@@ -13,7 +13,7 @@ namespace happy_pet_game_2019
         private int happiness;
         private int energy;
 
-        private Toy toy;
+        public Toy toy;
         private Player owner;
         #endregion
 
@@ -31,7 +31,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Properties
-        public string Name 
+        public string Name
         {
             get => name;
             set
@@ -40,90 +40,67 @@ namespace happy_pet_game_2019
                 {
                     throw new Exception("Name cannot be empty");
                 }
-                else
-                {
-                    name = value;
-                }
+                else { name = value; }
             }
         }
         public Image Image { get => image; set => image = value; }
-        public int Health 
+        public int Health
         {
-            get => health; 
+            get => health;
             set
             {
                 if (value >= 10 && value <= 100)
                 {
                     health = value;
                 }
-                else if (value < 10)
-                {
-                    health = 10;
-                }
-                else
-                {
-                    health = 100;
-                }
-            } 
+                else if (value < 10) { health = 10; }
+                else { health = 100; }
+            }
         }
-        public int Happiness 
+        public int Happiness
         {
-            get => happiness; 
+            get => happiness;
             set
             {
                 if (value >= 10 && value <= 100)
                 {
                     happiness = value;
                 }
-                else if (value < 10)
-                {
-                    happiness = 10;
-                }
-                else
-                {
-                    happiness = 100;
-                }
+                else if (value < 10)  { happiness = 10; }
+                else { happiness = 100; }
             }
         }
-        public int Energy 
+        public int Energy
         {
-            get => energy; 
+            get => energy;
             set
             {
                 if (value >= 10 && value <= 100)
                 {
                     energy = value;
                 }
-                else if (value < 10)
-                {
-                    energy = 10;
-                }
-                else
-                {
-                    energy = 100;
-                }
+                else if (value < 10){ energy = 10;}
+                else { energy = 100; }
             }
         }
-        public Toy Toy { get => toy; set => toy = value;  }
-        public Player Owner  { get => owner; set => owner = value;  }
+        public Toy Toy { get => toy; set => toy = value; }
+        public Player Owner { get => owner; set => owner = value; }
 
-        public Player Player
-        {
-            get => default;
-            set
-            {
-            }
-        }
 
         #endregion
 
         #region Methods
-        public virtual void Feed()
+        public virtual void Feed(Consumable consumable)
         {
-            this.Health += 30;
-            this.Energy += 50;
+            this.Health += consumable.HealthBonus;
+            this.Energy += consumable.EnerygBonus;
+            this.Happiness += consumable.HappinessBonus;
+            this.Owner.Coins += (int)(0.5 * consumable.HealthBonus * 100);
+            this.Owner.Coins += (int)(0.5 * consumable.EnerygBonus * 100);
+            this.Owner.Coins += (int)(0.5 * consumable.HappinessBonus * 100);
         }
-        public virtual string DisplayData()
+        public virtual void Sleep() { this.Health += 0; }
+        public override string ToString()
         {
             return Name +
                    "\nHealth : " + Health +
@@ -151,10 +128,7 @@ namespace happy_pet_game_2019
         {
             return this.Happiness > 60 ? "Happy" : "Unhappy"; //if (this.Happiness > 60) { return "Happy"; } else { return "Unhappy"; }
         }
-        public void GetToy()
-        {
-
-        }
+        public abstract void GetToy(Toy EquipedToy);
         #endregion
     }
 }
