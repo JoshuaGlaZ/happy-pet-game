@@ -28,7 +28,7 @@ namespace happy_pet_game_2019
         {
             string condition = VaccStatus ? "True" : "False"; //if (VaccStatus) { condition = "True"; } else { condition = "False"; }
             return base.ToString() + "\nVaccine Status : " + condition;
-        }
+        }   
         public override void Feed(Consumable consumable)
         {
             base.Feed(consumable);
@@ -57,7 +57,7 @@ namespace happy_pet_game_2019
         public void Vaccinate()
         {
             if (VaccStatus)  { throw new Exception("Already vaccinated"); }
-            else if (base.Owner.Coins < 1000) { throw new Exception("Not Enough Coins.\nVaccinate = 1000Coins"); }
+            else if (base.Owner.Coins < 1000) { throw new Exception("Not enough Coins.\nVaccinate = 1000Coins"); }
             else
             {
                 base.Health += 40;

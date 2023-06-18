@@ -6,6 +6,9 @@
       <HashCode>AAAECgCABQAgiAQEAAAEgAwAEAAMABAAAQAAAAAAAAg=</HashCode>
       <FileName>Pet.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Toy" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="happy_pet_game_2019.Toy">
     <Position X="10.5" Y="2.25" Width="1.5" />
@@ -24,8 +27,8 @@
       <Property Name="ChoosenPet" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Property Name="ConsumableList" />
       <Property Name="ToyList" />
+      <Property Name="ConsumableList" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="happy_pet_game_2019.Fish">
@@ -50,7 +53,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="happy_pet_game_2019.Consumable">
-    <Position X="1.5" Y="2.5" Width="1.5" />
+    <Position X="1" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAQCAAAAEgAAAAAQAEEAECBBAAAgAAAAAAAA=</HashCode>
       <FileName>Consumable.cs</FileName>
