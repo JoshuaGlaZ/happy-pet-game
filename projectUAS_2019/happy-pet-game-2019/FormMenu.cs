@@ -53,14 +53,14 @@ namespace happy_pet_game_2019
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                minimizeresizeToolStripMenuItem.Text = "Resize";
-                minimizeresizeToolStripMenuItem.Image = Properties.Resources.ExitFullScreen;
+                maximizeresizeToolStripMenuItem.Text = "Resize";
+                maximizeresizeToolStripMenuItem.Image = Properties.Resources.ExitFullScreen;
                 this.WindowState = FormWindowState.Normal;
             }
             else
             {
-                minimizeresizeToolStripMenuItem.Text = "Maximize";
-                minimizeresizeToolStripMenuItem.Image = Properties.Resources.Scale;
+                maximizeresizeToolStripMenuItem.Text = "Maximize";
+                maximizeresizeToolStripMenuItem.Image = Properties.Resources.Scale;
                 this.WindowState = FormWindowState.Maximized;
             }
         }
