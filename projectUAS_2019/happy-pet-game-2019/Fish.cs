@@ -24,19 +24,14 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Methods
-        public override string DisplayData()
+        public override string ToString()
         {
-            return base.DisplayData() + "\nEnvirment :" + this.envStatus;
+            return base.ToString() + "\nEnviroment :" + this.envStatus;
         }
-
-        public override void Feed()
+        public override void Feed(Consumable consumable)
         {
-            base.Health += 20;
-            base.Energy += 40;
-            base.Owner.Coins += (int)(0.5 * 20 * 100);
-            base.Owner.Coins += (int)(0.5 * 40 * 100);
+            base.Feed(consumable);
         }
-
         public void Clean()
         {
             if (base.Owner.Coins >= 500)
@@ -48,6 +43,14 @@ namespace happy_pet_game_2019
                 base.Owner.Coins += (int)(0.5 * 50 * 100);
             }
             else { throw new Exception("Not enough coins.\nClean = 500 Coins"); }
+        }
+        public override void GetToy(Toy EquipedToy)
+        {
+            if (EquipedToy.Type == "fish".ToUpper())
+            {
+                base.Toy = EquipedToy;
+            }
+            else { throw new Exception("Toy isn't compatible to Fish"); }
         }
         #endregion
     }
