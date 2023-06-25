@@ -6,6 +6,7 @@ using System.Text;
 
 namespace happy_pet_game_2019
 {
+    [Serializable]
     public class Cat : Pet
     {
         #region DataMembers
@@ -13,7 +14,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Cat(string inName, Image inPict, Player inOwner, bool vaccStatus) : base(inName, inPict, inOwner)
+        public Cat(string inName, Image inPict, Player inOwner) : base(inName, inPict, inOwner)
         {
             VaccStatus = false;
         }

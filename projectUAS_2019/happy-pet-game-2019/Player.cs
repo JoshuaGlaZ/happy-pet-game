@@ -5,6 +5,7 @@ using System.Text;
 
 namespace happy_pet_game_2019
 {
+    [Serializable]
     public class Player
     {
         private string name;
@@ -14,11 +15,11 @@ namespace happy_pet_game_2019
         private List<Consumable> consumableList;
         private Pet choosenPet;
 
-        public Player(string name, int coins, DateTime lastplay, Pet pet )
+        public Player(string name, Pet pet )
         {
             Name = name;
-            Coins = coins;
-            Lastplay = lastplay;
+            Coins = 100;
+            Lastplay = DateTime.Now;
             ToyList = new List<Toy>();
             ConsumableList = new List<Consumable>();
             ChoosenPet = pet;

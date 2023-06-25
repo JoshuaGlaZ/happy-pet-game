@@ -3,6 +3,7 @@ using System.Drawing;
 
 namespace happy_pet_game_2019
 {
+    [Serializable]
     public abstract class Pet
     {
         #region DataMembers

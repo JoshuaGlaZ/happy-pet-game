@@ -62,6 +62,12 @@
     <Compile Include="FormShop.Designer.cs">
       <DependentUpon>FormShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStart.Designer.cs">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pet.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormShop.resx">
       <DependentUpon>FormShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStart.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,6 +126,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\logo\SearchFolderOpened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish_happy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_happy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_happy.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

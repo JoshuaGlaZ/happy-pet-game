@@ -6,6 +6,7 @@ using System.Text;
 
 namespace happy_pet_game_2019
 {
+    [Serializable]
     public class Chamaleon : Pet
     {
         #region DataMembers
