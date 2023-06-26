@@ -13,7 +13,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Fish(string inName, Image inPict, Player inOwner, bool envStatus) : base(inName, inPict, inOwner)
+        public Fish(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, bool envStatus) : base(inName, inPict, inOwner,inMaxHealth,inMaxHappiness,inEnergy)
         {
             EnvStatus = envStatus;
         }
@@ -24,33 +24,32 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Methods
-        public override string ToString()
+        public override string DisplayData()
         {
-            return base.ToString() + "\nEnviroment :" + this.envStatus;
+            return base.DisplayData() + 
+                   "\nEnviroment :" + this.envStatus;
         }
-        public override void Feed(Consumable consumable)
-        {
-            base.Feed(consumable);
-        }
+
         public void Clean()
         {
             if (base.Owner.Coins >= 500)
             {
-                base.Health += 60;
-                base.Happiness += 50;
+                base.Health += base.MaxHealth;
+                base.Happiness += base.MaxHappiness;
                 base.Owner.Coins -= 500;
-                base.Owner.Coins += (int)(0.5 * 60 * 100);
-                base.Owner.Coins += (int)(0.5 * 50 * 100);
             }
-            else { throw new Exception("Not enough coins.\nClean = 500 Coins"); }
+            else { throw new Exception("koin tidak cukup.\nClean = 500 Coins"); }
         }
-        public override void GetToy(Toy EquipedToy)
+
+        public override void Ultimate(Enemy target)
         {
-            if (EquipedToy.Type == "fish".ToUpper())
+            if (base.Happiness == base.MaxHappiness)
             {
-                base.Toy = EquipedToy;
+                target.Health -= (int)(this.Energy * 1.25);
+                this.Health += (int)(this.MaxHealth / 2);
+                this.Happiness = 0;
             }
-            else { throw new Exception("Toy isn't compatible to Fish"); }
+            else { throw new Exception("Ultimate belum siap"); }
         }
         #endregion
     }

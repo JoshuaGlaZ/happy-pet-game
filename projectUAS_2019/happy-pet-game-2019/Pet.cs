@@ -9,104 +9,136 @@ namespace happy_pet_game_2019
         private string name;
         private Image image;
 
+        private int maxHealth;
+        private int maxHappiness;
+        private int maxEnergy;
+
         private int health;
         private int happiness;
         private int energy;
 
-        public Toy toy;
+        private Toy toy;
         private Player owner;
         #endregion
 
         #region Constructors
-        public Pet(string inName, Image inPict, Player inOwner)
+        public Pet(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy)
         {
             Name = inName;
             Image = inPict;
-            Health = 100;
-            Happiness = 100;
-            Energy = 100;
-            Toy = toy;
+
+            MaxHealth = inMaxHealth;
+            Health = inMaxHealth;
+            Energy = inEnergy;
+            MaxHappiness = inMaxHappiness;
+            Happiness = 0;
+
             Owner = inOwner;
         }
         #endregion
 
         #region Properties
-        public string Name
+        public string Name 
         {
             get => name;
             set
             {
                 if (value == "")
                 {
-                    throw new Exception("Name cannot be empty");
+                    throw new Exception("Nama tidak boleh kosong");
                 }
-                else { name = value; }
+                else
+                {
+                    name = value;
+                }
             }
         }
-        public Image Image { get => image; set => image = value; }
-        public int Health
+        public Image Image { get => image;  set => image = value; }
+        public int Health 
         {
-            get => health;
+            get => health; 
             set
             {
-                if (value >= 10 && value <= 100)
+                if (value >= 0 && value <= MaxHealth)
                 {
                     health = value;
                 }
-                else if (value < 10) { health = 10; }
-                else { health = 100; }
-            }
+                else if (value < 0)
+                {
+                    health = 0;
+                }
+                else
+                {
+                    health = MaxHealth;
+                }
+            } 
         }
-        public int Happiness
+        public int Happiness 
         {
-            get => happiness;
+            get => happiness; 
             set
             {
-                if (value >= 10 && value <= 100)
+                if (value >= 0 && value <= MaxHappiness)
                 {
                     happiness = value;
                 }
-                else if (value < 10)  { happiness = 10; }
-                else { happiness = 100; }
+                else if (value < 0)
+                {
+                    happiness = 0;
+                }
+                else
+                {
+                    happiness = MaxHappiness;
+                }
             }
         }
-        public int Energy
+        public int Energy 
         {
-            get => energy;
+            get => energy; 
             set
             {
-                if (value >= 10 && value <= 100)
+                if (value >= 0 && value <= MaxEnergy)
                 {
                     energy = value;
                 }
-                else if (value < 10){ energy = 10;}
-                else { energy = 100; }
+                else if (value < 0)
+                {
+                    energy = 0;
+                }
+                else
+                {
+                    energy = MaxEnergy;
+                }
             }
         }
-        public Toy Toy { get => toy; set => toy = value; }
-        public Player Owner { get => owner; set => owner = value; }
-
-
+        public Toy Toy 
+        {
+            get => toy; set => toy = value; 
+        }
+        public Player Owner 
+        {
+            get => owner; set => owner = value; 
+        }
+        public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+        public int MaxHappiness { get => maxHappiness; set => maxHappiness = value; }
+        public int MaxEnergy { get => maxEnergy; set => maxEnergy = value; }
         #endregion
 
         #region Methods
-        public virtual void Feed(Consumable consumable)
+        public virtual void Feed(Consumable food)
         {
-            this.Health += consumable.HealthBonus;
-            this.Energy += consumable.EnerygBonus;
-            this.Happiness += consumable.HappinessBonus;
-            this.Owner.Coins += (int)(0.5 * consumable.HealthBonus * 100);
-            this.Owner.Coins += (int)(0.5 * consumable.EnerygBonus * 100);
-            this.Owner.Coins += (int)(0.5 * consumable.HappinessBonus * 100);
+            this.Health += food.HealthBonus;
+            this.Happiness += food.HappinessBonus;
+            this.Energy += food.EnergyBonus;
         }
-        public virtual void Sleep() { this.Health += 0; }
-        public override string ToString()
+        public virtual string DisplayData()
         {
             return Name +
-                   "\nHealth : " + Health +
+                   "\nHealth : " + Health + "/"+ MaxHealth +
                    "\nEnergy : " + Energy +
-                   "\nHappiness : " + Happiness;
+                   "\nHappiness : " + Happiness + "/" + MaxHappiness;
         }
+
         public string GetHealthCondition()
         {
             string condition;
@@ -128,7 +160,20 @@ namespace happy_pet_game_2019
         {
             return this.Happiness > 60 ? "Happy" : "Unhappy"; //if (this.Happiness > 60) { return "Happy"; } else { return "Unhappy"; }
         }
-        public abstract void GetToy(Toy EquipedToy);
+
+        public void GetToy(Toy equipment)
+        {
+            this.Toy = equipment;
+            this.MaxHealth += equipment.BonusHealth;
+            this.MaxEnergy += equipment.BonusEnergy;
+        }
+
+        public void basicAttack(Enemy target)
+        {
+            target.Health -= this.Energy;
+            this.Happiness += 10 + toy.HappinessGain;
+        }
+        public abstract void Ultimate(Enemy target);
         #endregion
     }
 }

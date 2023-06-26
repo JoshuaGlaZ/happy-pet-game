@@ -25,7 +25,7 @@ namespace happy_pet_game_2019
             Image = image;
             Price = price;
             HealthBonus = healthBonus;
-            EnerygBonus = enerygBonus;
+            EnergyBonus = enerygBonus;
             HappinessBonus = happinessBonus;
         }
         #endregion
@@ -46,17 +46,17 @@ namespace happy_pet_game_2019
         public Image Image { get => image; set => image = value; }
         public int Price { get => price; set => price = value; }
         public int HealthBonus { get => healthBonus; set => healthBonus = value; }
-        public int EnerygBonus { get => enerygBonus; set => enerygBonus = value; }
+        public int EnergyBonus { get => enerygBonus; set => enerygBonus = value; }
         public int HappinessBonus { get => happinessBonus; set => happinessBonus = value; }
         #endregion
 
         #region Methods
         public override string ToString()
         {
-            return this.Name + "\n" +
-                   this.HealthBonus + "\n" +
-                   this.EnerygBonus + "\n" +
-                   this.HappinessBonus + "\n";
+            return "Name : " + this.Name + "\n" +
+                   "Health Bonus :" + this.HealthBonus + "\n" +
+                   "Energy Bonus :" + this.EnergyBonus + "\n" +
+                   "Happiness Bonus :" + this.HappinessBonus + "\n";
         }
         #endregion
     }

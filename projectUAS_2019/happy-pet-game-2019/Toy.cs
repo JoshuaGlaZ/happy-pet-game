@@ -10,17 +10,20 @@ namespace happy_pet_game_2019
     {
         #region DataMembers
         private string name;
-        private string type;
-        private string benefit;
+        private int bonusHealth;
+        private int bonusEnergy;
+        private int happinessGain; 
         private Image image;
         private int price;
         #endregion
 
         #region Constructors
-        public Toy(string name, string benefit, Image image, int price)
+        public Toy(string name, int inBonusHealth, int inBonusEnergy, int inHappinessGain, Image image, int price)
         {
             Name = name;
-            Benefit = benefit;
+            BonusHealth = inBonusHealth;
+            BonusEnergy = inBonusEnergy;
+            HappinessGain = inHappinessGain;
             Image = image;
             Price = price;
         }
@@ -28,30 +31,21 @@ namespace happy_pet_game_2019
 
         #region Properties
         public string Name { get => name; set => name = value; }
-        public string Benefit { get => benefit; set => benefit = value; }
         public Image Image { get => image; set => image = value; }
         public int Price { get => price; set => price = value; }
-        public string Type
-        {
-            get => type;
-            set
-            {
-                if (value == "cat".ToUpper() || value == "fish".ToUpper() || value == "chamaleon".ToUpper())
-                {
-                    type = value;
-                }
-                else { throw new Exception("Not registered type"); }
-            }
-        }
+        public int BonusHealth { get => bonusHealth; set => bonusHealth = value; }
+        public int BonusEnergy { get => bonusEnergy; set => bonusEnergy = value; }
+        public int HappinessGain { get => happinessGain; set => happinessGain = value; }
         #endregion
 
         #region Methods
-        public override string ToString()
+        public string DisplayData()
         {
-            return this.Name + "\n" +
-                   this.Type + "\n" + 
-                   this.Benefit + "%\n" + 
-                   this.Price + "\n";
+            return "Name  : " + this.Name + "\n" +
+                   "Price : " + this.Price + "\n" +
+                   "Bonus maxHealth : " + this.BonusHealth + "\n" +
+                   "Bonus maxEnergy : " + this.BonusEnergy + "\n" +
+                   "Happiness Gain  : " + this.HappinessGain;
         }
         #endregion
     }

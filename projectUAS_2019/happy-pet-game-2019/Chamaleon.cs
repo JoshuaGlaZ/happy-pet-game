@@ -13,7 +13,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Chamaleon(string inName, Image inPict, Player inOwner, Color currentColor) : base(inName, inPict, inOwner)
+        public Chamaleon(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, Color currentColor) : base(inName, inPict, inOwner, inMaxHealth, inMaxHappiness, inEnergy)
         {
             CurrentColor = currentColor;
         }
@@ -24,33 +24,30 @@ namespace happy_pet_game_2019
         #endregion 
 
         #region Methods
-        public override string ToString()
+        public override string DisplayData()
         {
-            return base.ToString() + "\nCurrent color :" + this.CurrentColor + "\n";
+            return base.DisplayData() + "\nCurrent color :" + this.CurrentColor + "\n";
         }
-        public override void Feed(Consumable consumable)
-        {
-            base.Feed(consumable);
-        }
+
         public void ChangeColor(Color newColor)
         {
             this.CurrentColor = newColor;
         }
 
-        public override void Sleep()
+        public void Sleep()
         {
-            base.Health += 60;
-            base.Energy += 60;
-            base.Owner.Coins += (int)(0.5 * 60 * 100);
-            base.Owner.Coins += (int)(0.5 * 60 * 100);
+            base.Happiness = base.MaxHappiness;
+            base.Health = base.MaxHealth;
         }
-        public override void GetToy(Toy EquipedToy)
+
+        public override void Ultimate(Enemy target)
         {
-            if (EquipedToy.Type == "chamaleon".ToUpper())
+            if (base.Happiness == base.MaxHappiness)
             {
-                base.Toy = EquipedToy;
+                // masih dipikirkan
+                this.Happiness = 0;
             }
-            else { throw new Exception("Toy isn't compatible to Chamaleon"); }
+            else { throw new Exception("Ultimate belum siap"); }
         }
         #endregion
     }
