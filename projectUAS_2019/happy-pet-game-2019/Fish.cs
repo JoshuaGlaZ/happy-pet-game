@@ -13,7 +13,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Fish(string inName, Image inPict, Player inOwner, bool envStatus) : base(inName, inPict, inOwner)
+        public Fish(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, bool envStatus) : base(inName, inPict, inOwner,inMaxHealth,inMaxHappiness,inEnergy)
         {
             EnvStatus = envStatus;
         }
@@ -26,28 +26,30 @@ namespace happy_pet_game_2019
         #region Methods
         public override string DisplayData()
         {
-            return base.DisplayData() + "\nEnvirment :" + this.envStatus;
-        }
-
-        public override void Feed()
-        {
-            base.Health += 20;
-            base.Energy += 40;
-            base.Owner.Coins += (int)(0.5 * 20 * 100);
-            base.Owner.Coins += (int)(0.5 * 40 * 100);
+            return base.DisplayData() + 
+                   "\nEnviroment :" + this.envStatus;
         }
 
         public void Clean()
         {
             if (base.Owner.Coins >= 500)
             {
-                base.Health += 60;
-                base.Happiness += 50;
+                base.Health += base.MaxHealth;
+                base.Happiness += base.MaxHappiness;
                 base.Owner.Coins -= 500;
-                base.Owner.Coins += (int)(0.5 * 60 * 100);
-                base.Owner.Coins += (int)(0.5 * 50 * 100);
             }
-            else { throw new Exception("Not enough coins.\nClean = 500 Coins"); }
+            else { throw new Exception("not enough coins.\nClean = 500 Coins"); }
+        }
+
+        public override void Ultimate(Enemy target)
+        {
+            if (base.Happiness == base.MaxHappiness)
+            {
+                target.Health -= (int)(this.Energy * 1.25);
+                this.Health += (int)(this.MaxHealth / 2);
+                this.Happiness = 0;
+            }
+            else { throw new Exception("Ultimate not ready"); }
         }
         #endregion
     }

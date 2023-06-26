@@ -11,13 +11,13 @@ namespace happy_pet_game_2019
         private int coins;
         private DateTime lastplay;
         private List<Toy> toyList = new List<Toy>();
+        private List<Consumable> consumablesList = new List<Consumable>();
 
-        public Player(string name, int coins, DateTime lastplay, List<Toy> toyList)
+        public Player(string name, DateTime lastplay)
         {
             Name = name;
-            Coins = coins;
+            Coins = 0;
             Lastplay = lastplay;
-            ToyList = toyList;
         }
 
         public string Name 
@@ -50,9 +50,16 @@ namespace happy_pet_game_2019
         {
             if (this.Coins >= NewToy.Price) 
             {
-                toyList.Add(NewToy); Coins -= NewToy.Price; 
+                toyList.Add(NewToy); 
+                Coins -= NewToy.Price; 
             }
             else { throw new Exception("Not enough coins.\nPrice = " + NewToy.Price); }
+        }
+
+        public void feed(Pet pet, Consumable food)
+        {
+            pet.Feed(food);
+            consumablesList.Remove(food);
         }
         #endregion
     }

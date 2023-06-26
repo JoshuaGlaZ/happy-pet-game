@@ -13,7 +13,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Chamaleon(string inName, Image inPict, Player inOwner, Color currentColor) : base(inName, inPict, inOwner)
+        public Chamaleon(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, Color currentColor) : base(inName, inPict, inOwner, inMaxHealth, inMaxHappiness, inEnergy)
         {
             CurrentColor = currentColor;
         }
@@ -36,10 +36,18 @@ namespace happy_pet_game_2019
 
         public void Sleep()
         {
-            base.Health += 60;
-            base.Energy += 60;
-            base.Owner.Coins += (int)(0.5 * 60 * 100);
-            base.Owner.Coins += (int)(0.5 * 60 * 100);
+            base.Happiness = base.MaxHappiness;
+            base.Health = base.MaxHealth;
+        }
+
+        public override void Ultimate(Enemy target)
+        {
+            if (base.Happiness == base.MaxHappiness)
+            {
+                // masih dipikirkan
+                this.Happiness = 0;
+            }
+            else { throw new Exception("Ultimate not ready"); }
         }
         #endregion
     }

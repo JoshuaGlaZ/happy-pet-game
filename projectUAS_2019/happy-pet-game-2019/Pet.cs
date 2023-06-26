@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace happy_pet_game_2019
 {
-    public class Pet
+    public abstract class Pet
     {
         #region DataMembers
         private string name;
         private Image image;
+
+        private int maxHealth;
+        private int maxHappiness;
+        private int maxEnergy;
+        private double atkSpeed;
 
         private int health;
         private int happiness;
@@ -18,14 +24,19 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Pet(string inName, Image inPict, Player inOwner)
+        public Pet(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy)
         {
             Name = inName;
             Image = inPict;
-            Health = 100;
-            Happiness = 100;
-            Energy = 100;
-            Toy = toy;
+
+            MaxHealth = inMaxHealth;
+            Health = inMaxHealth;
+            Energy = inEnergy;
+            MaxHappiness = inMaxHappiness;
+            Happiness = 0;
+            AtkSpeed = 1;
+
+            toy = new Toy("none", 0, 0, 0, 1, image, 0);
             Owner = inOwner;
         }
         #endregion
@@ -46,27 +57,23 @@ namespace happy_pet_game_2019
                 }
             }
         }
-        public Image Image 
-        {
-            get => image; 
-            set => image = value; 
-        }
+        public Image Image { get => image;  set => image = value; }
         public int Health 
         {
             get => health; 
             set
             {
-                if (value >= 10 && value <= 100)
+                if (value >= 0 && value <= MaxHealth)
                 {
                     health = value;
                 }
-                else if (value < 10)
+                else if (value < 0)
                 {
-                    health = 10;
+                    health = 0;
                 }
                 else
                 {
-                    health = 100;
+                    health = MaxHealth;
                 }
             } 
         }
@@ -75,38 +82,24 @@ namespace happy_pet_game_2019
             get => happiness; 
             set
             {
-                if (value >= 10 && value <= 100)
+                if (value >= 0 && value <= MaxHappiness)
                 {
                     happiness = value;
                 }
-                else if (value < 10)
+                else if (value < 0)
                 {
-                    happiness = 10;
+                    happiness = 0;
                 }
                 else
                 {
-                    happiness = 100;
+                    happiness = MaxHappiness;
                 }
             }
         }
         public int Energy 
         {
-            get => energy; 
-            set
-            {
-                if (value >= 10 && value <= 100)
-                {
-                    energy = value;
-                }
-                else if (value < 10)
-                {
-                    energy = 10;
-                }
-                else
-                {
-                    energy = 100;
-                }
-            }
+            get => energy;
+            set => energy = value;
         }
         public Toy Toy 
         {
@@ -116,37 +109,28 @@ namespace happy_pet_game_2019
         {
             get => owner; set => owner = value; 
         }
-
-        public Player Player
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Toy Toy1
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+        public int MaxHappiness { get => maxHappiness; set => maxHappiness = value; }
+        public int MaxEnergy { get => maxEnergy; set => maxEnergy = value; }
+        public double AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
         #endregion
 
         #region Methods
-        public virtual void Feed()
+        public virtual void Feed(Consumable food)
         {
-            this.Health += 30;
-            this.Energy += 50;
+            this.Health += food.HealthBonus;
+            this.Happiness += food.HappinessBonus;
+            this.Energy += food.EnergyBonus;
         }
         public virtual string DisplayData()
         {
-            return Name +
-                   "\nHealth : " + Health +
+            return "Name : " + Name +
+                   "\nHealth : " + Health + "/"+ MaxHealth +
                    "\nEnergy : " + Energy +
-                   "\nHappiness : " + Happiness;
+                   "\nHappiness : " + Happiness + "/" + MaxHappiness +
+                   "\nAttack Speed : " + toy.AtkSpeedMultiplier;
         }
+
         public string GetHealthCondition()
         {
             string condition;
@@ -168,10 +152,21 @@ namespace happy_pet_game_2019
         {
             return this.Happiness > 60 ? "Happy" : "Unhappy"; //if (this.Happiness > 60) { return "Happy"; } else { return "Unhappy"; }
         }
-        public void GetToy()
-        {
 
+        public void GetToy(Toy equipment)
+        {
+            this.Toy = equipment;
+            this.MaxHealth += equipment.BonusHealth;
+            this.MaxEnergy += equipment.BonusEnergy;
+            this.AtkSpeed = 1 / equipment.AtkSpeedMultiplier;
         }
+
+        public void basicAttack(Enemy target)
+        {
+            target.Health -= Energy;
+            this.Happiness += 10 + toy.HappinessGain;
+        }
+        public abstract void Ultimate(Enemy target);
         #endregion
     }
 }
