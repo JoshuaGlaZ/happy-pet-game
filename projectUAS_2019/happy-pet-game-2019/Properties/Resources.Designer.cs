@@ -63,6 +63,26 @@ namespace happy_pet_game_2019.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buttonlarge_disable {
+            get {
+                object obj = ResourceManager.GetObject("buttonlarge_disable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonlarge_normal {
+            get {
+                object obj = ResourceManager.GetObject("buttonlarge_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cat_happy {
             get {
                 object obj = ResourceManager.GetObject("cat_happy", resourceCulture);

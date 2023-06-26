@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,44 +24,31 @@ namespace happy_pet_game_2019
             formMenu = (FormMenu)this.Owner;
             ButtonResetGameState();
         }
-        private void ButtonResetGameState()
-        {
-            if (File.Exists("playerData.dat")) {  buttonResetGame.Enabled = true; }
-            else { buttonResetGame.Enabled = false; }
-        }
-
-        private void maximizeresizeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                maximizeresizeToolStripMenuItem.Text = "Resize";
-                maximizeresizeToolStripMenuItem.Image = Properties.Resources.ExitFullScreen;
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                maximizeresizeToolStripMenuItem.Text = "Maximize";
-                maximizeresizeToolStripMenuItem.Image = Properties.Resources.Scale;
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
-
-        private void minimizeresizeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         #region PanelMain
+        private void ButtonResetGameState()
+        {
+            if (File.Exists("playerData.dat"))
+            {
+                buttonResetGame.Enabled = true;
+                buttonResetGame.BackgroundImage = Properties.Resources.buttonlarge_normal;
+            }
+            else
+            {
+                buttonResetGame.Enabled = false;
+                buttonResetGame.BackgroundImage = Properties.Resources.buttonlarge_disable;
+            }
+        }
+
         private void buttonLoadGame_Click(object sender, EventArgs e)
         {
             labelStart.Text = "Selecting Player";
-            panelLoadPlayer.Width = 947;
+            panelLoadPlayer.Width = panelMain.Width;
             panelMain.Width = panelNewPlayer.Width = panelReset.Width = 0;
+            LoadPanelState();
         }
 
         private void buttonNewGame_Click(object sender, EventArgs e)
@@ -76,6 +64,7 @@ namespace happy_pet_game_2019
             panelMain.Width = panelLoadPlayer.Width;
             panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
             ButtonResetGameState();
+            comboBoxLoadPlayers.SelectedIndex = -1;
         }
 
         private void buttonNewBack_Click(object sender, EventArgs e)
@@ -119,30 +108,6 @@ namespace happy_pet_game_2019
                 pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_happy;
             }
         }
-        private void comboBoxPlayers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxLoadPlayers.SelectedIndex == -1)
-            {
-                labelLoadRuntime.Visible = false;
-                labelLoadPetName.Visible = false;
-                labelLoadPetLevel.Visible = false;
-                pictureBoxLoadPet.Visible = false;
-                listBoxLoadStat.Visible = false;
-                listBoxLoadProgress.Visible = false;
-                buttonLoadReady.Visible = false;
-            }
-            else
-            {
-                labelLoadRuntime.Visible = true;
-                labelLoadPetName.Visible = true;
-                labelLoadPetLevel.Visible = true;
-                pictureBoxLoadPet.Visible = true;
-                listBoxLoadStat.Visible = true;
-                listBoxLoadProgress.Visible = true;
-                buttonLoadReady.Visible = true;
-            }
-        }
-
         private void buttonNewReady_Click(object sender, EventArgs e)
         {
             string playerName = textBoxNewPlayerName.Text;
@@ -151,8 +116,7 @@ namespace happy_pet_game_2019
             if (radioButtonStrength.Checked) { petTrait = radioButtonStrength.Text; }
             else if (radioButtonEndurance.Checked) { petTrait = radioButtonEndurance.Text; }
             else if (radioButtonWillpower.Checked) { petTrait = radioButtonWillpower.Text; }
-            else if (radioButtonHealth.Checked) { petTrait = radioButtonHealth.Text; }
-            else { petTrait = radioButtonWeird.Text; }
+            else { petTrait = radioButtonHealth.Text; }
         }
 
         private void radioButtonChooseCat_CheckedChanged(object sender, EventArgs e)
@@ -169,7 +133,49 @@ namespace happy_pet_game_2019
         {
             ChangePictureBoxChoosePet();
         }
+        #endregion
 
+        #region PanelLoad
+        private void comboBoxLoadPlayers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadPanelState();
+        }
+
+        private void LoadPanelState()
+        {
+            if (comboBoxLoadPlayers.SelectedIndex == -1)
+            {
+                pictureBoxLoadBorder.Visible = false;
+                labelLoadRuntime.Visible = false;
+                labelLoadPetName.Visible = false;
+                labelLoadPetLevel.Visible = false;
+                pictureBoxLoadPet.Visible = false;
+                pictureBoxLoadPetBorder.Visible = false;
+                listBoxLoadStat.Visible = false;
+                pictureBoxLoadStatBorder.Visible = false;
+                listBoxLoadProgress.Visible = false;
+                pictureBoxLoadProgressBorder.Visible = false;
+                buttonLoadReady.Visible = false;
+                labelNewPlayer.Visible = true;
+                linkLabelClickHere.Visible = true;
+            }
+            else
+            {
+                pictureBoxLoadBorder.Visible = true;
+                labelLoadRuntime.Visible = true;
+                labelLoadPetName.Visible = true;
+                labelLoadPetLevel.Visible = true;
+                pictureBoxLoadPet.Visible = true;
+                pictureBoxLoadPetBorder.Visible = true;
+                listBoxLoadStat.Visible = true;
+                pictureBoxLoadStatBorder.Visible = true;
+                listBoxLoadProgress.Visible = true;
+                pictureBoxLoadProgressBorder.Visible = true;
+                buttonLoadReady.Visible = true;
+                labelNewPlayer.Visible = false;
+                linkLabelClickHere.Visible = false;
+            }
+        }
         private void linkLabelClickHere_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             labelStart.Text = "Creating Player";
@@ -177,19 +183,26 @@ namespace happy_pet_game_2019
             panelMain.Width = panelLoadPlayer.Width = panelReset.Width = 0;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        #endregion
+
+        private void radioButtonStrength_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-        #endregion
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    pictureBoxCat.Enabled = true;
-        //    pictureBoxCat.Visible = true;
-        //    pictureBoxFish.Enabled = true;
-        //    pictureBoxFish.Visible = true;
-        //    pictureBoxChamaleon.Enabled = true;
-        //    pictureBoxChamaleon.Visible = true;
-        //}
+
+        private void radioButtonHealth_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonEndurance_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonWillpower_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
