@@ -38,7 +38,7 @@ namespace happy_pet_game_2019
                 base.Happiness += base.MaxHappiness;
                 base.Owner.Coins -= 500;
             }
-            else { throw new Exception("koin tidak cukup.\nClean = 500 Coins"); }
+            else { throw new Exception("not enough coins.\nClean = 500 Coins"); }
         }
 
         public override void Ultimate(Enemy target)
@@ -49,7 +49,7 @@ namespace happy_pet_game_2019
                 this.Health += (int)(this.MaxHealth / 2);
                 this.Happiness = 0;
             }
-            else { throw new Exception("Ultimate belum siap"); }
+            else { throw new Exception("Ultimate not ready"); }
         }
         #endregion
     }

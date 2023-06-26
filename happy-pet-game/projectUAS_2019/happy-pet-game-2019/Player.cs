@@ -13,12 +13,11 @@ namespace happy_pet_game_2019
         private List<Toy> toyList = new List<Toy>();
         private List<Consumable> consumablesList = new List<Consumable>();
 
-        public Player(string name, int coins, DateTime lastplay, List<Toy> toyList)
+        public Player(string name, DateTime lastplay)
         {
             Name = name;
-            Coins = coins;
+            Coins = 0;
             Lastplay = lastplay;
-            ToyList = toyList;
         }
 
         public string Name 

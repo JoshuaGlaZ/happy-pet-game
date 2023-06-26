@@ -47,7 +47,7 @@ namespace happy_pet_game_2019
                 // masih dipikirkan
                 this.Happiness = 0;
             }
-            else { throw new Exception("Ultimate belum siap"); }
+            else { throw new Exception("Ultimate not ready"); }
         }
         #endregion
     }
