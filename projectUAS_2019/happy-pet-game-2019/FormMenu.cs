@@ -76,12 +76,10 @@ namespace happy_pet_game_2019
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                maximizeresizeToolStripMenuItem.Image = Properties.Resources.ExitFullScreen;
                 this.WindowState = FormWindowState.Normal;
             }
             else
             {
-                maximizeresizeToolStripMenuItem.Image = Properties.Resources.Scale;
                 this.WindowState = FormWindowState.Maximized;
             }
         }

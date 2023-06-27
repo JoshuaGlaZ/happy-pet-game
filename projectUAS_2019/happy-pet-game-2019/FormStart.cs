@@ -22,7 +22,7 @@ namespace happy_pet_game_2019
         private void FormStart_Load(object sender, EventArgs e)
         {
             formMenu = (FormMenu)this.Owner;
-            ButtonResetGameState();
+            //ButtonResetGameState();
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -43,14 +43,6 @@ namespace happy_pet_game_2019
             }
         }
 
-        private void buttonLoadGame_Click(object sender, EventArgs e)
-        {
-            labelStart.Text = "Selecting Player";
-            panelLoadPlayer.Width = panelMain.Width;
-            panelMain.Width = panelNewPlayer.Width = panelReset.Width = 0;
-            LoadPanelState();
-        }
-
         private void buttonNewGame_Click(object sender, EventArgs e)
         {
             labelStart.Text = "Creating Player";
@@ -58,21 +50,30 @@ namespace happy_pet_game_2019
             panelMain.Width = panelLoadPlayer.Width = panelReset.Width = 0;
         }
 
-        private void buttonLoadBack_Click(object sender, EventArgs e)
+        private void buttonNewGame_MouseEnter(object sender, EventArgs e)
         {
-            labelStart.Text = "Happy Pet";
-            panelMain.Width = panelLoadPlayer.Width;
-            panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
-            ButtonResetGameState();
-            comboBoxLoadPlayers.SelectedIndex = -1;
+            buttonNewGame.BackgroundImage = Properties.Resources.buttonlarge_pressed;
         }
 
-        private void buttonNewBack_Click(object sender, EventArgs e)
+        private void buttonNewGame_MouseLeave(object sender, EventArgs e)
         {
-            labelStart.Text = "Happy Pet";
-            panelMain.Width = panelNewPlayer.Width;
-            panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
-            ButtonResetGameState();
+            buttonNewGame.BackgroundImage = Properties.Resources.buttonlarge_normal;
+        }
+
+        private void buttonLoadGame_Click(object sender, EventArgs e)
+        {
+            labelStart.Text = "Selecting Player";
+            panelLoadPlayer.Width = panelMain.Width;
+            panelMain.Width = panelNewPlayer.Width = panelReset.Width = 0;
+            LoadPanelState();
+        }
+        private void buttonLoadGame_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLoadGame.BackgroundImage = Properties.Resources.buttonlarge_pressed;
+        }
+        private void buttonLoadGame_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLoadGame.BackgroundImage = Properties.Resources.buttonlarge_normal;
         }
 
         private void buttonResetGame_Click(object sender, EventArgs e)
@@ -82,14 +83,15 @@ namespace happy_pet_game_2019
             panelMain.Width = panelNewPlayer.Width = panelLoadPlayer.Width = 0;
         }
 
-        private void buttonResetBack_Click(object sender, EventArgs e)
+        private void buttonResetGame_MouseEnter(object sender, EventArgs e)
         {
-            labelStart.Text = "Happy Pet";
-            panelMain.Width = panelReset.Width;
-            panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
-            ButtonResetGameState();
+            buttonResetGame.BackgroundImage = Properties.Resources.buttonlarge_pressed;
         }
 
+        private void buttonResetGame_MouseLeave(object sender, EventArgs e)
+        {
+            buttonResetGame.BackgroundImage = Properties.Resources.buttonlarge_normal;
+        }
         #endregion
 
         #region PanelNew
@@ -108,16 +110,6 @@ namespace happy_pet_game_2019
                 pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_happy;
             }
         }
-        private void buttonNewReady_Click(object sender, EventArgs e)
-        {
-            string playerName = textBoxNewPlayerName.Text;
-            string petName = textBoxNewPetName.Text;
-            string petTrait;
-            if (radioButtonStrength.Checked) { petTrait = radioButtonStrength.Text; }
-            else if (radioButtonEndurance.Checked) { petTrait = radioButtonEndurance.Text; }
-            else if (radioButtonWillpower.Checked) { petTrait = radioButtonWillpower.Text; }
-            else { petTrait = radioButtonHealth.Text; }
-        }
 
         private void radioButtonChooseCat_CheckedChanged(object sender, EventArgs e)
         {
@@ -132,6 +124,65 @@ namespace happy_pet_game_2019
         private void radioButtonChooseChamaleon_CheckedChanged(object sender, EventArgs e)
         {
             ChangePictureBoxChoosePet();
+        }
+
+        private void radioButtonStrength_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonHealth_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonEndurance_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonWillpower_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNewBack_Click(object sender, EventArgs e)
+        {
+            labelStart.Text = "Happy Pet";
+            panelMain.Width = panelNewPlayer.Width;
+            panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
+            ButtonResetGameState();
+        }
+
+        private void buttonNewBack_MouseEnter(object sender, EventArgs e)
+        {
+            buttonNewBack.BackgroundImage = Properties.Resources.buttonback_pressed;
+        }
+
+        private void buttonNewBack_MouseLeave(object sender, EventArgs e)
+        {
+            buttonNewBack.BackgroundImage = Properties.Resources.buttonback;
+        }
+
+        private void buttonNewReady_MouseEnter(object sender, EventArgs e)
+        {
+            buttonNewReady.BackgroundImage = Properties.Resources.buttonlarge_pressed;
+        }
+
+        private void buttonNewReady_MouseLeave(object sender, EventArgs e)
+        {
+            buttonNewReady.BackgroundImage = Properties.Resources.buttonlarge_normal;
+        }
+
+        private void buttonNewReady_Click(object sender, EventArgs e)
+        {
+            string playerName = textBoxNewPlayerName.Text;
+            string petName = textBoxNewPetName.Text;
+            string petTrait;
+            if (radioButtonStrength.Checked) { petTrait = radioButtonStrength.Text; }
+            else if (radioButtonEndurance.Checked) { petTrait = radioButtonEndurance.Text; }
+            else if (radioButtonWillpower.Checked) { petTrait = radioButtonWillpower.Text; }
+            else { petTrait = radioButtonHealth.Text; }
         }
         #endregion
 
@@ -179,30 +230,83 @@ namespace happy_pet_game_2019
         private void linkLabelClickHere_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             labelStart.Text = "Creating Player";
-            panelNewPlayer.Width = panelMain.Width;
-            panelMain.Width = panelLoadPlayer.Width = panelReset.Width = 0;
+            panelNewPlayer.Width = panelLoadPlayer.Width;
+            panelLoadPlayer.Width = panelMain.Width = panelReset.Width = 0;
         }
 
+        private void buttonLoadBack_Click(object sender, EventArgs e)
+        {
+            labelStart.Text = "Happy Pet";
+            panelMain.Width = panelLoadPlayer.Width;
+            panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
+            ButtonResetGameState();
+            comboBoxLoadPlayers.SelectedIndex = -1;
+        }
+
+        private void buttonLoadBack_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLoadBack.BackgroundImage = Properties.Resources.buttonback_pressed;
+        }
+
+        private void buttonLoadBack_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLoadBack.BackgroundImage = Properties.Resources.buttonback;
+        }
+
+        private void buttonLoadReady_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLoadReady.BackgroundImage = Properties.Resources.buttonlarge_pressed;
+        }
+
+        private void buttonLoadReady_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLoadReady.BackgroundImage = Properties.Resources.buttonlarge_normal;
+        }
         #endregion
 
-        private void radioButtonStrength_CheckedChanged(object sender, EventArgs e)
+        #region PanelReset
+        private void buttonResetBack_Click(object sender, EventArgs e)
+        {
+            labelStart.Text = "Happy Pet";
+            panelMain.Width = panelReset.Width;
+            panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
+            ButtonResetGameState();
+        }
+
+        private void buttonResetBack_MouseEnter(object sender, EventArgs e)
+        {
+            buttonResetBack.BackgroundImage = Properties.Resources.buttonback_pressed;
+        }
+
+        private void buttonResetBack_MouseLeave(object sender, EventArgs e)
+        {
+            buttonResetBack.BackgroundImage = Properties.Resources.buttonback;
+        }
+
+        private void buttonResetYes_MouseEnter(object sender, EventArgs e)
+        {
+            buttonResetYes.BackgroundImage = Properties.Resources.buttonlarge_pressed;
+        }
+
+        private void buttonResetYes_MouseLeave(object sender, EventArgs e)
+        {
+            buttonResetYes.BackgroundImage = Properties.Resources.buttonlarge_normal;
+        }
+
+        private void buttonResetNo_MouseEnter(object sender, EventArgs e)
+        {
+            buttonResetNo.BackgroundImage = Properties.Resources.buttonlarge_pressed;
+        }
+
+        private void buttonResetNo_MouseLeave(object sender, EventArgs e)
+        {
+            buttonResetNo.BackgroundImage = Properties.Resources.buttonlarge_normal;
+        }
+
+        private void comboBoxResetPlayers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void radioButtonHealth_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButtonEndurance_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButtonWillpower_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

@@ -32,8 +32,6 @@ namespace happy_pet_game_2019
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStart));
             this.panelProgress = new System.Windows.Forms.Panel();
             this.labelStart = new System.Windows.Forms.Label();
-            this.menuStripAll = new System.Windows.Forms.MenuStrip();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.buttonNewGame = new System.Windows.Forms.Button();
             this.buttonLoadGame = new System.Windows.Forms.Button();
@@ -89,8 +87,9 @@ namespace happy_pet_game_2019
             this.buttonResetBack = new System.Windows.Forms.Button();
             this.buttonResetNo = new System.Windows.Forms.Button();
             this.labelAreYouSure = new System.Windows.Forms.Label();
+            this.menuStripAll = new System.Windows.Forms.MenuStrip();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelProgress.SuspendLayout();
-            this.menuStripAll.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelNewPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewStat)).BeginInit();
@@ -108,6 +107,7 @@ namespace happy_pet_game_2019
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetPetBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetBorder)).BeginInit();
+            this.menuStripAll.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelProgress
@@ -133,32 +133,6 @@ namespace happy_pet_game_2019
             this.labelStart.Text = "Happy Pet";
             this.labelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // menuStripAll
-            // 
-            this.menuStripAll.BackColor = System.Drawing.Color.Transparent;
-            this.menuStripAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStripAll.BackgroundImage")));
-            this.menuStripAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.menuStripAll.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.menuStripAll.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStripAll.Location = new System.Drawing.Point(0, 0);
-            this.menuStripAll.Name = "menuStripAll";
-            this.menuStripAll.Size = new System.Drawing.Size(1000, 26);
-            this.menuStripAll.TabIndex = 22;
-            this.menuStripAll.Text = "menuStrip1";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
-            this.exitToolStripMenuItem.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(30, 22);
-            this.exitToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
@@ -177,52 +151,67 @@ namespace happy_pet_game_2019
             // 
             this.buttonNewGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonNewGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonNewGame.BackgroundImage")));
-            this.buttonNewGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonNewGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonNewGame.FlatAppearance.BorderSize = 0;
+            this.buttonNewGame.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonNewGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonNewGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewGame.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNewGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.buttonNewGame.Location = new System.Drawing.Point(391, 72);
             this.buttonNewGame.Name = "buttonNewGame";
-            this.buttonNewGame.Size = new System.Drawing.Size(272, 74);
+            this.buttonNewGame.Size = new System.Drawing.Size(243, 74);
             this.buttonNewGame.TabIndex = 17;
             this.buttonNewGame.Text = "New Game";
             this.buttonNewGame.UseVisualStyleBackColor = true;
             this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
+            this.buttonNewGame.MouseEnter += new System.EventHandler(this.buttonNewGame_MouseEnter);
+            this.buttonNewGame.MouseLeave += new System.EventHandler(this.buttonNewGame_MouseLeave);
             // 
             // buttonLoadGame
             // 
             this.buttonLoadGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonLoadGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLoadGame.BackgroundImage")));
-            this.buttonLoadGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLoadGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonLoadGame.FlatAppearance.BorderSize = 0;
+            this.buttonLoadGame.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonLoadGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonLoadGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonLoadGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoadGame.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLoadGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.buttonLoadGame.Location = new System.Drawing.Point(391, 158);
             this.buttonLoadGame.Name = "buttonLoadGame";
-            this.buttonLoadGame.Size = new System.Drawing.Size(272, 74);
+            this.buttonLoadGame.Size = new System.Drawing.Size(243, 74);
             this.buttonLoadGame.TabIndex = 18;
             this.buttonLoadGame.Text = "Load Game";
             this.buttonLoadGame.UseVisualStyleBackColor = true;
             this.buttonLoadGame.Click += new System.EventHandler(this.buttonLoadGame_Click);
+            this.buttonLoadGame.MouseEnter += new System.EventHandler(this.buttonLoadGame_MouseEnter);
+            this.buttonLoadGame.MouseLeave += new System.EventHandler(this.buttonLoadGame_MouseLeave);
             // 
             // buttonResetGame
             // 
             this.buttonResetGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonResetGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonResetGame.BackgroundImage")));
-            this.buttonResetGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonResetGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonResetGame.FlatAppearance.BorderSize = 0;
+            this.buttonResetGame.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonResetGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonResetGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonResetGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResetGame.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResetGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.buttonResetGame.Location = new System.Drawing.Point(391, 248);
             this.buttonResetGame.Name = "buttonResetGame";
-            this.buttonResetGame.Size = new System.Drawing.Size(272, 74);
+            this.buttonResetGame.Size = new System.Drawing.Size(243, 74);
             this.buttonResetGame.TabIndex = 19;
             this.buttonResetGame.Text = "Reset Game";
             this.buttonResetGame.UseVisualStyleBackColor = true;
             this.buttonResetGame.Click += new System.EventHandler(this.buttonResetGame_Click);
+            this.buttonResetGame.MouseEnter += new System.EventHandler(this.buttonResetGame_MouseEnter);
+            this.buttonResetGame.MouseLeave += new System.EventHandler(this.buttonResetGame_MouseLeave);
             // 
             // panelNewPlayer
             // 
@@ -281,12 +270,12 @@ namespace happy_pet_game_2019
             // 
             this.pictureBoxNewChoosePet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxNewChoosePet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(212)))), ((int)(((byte)(170)))));
-            this.pictureBoxNewChoosePet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxNewChoosePet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxNewChoosePet.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNewChoosePet.Image")));
             this.pictureBoxNewChoosePet.Location = new System.Drawing.Point(-155, 152);
             this.pictureBoxNewChoosePet.Name = "pictureBoxNewChoosePet";
             this.pictureBoxNewChoosePet.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxNewChoosePet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNewChoosePet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxNewChoosePet.TabIndex = 19;
             this.pictureBoxNewChoosePet.TabStop = false;
             // 
@@ -304,10 +293,11 @@ namespace happy_pet_game_2019
             // radioButtonHealth
             // 
             this.radioButtonHealth.AutoSize = true;
-            this.radioButtonHealth.Font = new System.Drawing.Font("Pixeloid Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonHealth.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonHealth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.radioButtonHealth.Location = new System.Drawing.Point(572, 74);
             this.radioButtonHealth.Name = "radioButtonHealth";
-            this.radioButtonHealth.Size = new System.Drawing.Size(94, 25);
+            this.radioButtonHealth.Size = new System.Drawing.Size(120, 30);
             this.radioButtonHealth.TabIndex = 19;
             this.radioButtonHealth.Text = "Health";
             this.radioButtonHealth.UseVisualStyleBackColor = true;
@@ -316,10 +306,11 @@ namespace happy_pet_game_2019
             // radioButtonEndurance
             // 
             this.radioButtonEndurance.AutoSize = true;
-            this.radioButtonEndurance.Font = new System.Drawing.Font("Pixeloid Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonEndurance.Location = new System.Drawing.Point(799, 74);
+            this.radioButtonEndurance.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonEndurance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
+            this.radioButtonEndurance.Location = new System.Drawing.Point(762, 74);
             this.radioButtonEndurance.Name = "radioButtonEndurance";
-            this.radioButtonEndurance.Size = new System.Drawing.Size(127, 25);
+            this.radioButtonEndurance.Size = new System.Drawing.Size(165, 30);
             this.radioButtonEndurance.TabIndex = 18;
             this.radioButtonEndurance.Text = "Endurance";
             this.radioButtonEndurance.UseVisualStyleBackColor = true;
@@ -328,10 +319,11 @@ namespace happy_pet_game_2019
             // radioButtonWillpower
             // 
             this.radioButtonWillpower.AutoSize = true;
-            this.radioButtonWillpower.Font = new System.Drawing.Font("Pixeloid Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonWillpower.Location = new System.Drawing.Point(799, 43);
+            this.radioButtonWillpower.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonWillpower.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
+            this.radioButtonWillpower.Location = new System.Drawing.Point(762, 43);
             this.radioButtonWillpower.Name = "radioButtonWillpower";
-            this.radioButtonWillpower.Size = new System.Drawing.Size(127, 25);
+            this.radioButtonWillpower.Size = new System.Drawing.Size(165, 30);
             this.radioButtonWillpower.TabIndex = 17;
             this.radioButtonWillpower.Text = "Willpower";
             this.radioButtonWillpower.UseVisualStyleBackColor = true;
@@ -341,10 +333,11 @@ namespace happy_pet_game_2019
             // 
             this.radioButtonStrength.AutoSize = true;
             this.radioButtonStrength.Checked = true;
-            this.radioButtonStrength.Font = new System.Drawing.Font("Pixeloid Mono", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonStrength.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonStrength.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.radioButtonStrength.Location = new System.Drawing.Point(572, 43);
             this.radioButtonStrength.Name = "radioButtonStrength";
-            this.radioButtonStrength.Size = new System.Drawing.Size(116, 25);
+            this.radioButtonStrength.Size = new System.Drawing.Size(150, 30);
             this.radioButtonStrength.TabIndex = 16;
             this.radioButtonStrength.TabStop = true;
             this.radioButtonStrength.Text = "Strength";
@@ -355,11 +348,11 @@ namespace happy_pet_game_2019
             // 
             this.radioButtonChooseChamaleon.AutoSize = true;
             this.radioButtonChooseChamaleon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.radioButtonChooseChamaleon.Font = new System.Drawing.Font("Pixeloid Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonChooseChamaleon.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonChooseChamaleon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.radioButtonChooseChamaleon.Location = new System.Drawing.Point(141, 223);
             this.radioButtonChooseChamaleon.Name = "radioButtonChooseChamaleon";
-            this.radioButtonChooseChamaleon.Size = new System.Drawing.Size(145, 27);
+            this.radioButtonChooseChamaleon.Size = new System.Drawing.Size(165, 30);
             this.radioButtonChooseChamaleon.TabIndex = 18;
             this.radioButtonChooseChamaleon.Text = "Chamaleon";
             this.radioButtonChooseChamaleon.UseVisualStyleBackColor = false;
@@ -368,29 +361,33 @@ namespace happy_pet_game_2019
             // buttonNewBack
             // 
             this.buttonNewBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonNewBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(92)))));
-            this.buttonNewBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(111)))));
-            this.buttonNewBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(92)))));
+            this.buttonNewBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
+            this.buttonNewBack.BackgroundImage = global::happy_pet_game_2019.Properties.Resources.buttonback;
+            this.buttonNewBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonNewBack.FlatAppearance.BorderSize = 0;
+            this.buttonNewBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonNewBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonNewBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewBack.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNewBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.buttonNewBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonNewBack.Image")));
-            this.buttonNewBack.Location = new System.Drawing.Point(-488, 183);
+            this.buttonNewBack.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonNewBack.Location = new System.Drawing.Point(-486, 183);
             this.buttonNewBack.Name = "buttonNewBack";
-            this.buttonNewBack.Size = new System.Drawing.Size(24, 25);
+            this.buttonNewBack.Size = new System.Drawing.Size(30, 30);
             this.buttonNewBack.TabIndex = 24;
-            this.buttonNewBack.UseVisualStyleBackColor = true;
+            this.buttonNewBack.UseVisualStyleBackColor = false;
             this.buttonNewBack.Click += new System.EventHandler(this.buttonNewBack_Click);
+            this.buttonNewBack.MouseEnter += new System.EventHandler(this.buttonNewBack_MouseEnter);
+            this.buttonNewBack.MouseLeave += new System.EventHandler(this.buttonNewBack_MouseLeave);
             // 
             // radioButtonChooseFish
             // 
             this.radioButtonChooseFish.AutoSize = true;
             this.radioButtonChooseFish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
-            this.radioButtonChooseFish.Font = new System.Drawing.Font("Pixeloid Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonChooseFish.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonChooseFish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.radioButtonChooseFish.Location = new System.Drawing.Point(141, 184);
             this.radioButtonChooseFish.Name = "radioButtonChooseFish";
-            this.radioButtonChooseFish.Size = new System.Drawing.Size(80, 27);
+            this.radioButtonChooseFish.Size = new System.Drawing.Size(90, 30);
             this.radioButtonChooseFish.TabIndex = 17;
             this.radioButtonChooseFish.Text = "Fish";
             this.radioButtonChooseFish.UseVisualStyleBackColor = false;
@@ -400,9 +397,11 @@ namespace happy_pet_game_2019
             // 
             this.buttonNewReady.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonNewReady.AutoSize = true;
-            this.buttonNewReady.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(85)))));
-            this.buttonNewReady.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(111)))));
-            this.buttonNewReady.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(92)))));
+            this.buttonNewReady.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonNewReady.BackgroundImage")));
+            this.buttonNewReady.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonNewReady.FlatAppearance.BorderSize = 0;
+            this.buttonNewReady.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonNewReady.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonNewReady.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewReady.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNewReady.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
@@ -413,17 +412,19 @@ namespace happy_pet_game_2019
             this.buttonNewReady.Text = "Ready ?";
             this.buttonNewReady.UseVisualStyleBackColor = true;
             this.buttonNewReady.Click += new System.EventHandler(this.buttonNewReady_Click);
+            this.buttonNewReady.MouseEnter += new System.EventHandler(this.buttonNewReady_MouseEnter);
+            this.buttonNewReady.MouseLeave += new System.EventHandler(this.buttonNewReady_MouseLeave);
             // 
             // radioButtonChooseCat
             // 
             this.radioButtonChooseCat.AutoSize = true;
             this.radioButtonChooseCat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.radioButtonChooseCat.Checked = true;
-            this.radioButtonChooseCat.Font = new System.Drawing.Font("Pixeloid Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonChooseCat.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonChooseCat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.radioButtonChooseCat.Location = new System.Drawing.Point(141, 145);
             this.radioButtonChooseCat.Name = "radioButtonChooseCat";
-            this.radioButtonChooseCat.Size = new System.Drawing.Size(67, 27);
+            this.radioButtonChooseCat.Size = new System.Drawing.Size(75, 30);
             this.radioButtonChooseCat.TabIndex = 16;
             this.radioButtonChooseCat.TabStop = true;
             this.radioButtonChooseCat.Text = "Cat";
@@ -580,36 +581,43 @@ namespace happy_pet_game_2019
             // buttonLoadReady
             // 
             this.buttonLoadReady.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonLoadReady.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(85)))));
-            this.buttonLoadReady.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(111)))));
-            this.buttonLoadReady.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(92)))));
+            this.buttonLoadReady.BackgroundImage = global::happy_pet_game_2019.Properties.Resources.buttonlarge_normal;
+            this.buttonLoadReady.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonLoadReady.FlatAppearance.BorderSize = 0;
+            this.buttonLoadReady.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonLoadReady.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonLoadReady.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoadReady.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLoadReady.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.buttonLoadReady.Location = new System.Drawing.Point(165, 17);
             this.buttonLoadReady.Name = "buttonLoadReady";
-            this.buttonLoadReady.Size = new System.Drawing.Size(150, 46);
+            this.buttonLoadReady.Size = new System.Drawing.Size(148, 46);
             this.buttonLoadReady.TabIndex = 25;
             this.buttonLoadReady.Text = "Ready ?";
             this.buttonLoadReady.UseVisualStyleBackColor = true;
             this.buttonLoadReady.Visible = false;
+            this.buttonLoadReady.MouseEnter += new System.EventHandler(this.buttonLoadReady_MouseEnter);
+            this.buttonLoadReady.MouseLeave += new System.EventHandler(this.buttonLoadReady_MouseLeave);
             // 
             // buttonLoadBack
             // 
             this.buttonLoadBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonLoadBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(92)))));
-            this.buttonLoadBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(111)))));
-            this.buttonLoadBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(92)))));
+            this.buttonLoadBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
+            this.buttonLoadBack.BackgroundImage = global::happy_pet_game_2019.Properties.Resources.buttonback;
+            this.buttonLoadBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonLoadBack.FlatAppearance.BorderSize = 0;
+            this.buttonLoadBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonLoadBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonLoadBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoadBack.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLoadBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.buttonLoadBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonLoadBack.Image")));
             this.buttonLoadBack.Location = new System.Drawing.Point(-488, 183);
             this.buttonLoadBack.Name = "buttonLoadBack";
-            this.buttonLoadBack.Size = new System.Drawing.Size(24, 25);
+            this.buttonLoadBack.Size = new System.Drawing.Size(30, 30);
             this.buttonLoadBack.TabIndex = 23;
-            this.buttonLoadBack.UseVisualStyleBackColor = true;
+            this.buttonLoadBack.UseVisualStyleBackColor = false;
             this.buttonLoadBack.Click += new System.EventHandler(this.buttonLoadBack_Click);
+            this.buttonLoadBack.MouseEnter += new System.EventHandler(this.buttonLoadBack_MouseEnter);
             // 
             // labelLoadPetLevel
             // 
@@ -861,6 +869,7 @@ namespace happy_pet_game_2019
             this.comboBoxResetPlayers.Name = "comboBoxResetPlayers";
             this.comboBoxResetPlayers.Size = new System.Drawing.Size(201, 28);
             this.comboBoxResetPlayers.TabIndex = 35;
+            this.comboBoxResetPlayers.SelectedIndexChanged += new System.EventHandler(this.comboBoxResetPlayers_SelectedIndexChanged);
             // 
             // labelResetPlayer
             // 
@@ -883,14 +892,16 @@ namespace happy_pet_game_2019
             this.pictureBoxResetBorder.Size = new System.Drawing.Size(473, 305);
             this.pictureBoxResetBorder.TabIndex = 44;
             this.pictureBoxResetBorder.TabStop = false;
-            this.pictureBoxResetBorder.Visible = false;
             // 
             // buttonResetYes
             // 
             this.buttonResetYes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonResetYes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonResetYes.BackgroundImage")));
-            this.buttonResetYes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonResetYes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonResetYes.FlatAppearance.BorderSize = 0;
+            this.buttonResetYes.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonResetYes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonResetYes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonResetYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResetYes.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResetYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
@@ -900,30 +911,38 @@ namespace happy_pet_game_2019
             this.buttonResetYes.TabIndex = 25;
             this.buttonResetYes.Text = "Yes";
             this.buttonResetYes.UseVisualStyleBackColor = true;
+            this.buttonResetYes.MouseEnter += new System.EventHandler(this.buttonResetYes_MouseEnter);
+            this.buttonResetYes.MouseLeave += new System.EventHandler(this.buttonResetYes_MouseLeave);
             // 
             // buttonResetBack
             // 
             this.buttonResetBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonResetBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(92)))));
-            this.buttonResetBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(111)))));
-            this.buttonResetBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(92)))));
+            this.buttonResetBack.BackgroundImage = global::happy_pet_game_2019.Properties.Resources.buttonback;
+            this.buttonResetBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonResetBack.FlatAppearance.BorderSize = 0;
+            this.buttonResetBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonResetBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonResetBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResetBack.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResetBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.buttonResetBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonResetBack.Image")));
-            this.buttonResetBack.Location = new System.Drawing.Point(-488, 183);
+            this.buttonResetBack.Location = new System.Drawing.Point(-486, 183);
             this.buttonResetBack.Name = "buttonResetBack";
-            this.buttonResetBack.Size = new System.Drawing.Size(24, 25);
+            this.buttonResetBack.Size = new System.Drawing.Size(30, 30);
             this.buttonResetBack.TabIndex = 24;
             this.buttonResetBack.UseVisualStyleBackColor = true;
             this.buttonResetBack.Click += new System.EventHandler(this.buttonResetBack_Click);
+            this.buttonResetBack.MouseEnter += new System.EventHandler(this.buttonResetBack_MouseEnter);
+            this.buttonResetBack.MouseLeave += new System.EventHandler(this.buttonResetBack_MouseLeave);
             // 
             // buttonResetNo
             // 
             this.buttonResetNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonResetNo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonResetNo.BackgroundImage")));
-            this.buttonResetNo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonResetNo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonResetNo.FlatAppearance.BorderSize = 0;
+            this.buttonResetNo.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonResetNo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonResetNo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonResetNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResetNo.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResetNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
@@ -933,6 +952,8 @@ namespace happy_pet_game_2019
             this.buttonResetNo.TabIndex = 22;
             this.buttonResetNo.Text = "No";
             this.buttonResetNo.UseVisualStyleBackColor = true;
+            this.buttonResetNo.MouseEnter += new System.EventHandler(this.buttonResetNo_MouseEnter);
+            this.buttonResetNo.MouseLeave += new System.EventHandler(this.buttonResetNo_MouseLeave);
             // 
             // labelAreYouSure
             // 
@@ -945,6 +966,32 @@ namespace happy_pet_game_2019
             this.labelAreYouSure.Size = new System.Drawing.Size(325, 39);
             this.labelAreYouSure.TabIndex = 19;
             this.labelAreYouSure.Text = "Are you sure ?";
+            // 
+            // menuStripAll
+            // 
+            this.menuStripAll.BackColor = System.Drawing.Color.Transparent;
+            this.menuStripAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStripAll.BackgroundImage")));
+            this.menuStripAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStripAll.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.menuStripAll.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStripAll.Location = new System.Drawing.Point(0, 0);
+            this.menuStripAll.Name = "menuStripAll";
+            this.menuStripAll.Size = new System.Drawing.Size(1000, 26);
+            this.menuStripAll.TabIndex = 22;
+            this.menuStripAll.Text = "menuStrip1";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
+            this.exitToolStripMenuItem.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(30, 22);
+            this.exitToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // FormStart
             // 
@@ -967,8 +1014,6 @@ namespace happy_pet_game_2019
             this.TopMost = true;
             this.Load += new System.EventHandler(this.FormStart_Load);
             this.panelProgress.ResumeLayout(false);
-            this.menuStripAll.ResumeLayout(false);
-            this.menuStripAll.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.panelNewPlayer.ResumeLayout(false);
             this.panelNewPlayer.PerformLayout();
@@ -989,6 +1034,8 @@ namespace happy_pet_game_2019
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetPet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetPetBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetBorder)).EndInit();
+            this.menuStripAll.ResumeLayout(false);
+            this.menuStripAll.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
