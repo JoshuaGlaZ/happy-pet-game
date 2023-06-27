@@ -148,11 +148,5 @@
   <ItemGroup>
     <None Include="assets\img\buttonlarge_normal.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\img\buttonback.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\img\buttonback_pressed.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

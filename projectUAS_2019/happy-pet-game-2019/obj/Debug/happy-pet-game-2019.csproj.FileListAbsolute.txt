@@ -21,7 +21,6 @@ D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\
 D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.exe
 D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.pdb
 D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.FormStart.resources
-D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.Form2.resources
 C:\Users\LENOVO\Downloads\Compressed\happy-pet-game-joshua\happy-pet-game-joshua\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe.config
 C:\Users\LENOVO\Downloads\Compressed\happy-pet-game-joshua\happy-pet-game-joshua\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe
 C:\Users\LENOVO\Downloads\Compressed\happy-pet-game-joshua\happy-pet-game-joshua\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.pdb
