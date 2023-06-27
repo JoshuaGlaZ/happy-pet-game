@@ -63,6 +63,26 @@ namespace happy_pet_game_2019.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buttonback {
+            get {
+                object obj = ResourceManager.GetObject("buttonback", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonback_pressed {
+            get {
+                object obj = ResourceManager.GetObject("buttonback_pressed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buttonlarge_disable {
             get {
                 object obj = ResourceManager.GetObject("buttonlarge_disable", resourceCulture);
@@ -76,6 +96,16 @@ namespace happy_pet_game_2019.Properties {
         internal static System.Drawing.Bitmap buttonlarge_normal {
             get {
                 object obj = ResourceManager.GetObject("buttonlarge_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonlarge_pressed {
+            get {
+                object obj = ResourceManager.GetObject("buttonlarge_pressed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,89 +133,9 @@ namespace happy_pet_game_2019.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dash {
-            get {
-                object obj = ResourceManager.GetObject("Dash", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Delete {
-            get {
-                object obj = ResourceManager.GetObject("Delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ExitFullScreen {
-            get {
-                object obj = ResourceManager.GetObject("ExitFullScreen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap fish_happy {
             get {
                 object obj = ResourceManager.GetObject("fish_happy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FlagRed {
-            get {
-                object obj = ResourceManager.GetObject("FlagRed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MoneyEditor {
-            get {
-                object obj = ResourceManager.GetObject("MoneyEditor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Scale {
-            get {
-                object obj = ResourceManager.GetObject("Scale", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SearchFolderOpened {
-            get {
-                object obj = ResourceManager.GetObject("SearchFolderOpened", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StatusError {
-            get {
-                object obj = ResourceManager.GetObject("StatusError", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
