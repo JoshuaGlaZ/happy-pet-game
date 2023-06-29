@@ -133,11 +133,56 @@
   <data name="buttonlarge_pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\buttonlarge_pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cat_happy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\cat_happy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\cat.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chameleon_happy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\chameleon_happy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chameleon_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_blue_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_blue-green.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_blue_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_blue-red.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_blue_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_blue-yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green-red.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green-yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_red.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_red_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_red-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_red_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_red-green.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_red_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_red-yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_yellow_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_yellow-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_yellow_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_yellow-green.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_yellow_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_yellow-red.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fish_happy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\fish_happy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

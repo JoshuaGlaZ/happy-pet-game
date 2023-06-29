@@ -14,20 +14,39 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Chamaleon(string inName, Image inPict, Player inOwner, Color currentColor) : base(inName, inPict, inOwner)
+        public Chamaleon(string inName, string trait, Image inPict, Color currentColor) : base(inName, trait, inPict)
         {
             CurrentColor = currentColor;
         }
         #endregion
 
         #region Properties
-        public Color CurrentColor { get => currentColor; set => currentColor = value; }
+        public Color CurrentColor 
+        { 
+            get => currentColor;
+            set
+            {
+                if (value == Color.Blue || value == Color.Green || value == Color.Red || value == Color.Yellow)
+                {
+                    currentColor = value;
+                }
+                else
+                {
+                    throw new Exception("Chameleon only has green, blue, red, and yellow color");
+                }
+            }
+        }
         #endregion 
 
         #region Methods
         public override string ToString()
         {
-            return base.ToString() + "\nCurrent color :" + this.CurrentColor + "\n";
+            string color;
+            if (this.CurrentColor == Color.Blue) { color = "Blue"; }
+            else if (this.CurrentColor == Color.Green) { color = "Green"; }
+            else if (this.CurrentColor == Color.Red) { color = "Red"; }
+            else { color = "Yellow"; }
+            return base.ToString() + "\nCurrent color : " + color + "\n";
         }
         public override void Feed(Consumable consumable)
         {
@@ -38,21 +57,6 @@ namespace happy_pet_game_2019
             this.CurrentColor = newColor;
         }
 
-        public override void Sleep()
-        {
-            base.Health += 60;
-            base.Energy += 60;
-            base.Owner.Coins += (int)(0.5 * 60 * 100);
-            base.Owner.Coins += (int)(0.5 * 60 * 100);
-        }
-        public override void GetToy(Toy EquipedToy)
-        {
-            if (EquipedToy.Type == "chamaleon".ToUpper())
-            {
-                base.Toy = EquipedToy;
-            }
-            else { throw new Exception("Toy isn't compatible to Chamaleon"); }
-        }
         #endregion
     }
 }

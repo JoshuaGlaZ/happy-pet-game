@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -13,27 +14,26 @@ namespace happy_pet_game_2019
         private DateTime lastplay;
         private List<Toy> toyList;
         private List<Consumable> consumableList;
+        //private List<Pet> petList;
         private Pet choosenPet;
 
-        public Player(string name, Pet pet )
+        public Player(string name)
         {
             Name = name;
             Coins = 100;
             Lastplay = DateTime.Now;
             ToyList = new List<Toy>();
             ConsumableList = new List<Consumable>();
-            ChoosenPet = pet;
+            ChoosenPet = choosenPet;
+            //PetList = new List<Pet>();
         }
 
         public string Name 
         {
             get => name;
             set
-            {
-                if (value == "")
-                {
-                    throw new Exception("Name cannot be empty");
-                }
+            { 
+                if (value == "") { throw new Exception("Player name cannot be empty"); }
                 else { name = value; }
             }
         }
@@ -41,17 +41,21 @@ namespace happy_pet_game_2019
         public DateTime Lastplay { get => lastplay; set => lastplay = value;  }
         public List<Toy> ToyList  {  get => toyList; private set => toyList = value; }
         public List<Consumable> ConsumableList { get => consumableList; private set => consumableList = value; }
-        public Pet ChoosenPet { get => choosenPet; set => choosenPet = value; }
+        public Pet ChoosenPet { get => choosenPet; private set => choosenPet = value; }
+
+        //public List<Pet> PetList { get => petList; set => petList = value; }
+
 
 
         #region Methods
-        public void BuyToy(Toy NewToy)
+        public void BuyToy(string name, string benefit, int price)
         {
-            if (this.Coins >= NewToy.Price) 
+            if (this.Coins >= price) 
             {
+                Toy NewToy = new Toy(name, benefit, price);
                 toyList.Add(NewToy); Coins -= NewToy.Price; 
             }
-            else { throw new Exception("Not enough coins.\nPrice = " + NewToy.Price); }
+            else { throw new Exception("Not enough coins.\nPrice = " + price); }
         }
         public string DisplayToy()
         {
@@ -62,13 +66,14 @@ namespace happy_pet_game_2019
             }
             return data;
         }
-        public void BuyConsumable(Consumable NewConsumable)
+        public void BuyConsumable(string name, int price, int healthBonus, int enerygBonus, int happinessBonus)
         {
-            if (this.Coins >= NewConsumable.Price)
+            if (this.Coins >= price)
             {
+                Consumable NewConsumable = new Consumable(name, price, healthBonus, enerygBonus, happinessBonus);
                 consumableList.Add(NewConsumable); Coins -= NewConsumable.Price;
             }
-            else { throw new Exception("Not enough coins.\nPrice = " + NewConsumable.Price); }
+            else { throw new Exception("Not enough coins.\nPrice = " + price); }
         }
         public string DisplayConsumable()
         {
@@ -79,9 +84,46 @@ namespace happy_pet_game_2019
             }
             return data;
         }
-        public void ChangePet(Pet petToChange)
+        public void AddPetFish(string name, string trait, Image inPict)
         {
-            this.ChoosenPet = petToChange;
+            Fish newFish = new Fish(name, trait, inPict);
+            ChoosenPet = newFish;
+        }
+        public void AddPetCat(string name, string trait, Image inPict)
+        {
+            Cat newCat = new Cat(name, trait, inPict);
+            ChoosenPet = newCat;
+        }
+        public void AddPetChamaleon(string name, string trait, Image inPict, Color currentColor)
+        {
+            Chamaleon newChamaleon = new Chamaleon(name, trait, inPict, currentColor);
+            ChoosenPet = newChamaleon;
+        }
+        public string DisplayPetStat()
+        {
+            string stat = "";
+            if (ChoosenPet is Cat)
+            {
+                stat += "CAT" + "\n" + ChoosenPet.ToString();
+            }
+            else if (ChoosenPet is Fish)
+            {
+                stat += "FISH" + "\n" + ChoosenPet.ToString();
+            }
+            else if (ChoosenPet is Chamaleon)
+            {
+                stat += "CHAMALEON" + "\n" + ChoosenPet.ToString();
+            }
+            else
+            {
+                return "Empty";
+            }
+            return stat;
+        }
+        public void RemovePet(/*Pet removedPet*/)
+        {
+            ChoosenPet = null;
+            //PetList.Remove(removedPet)
         }
         #endregion
     }

@@ -14,8 +14,6 @@ namespace happy_pet_game_2019
 {
     public partial class FormMenu : Form
     {
-        public Player player;
-
         public FormMenu()
         {
             InitializeComponent();
@@ -29,19 +27,7 @@ namespace happy_pet_game_2019
             }
             else
             {
-                //battleToolStripMenuItem.Enabled = false;
-                //battleToolStripMenuItem.Visible = false;
-                //showPetStatToolStripMenuItem.Enabled = false;
-                //showPetStatToolStripMenuItem.Visible = false;
-                //showInventoryToolStripMenuItem.Enabled = false;
-                //showInventoryToolStripMenuItem.Visible = false;
-                //shopToolStripMenuItem.Enabled = false;
-                //shopToolStripMenuItem.Visible = false;
-                //settingsToolStripMenuItem.Enabled = false;
-                //settingsToolStripMenuItem.Visible = false;
-                FormStart formStart = new FormStart();
-                formStart.Owner = this;
-                formStart.ShowDialog();
+                
             }
         }
 

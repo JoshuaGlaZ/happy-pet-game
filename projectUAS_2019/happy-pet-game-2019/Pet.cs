@@ -8,26 +8,26 @@ namespace happy_pet_game_2019
     {
         #region DataMembers
         private string name;
-        private Image image;
+        private string trait;
 
         private int health;
         private int happiness;
         private int energy;
 
+        private Image picture;
         public Toy toy;
-        private Player owner;
         #endregion
 
         #region Constructors
-        public Pet(string inName, Image inPict, Player inOwner)
+        public Pet(string inName, string trait, Image picture)
         {
             Name = inName;
-            Image = inPict;
+            Trait = trait;
             Health = 100;
             Happiness = 100;
             Energy = 100;
             Toy = toy;
-            Owner = inOwner;
+            Picture = picture;
         }
         #endregion
 
@@ -39,12 +39,11 @@ namespace happy_pet_game_2019
             {
                 if (value == "")
                 {
-                    throw new Exception("Name cannot be empty");
+                    throw new Exception("Pet name cannot be empty");
                 }
                 else { name = value; }
             }
         }
-        public Image Image { get => image; set => image = value; }
         public int Health
         {
             get => health;
@@ -85,7 +84,23 @@ namespace happy_pet_game_2019
             }
         }
         public Toy Toy { get => toy; set => toy = value; }
-        public Player Owner { get => owner; set => owner = value; }
+        public string Trait 
+        {
+            get => trait; 
+            set
+            {
+                if (value != "")
+                {
+                    trait = value;
+                }
+                else
+                {
+                    throw new Exception("Trait cannot be empty");
+                }
+            }
+        }
+
+        public Image Picture { get => picture; set => picture = value; }
 
 
         #endregion
@@ -96,14 +111,12 @@ namespace happy_pet_game_2019
             this.Health += consumable.HealthBonus;
             this.Energy += consumable.EnerygBonus;
             this.Happiness += consumable.HappinessBonus;
-            this.Owner.Coins += (int)(0.5 * consumable.HealthBonus * 100);
-            this.Owner.Coins += (int)(0.5 * consumable.EnerygBonus * 100);
-            this.Owner.Coins += (int)(0.5 * consumable.HappinessBonus * 100);
         }
         public virtual void Sleep() { this.Health += 0; }
         public override string ToString()
         {
-            return Name +
+            return "Name : " + Name +
+                   "\nTrait : " + Trait + 
                    "\nHealth : " + Health +
                    "\nEnergy : " + Energy +
                    "\nHappiness : " + Happiness;
@@ -129,7 +142,10 @@ namespace happy_pet_game_2019
         {
             return this.Happiness > 60 ? "Happy" : "Unhappy"; //if (this.Happiness > 60) { return "Happy"; } else { return "Unhappy"; }
         }
-        public abstract void GetToy(Toy EquipedToy);
+        public virtual void GetToy(Toy EquipedToy)
+        {
+            Toy = EquipedToy;
+        }
         #endregion
     }
 }

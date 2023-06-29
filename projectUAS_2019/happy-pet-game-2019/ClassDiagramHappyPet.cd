@@ -3,7 +3,7 @@
   <Class Name="happy_pet_game_2019.Pet">
     <Position X="7.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAECgCABQAgiAQEAAAEgAwAEAAMABAAAQAAAAAAAAg=</HashCode>
+      <HashCode>AAAECgAABQAgCAQEgAAEgIwAAAAMAAAAAQAAAAAAAAg=</HashCode>
       <FileName>Pet.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -13,19 +13,16 @@
   <Class Name="happy_pet_game_2019.Toy">
     <Position X="10.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABABAAAAAQAAAAAEAAAAAAQAEAAFABAAAQAAAAAQAAA=</HashCode>
+      <HashCode>ABABAAAAAQAAAAAEAAAAAAQAAAAEAAAAAAAAAAAQAAA=</HashCode>
       <FileName>Toy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="happy_pet_game_2019.Player">
     <Position X="5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAgAAAAIACCAIAAEACAQAAAAMAAAACAEAICBAAAg=</HashCode>
+      <HashCode>IAAAAEAAAAAACKAIAAEACAQAAAAMAAAASAEBACBAAAg=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="ChoosenPet" />
-    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="ToyList" />
       <Property Name="ConsumableList" />
@@ -34,28 +31,28 @@
   <Class Name="happy_pet_game_2019.Fish">
     <Position X="9.5" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAEAAAAgAAAAAIAAAACAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAEAAAAAAAAAAIAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Fish.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="happy_pet_game_2019.Cat">
     <Position X="5" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAgCAAQAAgAAEAAAAgAAAAAAAAAQAgAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgCAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="happy_pet_game_2019.Chamaleon">
     <Position X="11.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAQAAAgAEAAAAgAAAgAAAAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAgAEAAAAAAAAgAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>Chamaleon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="happy_pet_game_2019.Consumable">
     <Position X="1" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAQCAAAAEgAAAAAQAEEAECBBAAAgAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAQCAAAAEgAAAAAQAAEAECABAAAgAAAAAAAA=</HashCode>
       <FileName>Consumable.cs</FileName>
     </TypeIdentifier>
   </Class>

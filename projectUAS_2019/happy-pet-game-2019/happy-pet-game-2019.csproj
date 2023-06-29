@@ -148,5 +148,56 @@
   <ItemGroup>
     <None Include="assets\img\buttonlarge_normal.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_red.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_yellow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_blue-green.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_blue-red.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_blue-yellow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green-blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green-red.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green-yellow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_red-blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_red-green.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_red-yellow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_yellow-blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_yellow-green.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_yellow-red.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
