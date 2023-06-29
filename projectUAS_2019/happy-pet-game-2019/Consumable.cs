@@ -16,16 +16,19 @@ namespace happy_pet_game_2019
         private int healthBonus;
         private int enerygBonus;
         private int happinessBonus;
+
+        private Image picture;
         #endregion
 
         #region Constuctors
-        public Consumable(string name, int price, int healthBonus, int enerygBonus, int happinessBonus)
+        public Consumable(string name, int price, int healthBonus, int enerygBonus, int happinessBonus, Image inPicture)
         {
             Name = name;
             Price = price;
             HealthBonus = healthBonus;
             EnerygBonus = enerygBonus;
             HappinessBonus = happinessBonus;
+            Picture = inPicture;
         }
         #endregion
 
@@ -46,6 +49,7 @@ namespace happy_pet_game_2019
         public int HealthBonus { get => healthBonus; set => healthBonus = value; }
         public int EnerygBonus { get => enerygBonus; set => enerygBonus = value; }
         public int HappinessBonus { get => happinessBonus; set => happinessBonus = value; }
+        public Image Picture { get => picture; set => picture = value; }
         #endregion
 
         #region Methods

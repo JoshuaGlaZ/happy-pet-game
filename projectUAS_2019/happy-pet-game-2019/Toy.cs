@@ -12,15 +12,17 @@ namespace happy_pet_game_2019
         #region DataMembers
         private string name;
         private string benefit;
+        private Image picture;
         private int price;
         #endregion
 
         #region Constructors
-        public Toy(string name, string benefit, int price)
+        public Toy(string name, string benefit, int price, Image inPicture)
         {
             Name = name;
             Benefit = benefit;
             Price = price;
+            Picture = inPicture;
         }
         #endregion
 
@@ -28,7 +30,8 @@ namespace happy_pet_game_2019
         public string Name { get => name; set => name = value; }
         public string Benefit { get => benefit; set => benefit = value; }
         public int Price { get => price; set => price = value; }
-        
+        public Image Picture { get => picture; set => picture = value; }
+
         #endregion
 
         #region Methods
