@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace happy_pet_game_2019
 {
@@ -12,6 +13,7 @@ namespace happy_pet_game_2019
         private int maxHealth;
         private int maxHappiness;
         private int maxEnergy;
+        private double atkSpeed;
 
         private int health;
         private int happiness;
@@ -32,7 +34,9 @@ namespace happy_pet_game_2019
             Energy = inEnergy;
             MaxHappiness = inMaxHappiness;
             Happiness = 0;
+            AtkSpeed = 1;
 
+            toy = new Toy("none", 0, 0, 0, 1, image, 0);
             Owner = inOwner;
         }
         #endregion
@@ -94,22 +98,8 @@ namespace happy_pet_game_2019
         }
         public int Energy 
         {
-            get => energy; 
-            set
-            {
-                if (value >= 0 && value <= MaxEnergy)
-                {
-                    energy = value;
-                }
-                else if (value < 0)
-                {
-                    energy = 0;
-                }
-                else
-                {
-                    energy = MaxEnergy;
-                }
-            }
+            get => energy;
+            set => energy = value;
         }
         public Toy Toy 
         {
@@ -122,6 +112,7 @@ namespace happy_pet_game_2019
         public int MaxHealth { get => maxHealth; set => maxHealth = value; }
         public int MaxHappiness { get => maxHappiness; set => maxHappiness = value; }
         public int MaxEnergy { get => maxEnergy; set => maxEnergy = value; }
+        public double AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
         #endregion
 
         #region Methods
@@ -133,10 +124,11 @@ namespace happy_pet_game_2019
         }
         public virtual string DisplayData()
         {
-            return Name +
+            return "Name : " + Name +
                    "\nHealth : " + Health + "/"+ MaxHealth +
                    "\nEnergy : " + Energy +
-                   "\nHappiness : " + Happiness + "/" + MaxHappiness;
+                   "\nHappiness : " + Happiness + "/" + MaxHappiness +
+                   "\nAttack Speed : " + toy.AtkSpeedMultiplier;
         }
 
         public string GetHealthCondition()
@@ -166,11 +158,12 @@ namespace happy_pet_game_2019
             this.Toy = equipment;
             this.MaxHealth += equipment.BonusHealth;
             this.MaxEnergy += equipment.BonusEnergy;
+            this.AtkSpeed = 1 / equipment.AtkSpeedMultiplier;
         }
 
         public void basicAttack(Enemy target)
         {
-            target.Health -= this.Energy;
+            target.Health -= Energy;
             this.Happiness += 10 + toy.HappinessGain;
         }
         public abstract void Ultimate(Enemy target);

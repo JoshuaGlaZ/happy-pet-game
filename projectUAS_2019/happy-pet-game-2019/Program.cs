@@ -16,7 +16,7 @@ namespace happy_pet_game_2019
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenu());
+            Application.Run(new Form1());
         }
     }
 }

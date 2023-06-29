@@ -13,7 +13,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Cat(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, bool vaccStatus) : base(inName, inPict, inOwner,inMaxHealth,inMaxHappiness,inEnergy)
+        public Cat(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy) : base(inName, inPict, inOwner,inMaxHealth,inMaxHappiness,inEnergy)
         {
             VaccStatus = false;
         }
@@ -27,7 +27,7 @@ namespace happy_pet_game_2019
         public override string DisplayData()
         {
             string condition = VaccStatus ? "True" : "False"; //if (VaccStatus) { condition = "True"; } else { condition = "False"; }
-            return base.ToString() + "\nVaccine Status : " + condition;
+            return base.DisplayData() + "\nVaccine Status : " + condition;
         }
 
         public void Play()
@@ -48,8 +48,8 @@ namespace happy_pet_game_2019
 
         public void Vaccinate()
         {
-            if (VaccStatus)  { throw new Exception("Sudah divaksin"); }
-            else if (base.Owner.Coins < 1000) { throw new Exception("koin tidak cukup.\nVaccinate = 1000Coins"); }
+            if (VaccStatus)  { throw new Exception("already vaccinated"); }
+            else if (base.Owner.Coins < 1000) { throw new Exception("not enough coins.\nVaccinate = 1000Coins"); }
             else{ base.Owner.Coins -= 1000; }
         }
 
@@ -61,7 +61,7 @@ namespace happy_pet_game_2019
                 this.Happiness = 0;
                 if (this.VaccStatus) { base.Health += (int)(MaxHealth / 5); }
             }
-            else { throw new Exception("Ultimate belum siap"); }
+            else { throw new Exception("Ultimate not ready"); }
         }
         #endregion
     }
