@@ -10,9 +10,12 @@ namespace happy_pet_game_2019
         private string name;
         private Image image;
 
+        private int level;
+        private int expBar; //banyak exp yg dibutuhkan untuk naik level
+        private int expProgress; //exp yg terkumpul
+
         private int maxHealth;
         private int maxHappiness;
-        private int maxEnergy;
         private double atkSpeed;
 
         private int health;
@@ -28,6 +31,10 @@ namespace happy_pet_game_2019
         {
             Name = inName;
             Image = inPict;
+
+            Level = 1;
+            ExpBar = 100;
+            ExpProgress = 0;
 
             MaxHealth = inMaxHealth;
             Health = inMaxHealth;
@@ -49,7 +56,7 @@ namespace happy_pet_game_2019
             {
                 if (value == "")
                 {
-                    throw new Exception("Nama tidak boleh kosong");
+                    throw new Exception("Name can't be empty");
                 }
                 else
                 {
@@ -96,26 +103,34 @@ namespace happy_pet_game_2019
                 }
             }
         }
-        public int Energy 
-        {
-            get => energy;
-            set => energy = value;
-        }
-        public Toy Toy 
-        {
-            get => toy; set => toy = value; 
-        }
-        public Player Owner 
-        {
-            get => owner; set => owner = value; 
-        }
+        public int Energy  { get => energy; set { if (value < 0) { energy = 0; } else { energy = value; } } }
+        public Toy Toy  { get => toy; set => toy = value; }
+        public Player Owner  { get => owner; set => owner = value; }
         public int MaxHealth { get => maxHealth; set => maxHealth = value; }
         public int MaxHappiness { get => maxHappiness; set => maxHappiness = value; }
-        public int MaxEnergy { get => maxEnergy; set => maxEnergy = value; }
         public double AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
+        public int ExpBar { get => expBar; set => expBar = value; }
+        public int ExpProgress { get => expProgress; set => expProgress = value; }
+        public int Level { get => level; set => level = value; }
         #endregion
 
         #region Methods
+        public void levelUp(int expGained)
+        {
+            while(ExpProgress >= ExpBar)
+            {
+                if (ExpProgress - ExpBar < 0) { break; }
+                else { ExpProgress = ExpProgress - ExpBar; }
+                ExpBar = (int)(ExpBar * 1.25);
+
+                Level += 1;
+                MaxHealth = (int)(MaxHealth * 1.1);
+                Health = MaxHealth;
+                Energy = (int)(Energy * 1.1);
+                Happiness = MaxHappiness;
+            }
+        }
+
         public virtual void Feed(Consumable food)
         {
             this.Health += food.HealthBonus;
@@ -125,6 +140,7 @@ namespace happy_pet_game_2019
         public virtual string DisplayData()
         {
             return "Name : " + Name +
+                   "\nLevel  : " + Level  + "\t\tNext level up : " + ExpProgress + "/" + expBar +
                    "\nHealth : " + Health + "/"+ MaxHealth +
                    "\nEnergy : " + Energy +
                    "\nHappiness : " + Happiness + "/" + MaxHappiness +
@@ -157,7 +173,7 @@ namespace happy_pet_game_2019
         {
             this.Toy = equipment;
             this.MaxHealth += equipment.BonusHealth;
-            this.MaxEnergy += equipment.BonusEnergy;
+            this.Energy += equipment.BonusEnergy;
             this.AtkSpeed = 1 / equipment.AtkSpeedMultiplier;
         }
 

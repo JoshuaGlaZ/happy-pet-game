@@ -10,7 +10,8 @@ namespace happy_pet_game_2019
     public class EnemyDrain:Enemy
     {
         private int drainEffect;
-        public EnemyDrain(string inName, Image inPict, int inHealth, int inEnergy, double inAtkSpeed, int inDrainEffect) : base(inName, inPict, inHealth, inEnergy, inAtkSpeed)
+        public EnemyDrain(string inName, Image inPict, int inHealth, int inEnergy, double inAtkSpeed, 
+            int inDrainEffect, int inMaxRage) : base(inName, inPict, inHealth, inEnergy, inAtkSpeed, inMaxRage)
         {
             Name = inName;
             Image = inPict;
