@@ -17,3 +17,13 @@ C:\Users\user\Desktop\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Deb
 C:\Users\user\Desktop\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe.config
 C:\Users\user\Desktop\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe
 C:\Users\user\Desktop\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.pdb
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe.config
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.pdb
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.AssemblyReference.cache
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.Form1.resources
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.Properties.Resources.resources
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.GenerateResource.cache
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.CoreCompileInputs.cache
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.exe
+D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.pdb
