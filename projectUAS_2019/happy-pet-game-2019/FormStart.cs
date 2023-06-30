@@ -157,7 +157,7 @@ namespace happy_pet_game_2019
             else if (radioButtonChooseFish.Checked)
             {
                 pictureBoxNewChoosePet.Image = Properties.Resources.fish;
-                pictureBoxBorderNewChoosePet.BackgroundImage = Properties.Resources.fishbowl_clean;
+                pictureBoxNewChoosePet.BackgroundImage = Properties.Resources.fishbowl_clean;
                 buttonChooseColor.Enabled = false;
                 buttonChooseColor.Visible = false;
             }
