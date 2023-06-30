@@ -14,6 +14,9 @@ namespace happy_pet_game_2019
         private int expBar; //banyak exp yg dibutuhkan untuk naik level
         private int expProgress; //exp yg terkumpul
 
+        private int statusDuration; // lama statusnya berjalan
+        private int statusBerjalan; // counter sudah berapa lama statusnya berjalan
+
         private int maxHealth;
         private int maxHappiness;
         private double atkSpeed;
@@ -21,6 +24,9 @@ namespace happy_pet_game_2019
         private int health;
         private int happiness;
         private int energy;
+
+        private int fill;
+        private int maxFill; // batas kekenyangannya
 
         private Toy toy;
         private Player owner;
@@ -36,12 +42,18 @@ namespace happy_pet_game_2019
             ExpBar = 100;
             ExpProgress = 0;
 
+            StatusDuration = 3;
+            StatusBerjalan = 0;
+
             MaxHealth = inMaxHealth;
             Health = inMaxHealth;
             Energy = inEnergy;
             MaxHappiness = inMaxHappiness;
             Happiness = 0;
             AtkSpeed = 1;
+
+            Fill = 0;
+            MaxFill = 100; 
 
             toy = new Toy("none", 0, 0, 0, 1, image, 0);
             Owner = inOwner;
@@ -112,6 +124,10 @@ namespace happy_pet_game_2019
         public int ExpBar { get => expBar; set => expBar = value; }
         public int ExpProgress { get => expProgress; set => expProgress = value; }
         public int Level { get => level; set => level = value; }
+        public int Fill { get => fill; set => fill = value; }
+        public int MaxFill { get => maxFill; set => maxFill = value; }
+        public int StatusDuration { get => statusDuration; set => statusDuration = value; }
+        public int StatusBerjalan { get => statusBerjalan; set => statusBerjalan = value; }
         #endregion
 
         #region Methods
@@ -182,6 +198,8 @@ namespace happy_pet_game_2019
             target.Health -= Energy;
             this.Happiness += 10 + toy.HappinessGain;
         }
+
+        public abstract void Skill(Enemy target);
         public abstract void Ultimate(Enemy target);
         #endregion
     }

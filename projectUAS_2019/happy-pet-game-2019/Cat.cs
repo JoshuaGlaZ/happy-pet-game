@@ -53,6 +53,10 @@ namespace happy_pet_game_2019
             else{ base.Owner.Coins -= 1000; }
         }
 
+        public override void Skill(Enemy target)
+        {
+            throw new NotImplementedException();
+        }
         public override void Ultimate(Enemy target)
         {
             if(base.Happiness == base.MaxHappiness)

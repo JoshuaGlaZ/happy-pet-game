@@ -134,18 +134,19 @@ namespace happy_pet_game_2019
         }
 
         #region method
+        Enemy newEnemy;
+        int tipe, health, energy, statusEffect;
         private Enemy RandomEnemy()
         {
             Random random = new Random();
-            Enemy enemy;
-            int tipe = random.Next(1, 3);
-            int health = random.Next(500, 1000);
-            int energy = random.Next(50,200);
-            int statusEffect = random.Next(10, 100);
-            if (tipe == 1) { enemy = new EnemyDebuffer("debuffer",image,health,energy,1,50,statusEffect); }
-            else if (tipe == 2) { enemy = new EnemyDrain("drain", image, health, energy, 1, 50, statusEffect); }
-            else { enemy = new EnemyPoisonous("poisonous", image, health, energy, 1, 50, statusEffect); }
-            return enemy;
+            tipe = random.Next(1, 3);
+            health = random.Next(pet.Health+100, pet.Health+300);
+            energy = random.Next(pet.Energy-50,pet.Energy+100);
+            statusEffect = random.Next(10, 100);
+            if (tipe == 1) { newEnemy = new EnemyDebuffer("debuffer",image,health,energy,1,50,statusEffect); }
+            else if (tipe == 2) { newEnemy = new EnemyDrain("drain", image, health, energy, 1, 50, statusEffect); }
+            else { newEnemy = new EnemyPoisonous("poisonous", image, health, energy, 1, 50, statusEffect); }
+            return newEnemy;
         }
         #endregion
     }
