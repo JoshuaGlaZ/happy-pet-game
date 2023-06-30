@@ -48,11 +48,11 @@ namespace happy_pet_game_2019
 
 
         #region Methods
-        public void BuyToy(string name, string benefit, int price)
+        public void BuyToy(string name, string benefit, int price, Image toyPicture)
         {
             if (this.Coins >= price) 
             {
-                Toy NewToy = new Toy(name, benefit, price);
+                Toy NewToy = new Toy(name, benefit, price, toyPicture);
                 toyList.Add(NewToy); Coins -= NewToy.Price; 
             }
             else { throw new Exception("Not enough coins.\nPrice = " + price); }
@@ -66,11 +66,11 @@ namespace happy_pet_game_2019
             }
             return data;
         }
-        public void BuyConsumable(string name, int price, int healthBonus, int enerygBonus, int happinessBonus)
+        public void BuyConsumable(string name, int price, int healthBonus, int enerygBonus, int happinessBonus, Image consumablePicture)
         {
             if (this.Coins >= price)
             {
-                Consumable NewConsumable = new Consumable(name, price, healthBonus, enerygBonus, happinessBonus);
+                Consumable NewConsumable = new Consumable(name, price, healthBonus, enerygBonus, happinessBonus, consumablePicture);
                 consumableList.Add(NewConsumable); Coins -= NewConsumable.Price;
             }
             else { throw new Exception("Not enough coins.\nPrice = " + price); }

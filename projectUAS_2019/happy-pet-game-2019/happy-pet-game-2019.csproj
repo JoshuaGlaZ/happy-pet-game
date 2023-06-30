@@ -199,5 +199,38 @@
   <ItemGroup>
     <None Include="assets\img\chameleon_yellow-red.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cherry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\drumsticks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fishBowl.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fishBowl_dirty.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\sodacan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\waterbottle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fishbowl_clean.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

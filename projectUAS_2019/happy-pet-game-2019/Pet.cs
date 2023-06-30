@@ -9,6 +9,7 @@ namespace happy_pet_game_2019
         #region DataMembers
         private string name;
         private string trait;
+        private int level;
 
         private int health;
         private int happiness;
@@ -23,6 +24,7 @@ namespace happy_pet_game_2019
         {
             Name = inName;
             Trait = trait;
+            Level = 1;
             Health = 100;
             Happiness = 100;
             Energy = 100;
@@ -101,6 +103,7 @@ namespace happy_pet_game_2019
         }
 
         public Image Picture { get => picture; set => picture = value; }
+        public int Level { get => level; set => level = value; }
 
 
         #endregion

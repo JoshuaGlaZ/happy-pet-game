@@ -292,10 +292,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>139, 17</value>
-  </metadata>
-  <data name="panelMain.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="panelButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+gAAAGJCAYAAAAZlBkyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
         IwAALiMBeKU/dgAAF1tJREFUeF7t17GNdM1xQFEGIUMJMAnajIIBEGAmBBSC0lAA9JkCc6FATwLuq+7v
@@ -1517,6 +1514,19 @@
 </value>
   </data>
   <data name="buttonResetNo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMgAAAA9CAYAAADoByY0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
+        IwAALiMBeKU/dgAAAbVJREFUeF7t07FtXEEMRdEtwoEbsBN34Fi1uP8OZBggYOLpfUHCj0Z7CJxshhHv
+        4yPz/duPV/hq5rzvT1sOp5vzvj9tOZxuzvv+tOVwujnvz01b9PvlD3w57dYng+tpn9pyOF279cngetqn
+        thxO1259Mrie9qkth9O1W58Mrqd9asvhdO3WJ4P/kw/aIngW2YNAYMkeBAJL9iAQWLIHgcCSPQgEluxB
+        ILBkDwKBJXsQCCzZg0BgyR4EAkv2IBBYsgeBwJI9CASW7EEgsGQPAoElexAILNmDQGDJHgQCS/YgEFiy
+        B4HAkj0IBJbsQSCwZA8CgSV7EAgs2YNAYMkeBAJL9iAQWLIHgcCSPQgEluxBILBkDwKBJXsQCCzZg0Bg
+        yR4EAkv28CaQn79e3miL4HTt1rMHgfC02q1nDwLhabVbzx4EwtNqt549fCgQeBbZg0BgyR4EAkv2IBBY
+        sodHTj74py2C07Vbnwyup31qy+F07dYng+tpn9pyOF279cngetqnthxO1259Mrie9qkth9O1W58MPjdt
+        EZxuzvv+tOVwujnv+9OWw+nmvO9PWw6nm/N+Zx6Pv9xW8ure8lb/AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAAA9CAYAAADoByY0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
         IwAALiMBeKU/dgAAAbVJREFUeF7t07FtXEEMRdEtwoEbsBN34Fi1uP8OZBggYOLpfUHCj0Z7CJxshhHv
