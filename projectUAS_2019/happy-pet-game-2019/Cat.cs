@@ -55,7 +55,7 @@ namespace happy_pet_game_2019
         {
             if (SkillPoin > 0)
             {
-                if (BuffStatus) { buffRemover(); }
+                if (BuffStatus) { buffRemover(DummyEnemy); }
                 Energy = (int)(Energy * 1.5);
                 StatusDuration = 3;
                 if (VaccStatus == false) { Health -= (int)(0.05 * Health); }
@@ -76,9 +76,11 @@ namespace happy_pet_game_2019
             else { throw new Exception("Ultimate not ready"); }
         }
 
-        public override void buffRemover()
+        public override void buffRemover(Enemy enemy)
         {
-            Energy = (int)(Math.Ceiling(Energy/1.5));
+            if (DebuffStatus && enemy is EnemyDebuffer) 
+            { Energy = OriginalEnergy - enemy.getDebuffEffect(); }
+            else { Energy = OriginalEnergy; }
             BuffStatus = false;
         }
         #endregion

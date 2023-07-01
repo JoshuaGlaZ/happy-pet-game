@@ -37,13 +37,14 @@ namespace happy_pet_game_2019
                 base.Health += base.MaxHealth;
                 base.Happiness += base.MaxHappiness;
                 base.Owner.Coins -= 500;
+                envStatus = "Clean";
             }
             else { throw new Exception("not enough coins.\nClean = 500 Coins"); }
         }
 
         public override void Skill(Enemy target)
         {
-            if (SkillPoin > 0)
+            if (SkillPoin == 3)
             {
                 EnvStatus = "Clean";
                 Health = Health + (int)(0.15 * MaxHealth);
@@ -61,6 +62,17 @@ namespace happy_pet_game_2019
                 this.Happiness = 0;
             }
             else { throw new Exception("Ultimate not ready"); }
+        }
+
+        public override string GetEnviromentStatus()
+        {
+            return EnvStatus;
+        }
+
+        public override void buffRemover(Enemy enemy)
+        {
+            EnvStatus = "Normal";
+            BuffStatus = false;
         }
         #endregion
     }

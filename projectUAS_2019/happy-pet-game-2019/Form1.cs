@@ -24,16 +24,47 @@ namespace happy_pet_game_2019
         {
             countdown = 3;
             labelBattleNumber.Text = "Battle before rest : " + countdown;
-            timerBattle.Start();
             groupBoxChooseEnemy.Enabled = false;
-            groupBoxPetAction.Enabled = false;
-            pet = new Cat("kochenk", image, owner, 1250, 100, 150, 100);
-            enemy = RandomEnemy();
+            groupBoxBattle.Enabled = false;
+            groupBoxChoosePet.Enabled = true;
+            radioButtonCat.Checked = true;
             labelSkillPoint.Text = "Skill point remaining : " + pet.SkillPoin;
-            listBox1.Items.AddRange((pet.DisplayData() + "'\n").Split('\n'));
-            listBox1.Items.AddRange((enemy.DisplayData() + "\n").Split('\n'));
+            labelBuff.Text = "Buff Duration : " + 0;
+            labelDebuff.Text = "Debuff Duration : " + 0;
             timer = 0;
         }
+
+        #region choose pet
+        private void radioButtonCat_CheckedChanged(object sender, EventArgs e)
+        {
+            listBoxPet.Items.Clear();
+            pet = new Cat("kochenk", image, owner, 1250, 100, 150, 100);
+            listBoxPet.Items.AddRange((pet.DisplayData() + "'\n").Split('\n'));
+        }
+        private void radioButtonFish_CheckedChanged(object sender, EventArgs e)
+        {
+            listBoxPet.Items.Clear();
+            pet = new Fish("le fische", image, owner, 1500, 120, 100, 50);
+            listBoxPet.Items.AddRange((pet.DisplayData() + "'\n").Split('\n'));
+            listBoxPet.Items.AddRange("\nFish need 3 skill point to activate skill".Split('\n'));
+        }
+
+        private void radioButtonChameleon_CheckedChanged(object sender, EventArgs e)
+        {
+            listBoxPet.Items.Clear();
+            pet = new Chamaleon("kadal uarsa", image, owner, 1000, 150, 120, 120);
+            listBoxPet.Items.AddRange((pet.DisplayData() + "'\n").Split('\n'));
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            timerBattle.Start();
+            groupBoxChoosePet.Enabled = false;
+            groupBoxBattle.Enabled = true;
+            enemy = RandomEnemy();
+            listBox1.Items.AddRange((enemy.DisplayData() + "\n").Split('\n'));
+        }
+        #endregion
 
         private void timerBattle_Tick(object sender, EventArgs e)
         {
@@ -44,24 +75,24 @@ namespace happy_pet_game_2019
             if (timer % (int)(((1 / pet.AtkSpeed) * 100)) == 0)
             {
                 #region status musuh
-                if (enemy is EnemyPoisonous && enemy.StatusBerjalan > 0)
+                if (enemy is EnemyPoisonous && enemy.StatusDuration > 0)
                 {
                     pet.Health -= enemy.getPoisonEffect();
                     if (pet.Health <= 0) 
                     { listBox1.Items.AddRange("\nGame Over\n".Split('\n')); timerBattle.Stop(); groupBoxPetAction.Enabled = false; }
-                    enemy.StatusBerjalan -= 1;
+                    enemy.StatusDuration -= 1;
                     listBox1.Items.Add("got poison damage "+enemy.getPoisonEffect());
-                    if (enemy.StatusBerjalan == 0)
+                    if (enemy.StatusDuration == 0)
                     {
                         listBox1.Items.Add("Poison Effect removed");
                     }
                 }
                 if (enemy is EnemyDebuffer)
                 {
-                    if (enemy.StatusBerjalan > 0)
+                    if (enemy.StatusDuration > 0)
                     {
-                        enemy.StatusBerjalan -= 1;
-                        if (enemy.StatusBerjalan == 0)
+                        enemy.StatusDuration -= 1;
+                        if (enemy.StatusDuration == 0)
                         {
                             listBox1.Items.Add("Debuff removed");
                             pet.Energy += enemy.getDebuffEffect();
@@ -71,9 +102,12 @@ namespace happy_pet_game_2019
                 #endregion
 
                 #region status pet
-                if (pet.StatusDuration == 0 && pet.BuffStatus) { pet.buffRemover(); listBox1.Items.Add("pet buff removed"); }
-                else { pet.StatusDuration -= 1; }
+                if (pet.StatusDuration == 0 && pet.BuffStatus) { pet.buffRemover(enemy); listBox1.Items.Add("pet buff removed"); }
+                else if(pet.BuffStatus){ pet.StatusDuration -= 1; }
                 #endregion
+
+                labelBuff.Text = "Buff Duration : " + pet.StatusDuration;
+                labelDebuff.Text = "Debuff Duration : " + enemy.StatusDuration;
 
                 timerBattle.Stop();
                 groupBoxPetAction.Enabled = true;
@@ -84,12 +118,26 @@ namespace happy_pet_game_2019
             {
                 if (enemy.Rage == enemy.MaxRage)
                 {
-                    enemy.specialAttack(pet);
-                    Door1.Items.Clear();
-                    Door1.Items.AddRange(("pet status\n" + pet.DisplayData()).Split('\n'));
-                    Door2.Items.Clear();
-                    Door2.Items.AddRange(("enemy status\n" + enemy.DisplayData()).Split('\n'));
-                    listBox1.Items.Add("enemy unleash special attack dealing "+(enemy.Energy)+" damage");
+                    if(pet.GetEnviromentStatus() == "Clean")
+                    {
+                        enemy.specialAttack(pet);
+                        Door1.Items.Clear();
+                        Door1.Items.AddRange(("pet status\n" + pet.DisplayData()).Split('\n'));
+                        Door2.Items.Clear();
+                        Door2.Items.AddRange(("enemy status\n" + enemy.DisplayData()).Split('\n'));
+                        listBox1.Items.Add("enemy unleash special attack dealing " + (enemy.Energy) + " damage");
+                        listBox1.Items.Add("immunity to debuff");
+                        enemy.StatusDuration = 0;
+                    }
+                    else
+                    {
+                        enemy.specialAttack(pet);
+                        Door1.Items.Clear();
+                        Door1.Items.AddRange(("pet status\n" + pet.DisplayData()).Split('\n'));
+                        Door2.Items.Clear();
+                        Door2.Items.AddRange(("enemy status\n" + enemy.DisplayData()).Split('\n'));
+                        listBox1.Items.Add("enemy unleash special attack dealing " + (enemy.Energy) + " damage");
+                    }
                 }
                 else
                 {
@@ -126,7 +174,7 @@ namespace happy_pet_game_2019
                 timerBattle.Stop();
                 countdown -= 1;
                 labelBattleNumber.Text = "Battle before rest : " + countdown;
-                if (countdown == 0) { MessageBox.Show("Do you want to go to the shop ?","to the shop",MessageBoxButtons.YesNo); }
+                if (countdown == 0) { MessageBox.Show("Do you want to go to the shop ?","to the shop",MessageBoxButtons.YesNo); countdown = 3; }
                 groupBoxChooseEnemy.Enabled = true;
                 Door1.Items.Clear();
                 Door2.Items.Clear();
@@ -200,14 +248,14 @@ namespace happy_pet_game_2019
         private Enemy RandomEnemy()
         {
             Random random = new Random();
-            tipe = random.Next(1, 4);
+            tipe = random.Next(1, 5);
             enemyLevel = random.Next(pet.Level-4,pet.Level+4);
             if (enemyLevel < 1) { enemyLevel = 1; } // mencegah level enemy minus
 
             if (tipe == 1) 
             { 
                 newEnemy = new EnemyDebuffer("debuffer",image,(int)(1200*(Math.Pow(1.1,enemyLevel-1))),
-                    (int)(140 * (Math.Pow(1.1, enemyLevel-1))), 1, 60, (int)((50 * (Math.Pow(1.1, (enemyLevel-1) / 10)))), enemyLevel);
+                    (int)(140 * (Math.Pow(1.1, enemyLevel-1))), 1, 50, (int)((50 * (Math.Pow(1.1, (enemyLevel-1) / 10)))), enemyLevel);
             }// tipe debuffer
             else if (tipe == 2)
             { 
@@ -222,7 +270,7 @@ namespace happy_pet_game_2019
             else
             {
                 newEnemy = new EnemyPhysical("physical", image, (int)(1500 * (Math.Pow(1.1, enemyLevel - 1)))
-                    , (int)(160 * (Math.Pow(1.1, enemyLevel - 1))), 1, 50, enemyLevel);
+                    , (int)(160 * (Math.Pow(1.1, enemyLevel - 1))), 1, 30, enemyLevel);
             } // tipe physical
 
             return newEnemy;

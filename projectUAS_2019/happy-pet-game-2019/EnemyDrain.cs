@@ -26,8 +26,15 @@ namespace happy_pet_game_2019
 
         public override void specialAttack(Pet target)
         {
-            base.specialAttack(target);
-            target.Happiness -= DrainEffect;
+            if (target.GetEnviromentStatus() != "Clean")
+            {
+                base.specialAttack(target);
+                target.Happiness -= DrainEffect;
+            }
+            else
+            {
+                base.specialAttack(target);
+            }
         }
     }
 }

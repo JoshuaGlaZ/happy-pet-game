@@ -30,8 +30,15 @@ namespace happy_pet_game_2019
         }
         public override void specialAttack(Pet target)
         {
-            base.specialAttack(target);
-            target.Energy = target.Energy-DebuffEffect;
+            if(target.GetEnviromentStatus() != "Clean")
+            {
+                base.specialAttack(target);
+                target.Energy -= DebuffEffect;
+            }
+            else
+            {
+                base.specialAttack(target);
+            }
         }
     }
 }

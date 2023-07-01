@@ -14,6 +14,7 @@ namespace happy_pet_game_2019
         private int expBar; //banyak exp yg dibutuhkan untuk naik level
         private int expProgress; //exp yg terkumpul
 
+        private bool debuffStatus;
         private bool buffStatus;
         private int statusDuration; // lama statusnya berjalan
 
@@ -24,6 +25,7 @@ namespace happy_pet_game_2019
         private int health;
         private int happiness;
         private int happinessGain;
+        private int originalEnergy;
         private int energy;
         private int defense;
 
@@ -33,6 +35,8 @@ namespace happy_pet_game_2019
 
         private int fill;
         private int maxFill; // batas kekenyangannya
+
+        private Enemy dummyEnemy;
 
         private Toy toy;
         private Player owner;
@@ -48,12 +52,14 @@ namespace happy_pet_game_2019
             ExpBar = 100;
             ExpProgress = 0;
 
+            DebuffStatus = false;
             BuffStatus = false;
             StatusDuration = 0;
 
             MaxHealth = inMaxHealth;
             Health = inMaxHealth;
-            Energy = inEnergy;
+            OriginalEnergy = inEnergy;
+            Energy = OriginalEnergy;
             MaxHappiness = inMaxHappiness;
             Happiness = 0;
             HappinessGain = 10;
@@ -65,7 +71,9 @@ namespace happy_pet_game_2019
             LevelPoin = 0;
 
             Fill = 0;
-            MaxFill = 100; 
+            MaxFill = 100;
+
+            DummyEnemy = new EnemyPhysical("physical", image, 0, 0, 0, 0, 0);
 
             toy = new Toy("none", 0, 0, 0, 1, image, 0);
             Owner = inOwner;
@@ -145,6 +153,16 @@ namespace happy_pet_game_2019
         public int SkillPoin { get => skillPoin; set { if (value > 3) { skillPoin = 3; } else { skillPoin = value; } } }
 
         public bool BuffStatus { get => buffStatus; set => buffStatus = value; }
+        public int OriginalEnergy { get => originalEnergy; set => originalEnergy = value; }
+        public bool DebuffStatus
+        {
+            get => debuffStatus; 
+            set
+            {
+                debuffStatus = value;
+            }
+        }
+        public Enemy DummyEnemy { get => dummyEnemy; set => dummyEnemy = value; }
         #endregion
 
         #region Methods
@@ -202,17 +220,18 @@ namespace happy_pet_game_2019
         {
             return this.Happiness > 60 ? "Happy" : "Unhappy"; //if (this.Happiness > 60) { return "Happy"; } else { return "Unhappy"; }
         }
+        public virtual string GetEnviromentStatus() { return ""; }
 
         public void GetToy(Toy equipment)
         {
             //ngapus efek toy lama
             this.MaxHealth -= Toy.BonusHealth;
-            this.Energy -= Toy.BonusEnergy;
+            this.OriginalEnergy -= Toy.BonusEnergy;
             this.AtkSpeed -= Toy.AtkSpeedMultiplier - 1;
             //ngasih efek toy baru
             this.Toy = equipment;
             this.MaxHealth += equipment.BonusHealth;
-            this.Energy += equipment.BonusEnergy;
+            this.OriginalEnergy += equipment.BonusEnergy;
             this.AtkSpeed += equipment.AtkSpeedMultiplier-1;
         }
 
@@ -225,7 +244,7 @@ namespace happy_pet_game_2019
         public abstract void Skill(Enemy target);
         public abstract void Ultimate(Enemy target);
 
-        public virtual void buffRemover() { }
+        public virtual void buffRemover(Enemy enemy) { }
 
         public void MaxHealthUp() 
         {
@@ -234,7 +253,7 @@ namespace happy_pet_game_2019
         }
         public void EnergyUp()
         {
-            if (LevelPoin > 0) { Energy += 10; LevelPoin -= 1; }
+            if (LevelPoin > 0) { OriginalEnergy += 10; LevelPoin -= 1; }
             else { throw new Exception("Level Poin isn't enough"); }
         }
         public void defenseUp()

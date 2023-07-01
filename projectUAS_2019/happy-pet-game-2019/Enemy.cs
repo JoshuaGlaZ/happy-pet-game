@@ -22,7 +22,6 @@ namespace happy_pet_game_2019
         private int maxRage; // kayak Maxhappiness di pet, buat njalain special attack
         private int rage; // Kayak Happiness di pet
         private int statusDuration; // lama statusnya berjalan
-        private int statusBerjalan; // counter sudah berapa lama statusnya berjalan
         #endregion
 
         #region constructor
@@ -37,8 +36,7 @@ namespace happy_pet_game_2019
             Health = MaxHealth;
             Energy = inEnergy;
             AtkSpeed = inAtkSpeed;
-            StatusDuration = 3;
-            StatusBerjalan = 0;
+            StatusDuration = 0;
             MaxRage = inMaxRage;
             Rage = 0;
         }
@@ -51,7 +49,6 @@ namespace happy_pet_game_2019
         public int Energy { get => energy; set => energy = value; }
         public double AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
         public int StatusDuration { get => statusDuration; set => statusDuration = value; }
-        public int StatusBerjalan { get => statusBerjalan; set => statusBerjalan = value; }
         public int MaxRage { get => maxRage; set => maxRage = value; }
         public int Rage { get => rage; set { if (value > maxRage) { rage = MaxRage; } else { rage = value; } } }
         public int Level { get => level; set => level = value; }
@@ -73,6 +70,7 @@ namespace happy_pet_game_2019
         public virtual void specialAttack(Pet target)
         {
             target.Health -= Energy;
+            target.DebuffStatus = true;
             statusDuration = 3;
             Rage = 0;
         }

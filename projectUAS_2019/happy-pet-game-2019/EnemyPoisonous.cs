@@ -31,7 +31,6 @@ namespace happy_pet_game_2019
         public override void specialAttack(Pet target)
         {
             base.specialAttack(target);
-            StatusBerjalan = StatusDuration; 
         }
     }
 }
