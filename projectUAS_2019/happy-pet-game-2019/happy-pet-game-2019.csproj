@@ -61,6 +61,17 @@
     </Compile>
     <Compile Include="FormShop.Designer.cs">
       <DependentUpon>FormShop.cs</DependentUpon>
+    <Compile Include="Enemy.cs" />
+    <Compile Include="EnemyDebuffer.cs" />
+    <Compile Include="EnemyDrain.cs" />
+    <Compile Include="EnemyPhysical.cs" />
+    <Compile Include="EnemyPoisonous.cs" />
+    <Compile Include="Fish.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Pet.cs" />
     <Compile Include="Player.cs" />
@@ -72,6 +83,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormShop.resx">
       <DependentUpon>FormShop.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +97,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagramHappyPet.cd" />
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

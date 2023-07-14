@@ -13,7 +13,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Cat(string inName, Image inPict, Player inOwner, bool vaccStatus) : base(inName, inPict, inOwner)
+        public Cat(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense) : base(inName, inPict, inOwner,inMaxHealth,inMaxHappiness,inEnergy, inDefense)
         {
             VaccStatus = false;
         }
@@ -24,54 +24,64 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Methods
-        public override string ToString()
+        public override string DisplayData()
         {
             string condition = VaccStatus ? "True" : "False"; //if (VaccStatus) { condition = "True"; } else { condition = "False"; }
-            return base.ToString() + "\nVaccine Status : " + condition;
-        }   
-        public override void Feed(Consumable consumable)
-        {
-            base.Feed(consumable);
+            return base.DisplayData() + "\nVaccine Status : " + condition;
         }
+
         public void Play()
         {
-            base.Happiness += 50;
-            base.Energy -= 30;
-            base.Owner.Coins += (int)(0.5 * 50 * 100);
-        }
-
-        public override void Sleep()
+            base.Happiness += (int)(base.MaxHappiness/2);
+        } 
+        public void Sleep()
         {
-            base.Health += 20;
-            base.Energy += 70;
-            base.Owner.Coins += (int)(0.5 * 20 * 100);
-            base.Owner.Coins += (int)(0.5 * 70 * 100);
-        }
-
+            base.Happiness = base.MaxHappiness;
+            base.Health = base.MaxHealth;
+        } 
         public void Bath()
         {
-            base.Health += 30;
-            base.Owner.Coins += (int)(0.5 * 30 * 100);
+            base.Health = base.MaxHealth;
         }
 
         public void Vaccinate()
         {
-            if (VaccStatus)  { throw new Exception("Already vaccinated"); }
-            else if (base.Owner.Coins < 1000) { throw new Exception("Not enough Coins.\nVaccinate = 1000Coins"); }
-            else
-            {
-                base.Health += 40;
-                base.Happiness -= 10;
-                base.Owner.Coins -= 1000;
-            }
+            if (VaccStatus)  { throw new Exception("already vaccinated"); }
+            else if (base.Owner.Coins < 1000) { throw new Exception("not enough coins.\nVaccinate = 1000Coins"); }
+            else{ base.Owner.Coins -= 1000; }
         }
-        public override void GetToy(Toy EquipedToy)
+
+        public override void Skill(Enemy target)
         {
-            if (EquipedToy.Type == "cat".ToUpper())
+            if (SkillPoin > 0)
             {
-                base.Toy = EquipedToy;
+                if (BuffStatus) { buffRemover(DummyEnemy); }
+                Energy = (int)(Energy * 1.5);
+                StatusDuration = 3;
+                if (VaccStatus == false) { Health -= (int)(0.05 * Health); }
+                Happiness = Happiness + HappinessGain;
+                BuffStatus = true;
+                SkillPoin -= 1;
             }
-            else { throw new Exception("Toy isn't compatible to Cat"); }
+            else { throw new Exception("skill point isn't enough"); }
+        }
+        public override void Ultimate(Enemy target)
+        {
+            if(base.Happiness == base.MaxHappiness)
+            {
+                target.Health -= this.Energy * 4;
+                this.Happiness = 0;
+                if (this.VaccStatus) { base.Health += (int)(MaxHealth / 5); }
+            }
+            else { throw new Exception("Ultimate not ready"); }
+        }
+
+        public override void buffRemover(Enemy enemy)
+        {
+            if (DebuffStatus && enemy is EnemyDebuffer) 
+            { Energy = OriginalEnergy - enemy.getDebuffEffect(); }
+            else { Energy = OriginalEnergy; }
+            BuffStatus = false;
         }
         #endregion
     }
