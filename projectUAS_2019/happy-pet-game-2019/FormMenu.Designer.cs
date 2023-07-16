@@ -87,11 +87,10 @@ namespace happy_pet_game_2019
             // 
             this.battleToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.battleToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.battleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("battleToolStripMenuItem.Image")));
             this.battleToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.battleToolStripMenuItem.Name = "battleToolStripMenuItem";
             this.battleToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.battleToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
+            this.battleToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
             this.battleToolStripMenuItem.Text = "Battle";
             this.battleToolStripMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.battleToolStripMenuItem.Click += new System.EventHandler(this.battleToolStripMenuItem_Click);
@@ -99,33 +98,30 @@ namespace happy_pet_game_2019
             // showPetStatToolStripMenuItem
             // 
             this.showPetStatToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPetStatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("showPetStatToolStripMenuItem.Image")));
             this.showPetStatToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.showPetStatToolStripMenuItem.Name = "showPetStatToolStripMenuItem";
             this.showPetStatToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.showPetStatToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.showPetStatToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.showPetStatToolStripMenuItem.Text = "Show Pet Stat";
             this.showPetStatToolStripMenuItem.Click += new System.EventHandler(this.showPetStatToolStripMenuItem_Click);
             // 
             // showInventoryToolStripMenuItem
             // 
             this.showInventoryToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showInventoryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("showInventoryToolStripMenuItem.Image")));
             this.showInventoryToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.showInventoryToolStripMenuItem.Name = "showInventoryToolStripMenuItem";
             this.showInventoryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.showInventoryToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.showInventoryToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.showInventoryToolStripMenuItem.Text = "Show Inventory";
             this.showInventoryToolStripMenuItem.Click += new System.EventHandler(this.showInventoryToolStripMenuItem_Click);
             // 
             // shopToolStripMenuItem
             // 
             this.shopToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shopToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("shopToolStripMenuItem.Image")));
             this.shopToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.shopToolStripMenuItem.Name = "shopToolStripMenuItem";
             this.shopToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.shopToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
+            this.shopToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
             this.shopToolStripMenuItem.Text = "Shop";
             this.shopToolStripMenuItem.Click += new System.EventHandler(this.shopToolStripMenuItem_Click);
             // 
@@ -133,11 +129,11 @@ namespace happy_pet_game_2019
             // 
             this.exitToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(30, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
+            this.exitToolStripMenuItem.Text = "EXIT";
             this.exitToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -145,10 +141,10 @@ namespace happy_pet_game_2019
             // 
             this.maximizeresizeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.maximizeresizeToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maximizeresizeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("maximizeresizeToolStripMenuItem.Image")));
             this.maximizeresizeToolStripMenuItem.Name = "maximizeresizeToolStripMenuItem";
             this.maximizeresizeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.maximizeresizeToolStripMenuItem.Size = new System.Drawing.Size(30, 22);
+            this.maximizeresizeToolStripMenuItem.Size = new System.Drawing.Size(70, 22);
+            this.maximizeresizeToolStripMenuItem.Text = "RESIZE";
             this.maximizeresizeToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.maximizeresizeToolStripMenuItem.Click += new System.EventHandler(this.maximizeresizeToolStripMenuItem_Click);
             // 
@@ -156,10 +152,10 @@ namespace happy_pet_game_2019
             // 
             this.minimizeresizeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.minimizeresizeToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minimizeresizeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("minimizeresizeToolStripMenuItem.Image")));
             this.minimizeresizeToolStripMenuItem.Name = "minimizeresizeToolStripMenuItem";
             this.minimizeresizeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.minimizeresizeToolStripMenuItem.Size = new System.Drawing.Size(30, 22);
+            this.minimizeresizeToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
+            this.minimizeresizeToolStripMenuItem.Text = "MINIMIZE";
             this.minimizeresizeToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.minimizeresizeToolStripMenuItem.Click += new System.EventHandler(this.minimizeresizeToolStripMenuItem_Click);
             // 
@@ -169,24 +165,23 @@ namespace happy_pet_game_2019
             this.changePetToolStripMenuItem,
             this.resetGameToolStripMenuItem});
             this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // changePetToolStripMenuItem
             // 
             this.changePetToolStripMenuItem.Name = "changePetToolStripMenuItem";
-            this.changePetToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.changePetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changePetToolStripMenuItem.Text = "Change Pet";
             this.changePetToolStripMenuItem.Click += new System.EventHandler(this.changePetToolStripMenuItem_Click);
             // 
             // resetGameToolStripMenuItem
             // 
             this.resetGameToolStripMenuItem.Name = "resetGameToolStripMenuItem";
-            this.resetGameToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.resetGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetGameToolStripMenuItem.Text = "Reset Game";
             this.resetGameToolStripMenuItem.Click += new System.EventHandler(this.resetGameToolStripMenuItem_Click);
             // 

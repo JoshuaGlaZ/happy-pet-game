@@ -69,26 +69,25 @@ namespace happy_pet_game_2019
             this.playerCoinsToolStripMenuItem});
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(440, 29);
+            menuStrip1.Size = new System.Drawing.Size(440, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "Player Coins : ";
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             exitToolStripMenuItem.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 1);
-            exitToolStripMenuItem.Size = new System.Drawing.Size(54, 21);
-            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            exitToolStripMenuItem.Text = "EXIT";
             exitToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // playerCoinsToolStripMenuItem
             // 
             this.playerCoinsToolStripMenuItem.Name = "playerCoinsToolStripMenuItem";
-            this.playerCoinsToolStripMenuItem.Size = new System.Drawing.Size(93, 25);
+            this.playerCoinsToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.playerCoinsToolStripMenuItem.Text = "Player Coins : ";
             // 
             // panel2

@@ -31,6 +31,7 @@ namespace happy_pet_game_2019
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStart));
             this.panelProgress = new System.Windows.Forms.Panel();
+            this.labelStart = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelButton = new System.Windows.Forms.Panel();
             this.buttonNewGame = new System.Windows.Forms.Button();
@@ -98,7 +99,6 @@ namespace happy_pet_game_2019
             this.buttonResetNo = new System.Windows.Forms.Button();
             this.labelAreYouSure = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.labelStart = new System.Windows.Forms.Label();
             this.menuStripAll = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelProgress.SuspendLayout();
@@ -137,6 +137,19 @@ namespace happy_pet_game_2019
             this.panelProgress.Name = "panelProgress";
             this.panelProgress.Size = new System.Drawing.Size(1000, 78);
             this.panelProgress.TabIndex = 20;
+            // 
+            // labelStart
+            // 
+            this.labelStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelStart.Font = new System.Drawing.Font("Press Start 2P", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
+            this.labelStart.Image = ((System.Drawing.Image)(resources.GetObject("labelStart.Image")));
+            this.labelStart.Location = new System.Drawing.Point(0, 0);
+            this.labelStart.Name = "labelStart";
+            this.labelStart.Size = new System.Drawing.Size(1000, 78);
+            this.labelStart.TabIndex = 0;
+            this.labelStart.Text = "Happy Pet";
+            this.labelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelMain
             // 
@@ -1162,19 +1175,6 @@ namespace happy_pet_game_2019
             this.button1.Text = "New Gafdszfsame";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // labelStart
-            // 
-            this.labelStart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelStart.Font = new System.Drawing.Font("Press Start 2P", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.labelStart.Image = ((System.Drawing.Image)(resources.GetObject("labelStart.Image")));
-            this.labelStart.Location = new System.Drawing.Point(0, 0);
-            this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(1000, 78);
-            this.labelStart.TabIndex = 0;
-            this.labelStart.Text = "Happy Pet";
-            this.labelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // menuStripAll
             // 
             this.menuStripAll.BackColor = System.Drawing.Color.Transparent;
@@ -1193,11 +1193,11 @@ namespace happy_pet_game_2019
             // 
             this.exitToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripMenuItem.Image")));
             this.exitToolStripMenuItem.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(30, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
+            this.exitToolStripMenuItem.Text = "EXIT";
             this.exitToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
