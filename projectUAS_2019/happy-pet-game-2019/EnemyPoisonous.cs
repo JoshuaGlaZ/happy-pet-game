@@ -9,35 +9,28 @@ namespace happy_pet_game_2019
 {
     public class EnemyPoisonous:Enemy
     {
-        private int poisoneffect;
-        private bool poisonStatus;
-        public EnemyPoisonous(string inName, Image inPict, int inHealth, int inEnergy,double inAtkSpeed, int inPoisonEffect): base(inName,inPict,inHealth,inEnergy,inAtkSpeed)
+        private int poisonEffect;
+        public EnemyPoisonous(string inName, Image inPict, int inHealth, int inEnergy,double inAtkSpeed, 
+            int inPoisonEffect, int inMaxRage, int inLevel) : 
+            base(inName, inPict, inHealth, inEnergy, inAtkSpeed, inMaxRage, inLevel)
         {
             Name = inName;
             Image = inPict;
             Health = inHealth;
             Energy = inEnergy;
             AtkSpeed = inAtkSpeed;
-            Poisoneffect = inPoisonEffect;
-            PoisonStatus = false;
+            PoisonEffect = inPoisonEffect;
         }
 
-        public int Poisoneffect { get => poisoneffect; set => poisoneffect = value; }
-        public bool PoisonStatus { get => poisonStatus; set => poisonStatus = value; }
+        public int PoisonEffect { get => poisonEffect; set => poisonEffect = value; }
 
-
-        public override void attack(Pet target)
+        public override int getPoisonEffect()
         {
-            base.attack(target);
-            if (PoisonStatus)
-            {
-                target.Health -= Poisoneffect;
-            }
+            return base.getPoisonEffect() + PoisonEffect;
         }
         public override void specialAttack(Pet target)
         {
             base.specialAttack(target);
-            poisonStatus = true;
         }
     }
 }

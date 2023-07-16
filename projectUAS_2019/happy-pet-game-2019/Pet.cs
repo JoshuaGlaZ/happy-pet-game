@@ -10,31 +10,62 @@ namespace happy_pet_game_2019
         private string name;
         private Image image;
 
+        private int level;
+        private int expBar; //banyak exp yg dibutuhkan untuk naik level
+        private int expProgress; //exp yg terkumpul
+
+        private int statusDuration; // lama statusnya berjalan
+
         private int maxHealth;
         private int maxHappiness;
-        private int maxEnergy;
         private double atkSpeed;
 
         private int health;
         private int happiness;
+        private int happinessGain;
+        private int originalEnergy;
         private int energy;
+        private int defense;
+
+        private int skillPoin; // sama kayak di hsr, buat njalanin skillnya
+
+        private int levelPoin; // buat nambah stat dari level up
+
+        private int fill;
+        private int maxFill; // batas kekenyangannya
 
         private Toy toy;
         private Player owner;
         #endregion
 
         #region Constructors
-        public Pet(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy)
+        public Pet(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
             Name = inName;
             Image = inPict;
 
+            Level = 1;
+            ExpBar = 100;
+            ExpProgress = 0;
+
+            StatusDuration = 0;
+
             MaxHealth = inMaxHealth;
             Health = inMaxHealth;
-            Energy = inEnergy;
+            OriginalEnergy = inEnergy;
+            Energy = OriginalEnergy;
             MaxHappiness = inMaxHappiness;
             Happiness = 0;
+            HappinessGain = 10;
             AtkSpeed = 1;
+            Defense = inDefense;
+
+            SkillPoin = 0;
+
+            LevelPoin = 0;
+
+            Fill = 0;
+            MaxFill = 100;
 
             toy = new Toy("none", 0, 0, 0, 1, image, 0);
             Owner = inOwner;
@@ -49,7 +80,7 @@ namespace happy_pet_game_2019
             {
                 if (value == "")
                 {
-                    throw new Exception("Nama tidak boleh kosong");
+                    throw new Exception("Name can't be empty");
                 }
                 else
                 {
@@ -96,26 +127,43 @@ namespace happy_pet_game_2019
                 }
             }
         }
-        public int Energy 
-        {
-            get => energy;
-            set => energy = value;
-        }
-        public Toy Toy 
-        {
-            get => toy; set => toy = value; 
-        }
-        public Player Owner 
-        {
-            get => owner; set => owner = value; 
-        }
+        public int Energy  { get => energy; set { if (value < 0) { energy = 0; } else { energy = value; } } }
+        public Toy Toy  { get => toy; set => toy = value; }
+        public Player Owner  { get => owner; set => owner = value; }
         public int MaxHealth { get => maxHealth; set => maxHealth = value; }
         public int MaxHappiness { get => maxHappiness; set => maxHappiness = value; }
-        public int MaxEnergy { get => maxEnergy; set => maxEnergy = value; }
         public double AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
+        public int ExpBar { get => expBar; set => expBar = value; }
+        public int ExpProgress { get => expProgress; set => expProgress = value; }
+        public int Level { get => level; set => level = value; }
+        public int Fill { get => fill; set => fill = value; }
+        public int MaxFill { get => maxFill; set => maxFill = value; }
+        public int StatusDuration { get => statusDuration; set => statusDuration = value; }
+        public int Defense { get => defense; set => defense = value; }
+        public int LevelPoin { get => levelPoin; set => levelPoin = value; }
+        public int HappinessGain { get => happinessGain; set => happinessGain = value; }
+        public int SkillPoin { get => skillPoin; set { if (value > 3) { skillPoin = 3; } else { skillPoin = value; } } }
+
+        public int OriginalEnergy { get => originalEnergy; set => originalEnergy = value; }
         #endregion
 
         #region Methods
+        public void levelUp(int expGained)
+        {
+            while(ExpProgress >= ExpBar)
+            {
+                if (ExpProgress - ExpBar < 0) { break; }
+                else { ExpProgress = ExpProgress - ExpBar; }
+                ExpBar = (int)(ExpBar * 1.25);
+
+                Level += 1;
+                Health = MaxHealth;
+                Happiness = MaxHappiness;
+
+                LevelPoin += 1;
+            }
+        }
+
         public virtual void Feed(Consumable food)
         {
             this.Health += food.HealthBonus;
@@ -125,10 +173,12 @@ namespace happy_pet_game_2019
         public virtual string DisplayData()
         {
             return "Name : " + Name +
+                   "\nLevel  : " + Level  + "\t\tNext level up : " + ExpProgress + "/" + expBar +
                    "\nHealth : " + Health + "/"+ MaxHealth +
-                   "\nEnergy : " + Energy +
+                   "\nEnergy : " + Energy + 
+                   "\nDefense: " + Defense +
                    "\nHappiness : " + Happiness + "/" + MaxHappiness +
-                   "\nAttack Speed : " + toy.AtkSpeedMultiplier;
+                   "\nAttack Speed : " + AtkSpeed;
         }
 
         public string GetHealthCondition()
@@ -152,21 +202,57 @@ namespace happy_pet_game_2019
         {
             return this.Happiness > 60 ? "Happy" : "Unhappy"; //if (this.Happiness > 60) { return "Happy"; } else { return "Unhappy"; }
         }
+        public virtual string GetEnviromentStatus() { return ""; }
 
         public void GetToy(Toy equipment)
         {
+            //ngapus efek toy lama
+            this.MaxHealth -= Toy.BonusHealth;
+            this.OriginalEnergy -= Toy.BonusEnergy;
+            this.AtkSpeed -= Toy.AtkSpeedMultiplier - 1;
+            //ngasih efek toy baru
             this.Toy = equipment;
             this.MaxHealth += equipment.BonusHealth;
-            this.MaxEnergy += equipment.BonusEnergy;
-            this.AtkSpeed = 1 / equipment.AtkSpeedMultiplier;
+            this.OriginalEnergy += equipment.BonusEnergy;
+            this.AtkSpeed += equipment.AtkSpeedMultiplier-1;
         }
 
         public void basicAttack(Enemy target)
         {
             target.Health -= Energy;
-            this.Happiness += 10 + toy.HappinessGain;
+            SkillPoin = SkillPoin + 1; // nggak pakai += biar pengecekan properties nya jalan
+            this.Happiness += HappinessGain + toy.HappinessGain;
         }
+        public abstract void Skill(Enemy target);
         public abstract void Ultimate(Enemy target);
+
+        public virtual void buffRemover(Enemy enemy) { }
+
+        public void MaxHealthUp() 
+        {
+            if (LevelPoin > 0) { MaxHealth += 100; LevelPoin -= 1; }
+            else { throw new Exception("Level Poin isn't enough"); }
+        }
+        public void EnergyUp()
+        {
+            if (LevelPoin > 0) { OriginalEnergy += 10; LevelPoin -= 1; }
+            else { throw new Exception("Level Poin isn't enough"); }
+        }
+        public void defenseUp()
+        {
+            if (LevelPoin > 0) { Defense += 10; LevelPoin -= 1; }
+            else { throw new Exception("Level Poin isn't enough"); }
+        }
+        public void HappinessGainUp()
+        {
+            if (LevelPoin > 0) { HappinessGain += 1; LevelPoin -= 1; }
+            else { throw new Exception("Level Poin isn't enough"); }
+        }
+        public void AtkSpeedUp()
+        {
+            if (LevelPoin > 0) { AtkSpeed += 0.05; LevelPoin -= 1; }
+            else { throw new Exception("Level Poin isn't enough"); }
+        }
         #endregion
     }
 }

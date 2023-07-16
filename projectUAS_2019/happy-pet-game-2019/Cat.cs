@@ -13,7 +13,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Cat(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy) : base(inName, inPict, inOwner,inMaxHealth,inMaxHappiness,inEnergy)
+        public Cat(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense) : base(inName, inPict, inOwner,inMaxHealth,inMaxHappiness,inEnergy, inDefense)
         {
             VaccStatus = false;
         }
@@ -33,14 +33,12 @@ namespace happy_pet_game_2019
         public void Play()
         {
             base.Happiness += (int)(base.MaxHappiness/2);
-        }
-
+        } 
         public void Sleep()
         {
             base.Happiness = base.MaxHappiness;
             base.Health = base.MaxHealth;
-        }
-
+        } 
         public void Bath()
         {
             base.Health = base.MaxHealth;
@@ -53,15 +51,34 @@ namespace happy_pet_game_2019
             else{ base.Owner.Coins -= 1000; }
         }
 
+        public override void Skill(Enemy target)
+        {
+            if (SkillPoin > 0)
+            {
+                Energy = (int)(Energy * 2);
+                StatusDuration = 3;
+                if (VaccStatus == false) { Health -= (int)(0.05 * Health); }
+                Happiness = Happiness + HappinessGain;
+                SkillPoin -= 1;
+            }
+            else { throw new Exception("skill point isn't enough"); }
+        }
         public override void Ultimate(Enemy target)
         {
             if(base.Happiness == base.MaxHappiness)
             {
-                target.Health -= this.Energy * 2;
+                target.Health -= this.Energy * 4;
                 this.Happiness = 0;
                 if (this.VaccStatus) { base.Health += (int)(MaxHealth / 5); }
             }
             else { throw new Exception("Ultimate not ready"); }
+        }
+
+        public override void buffRemover(Enemy enemy)
+        {
+            if (enemy.StatusDuration>0 && enemy is EnemyDebuffer) 
+            { Energy = OriginalEnergy - enemy.getDebuffEffect(); }
+            else { Energy = OriginalEnergy; }
         }
         #endregion
     }

@@ -10,7 +10,9 @@ namespace happy_pet_game_2019
     public class EnemyDrain:Enemy
     {
         private int drainEffect;
-        public EnemyDrain(string inName, Image inPict, int inHealth, int inEnergy, double inAtkSpeed, int inDrainEffect) : base(inName, inPict, inHealth, inEnergy, inAtkSpeed)
+        public EnemyDrain(string inName, Image inPict, int inHealth, int inEnergy, double inAtkSpeed, 
+            int inDrainEffect, int inMaxRage,int inLevel) : 
+            base(inName, inPict, inHealth, inEnergy, inAtkSpeed, inMaxRage, inLevel)
         {
             Name = inName;
             Image = inPict;
@@ -24,8 +26,16 @@ namespace happy_pet_game_2019
 
         public override void specialAttack(Pet target)
         {
-            base.specialAttack(target);
-            target.Happiness -= DrainEffect;
+            if (target.GetEnviromentStatus() != "Clean")
+            {
+                base.specialAttack(target);
+                target.Happiness -= DrainEffect;
+            }
+            else
+            {
+                base.specialAttack(target);
+            }
+            this.StatusDuration = 0;
         }
     }
 }
