@@ -17,3 +17,10 @@ C:\Users\user\Desktop\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Deb
 C:\Users\user\Desktop\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe.config
 C:\Users\user\Desktop\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe
 C:\Users\user\Desktop\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.pdb
+C:\Users\user\Desktop\happy-pet-game\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\happy-pet-game\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.FormMenu.resources
+C:\Users\user\Desktop\happy-pet-game\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.FormShop.resources
+C:\Users\user\Desktop\happy-pet-game\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.Properties.Resources.resources
+C:\Users\user\Desktop\happy-pet-game\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.GenerateResource.cache
+C:\Users\user\Desktop\happy-pet-game\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.exe
+C:\Users\user\Desktop\happy-pet-game\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.pdb

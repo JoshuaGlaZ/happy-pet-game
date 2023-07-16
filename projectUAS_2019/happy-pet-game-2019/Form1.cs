@@ -14,9 +14,9 @@ namespace happy_pet_game_2019
     {
         int timer; // timer battlenya
         int countdown; // buat ngitung berapa battle lagi untuk ke ruang istirahat
-        Player owner = new Player("player",DateTime.Now);
-        Image image;
         Pet pet;
+        Player owner;
+        Image image;
         Enemy enemy,enemy1,enemy2;
         public Form1() { InitializeComponent(); }
 

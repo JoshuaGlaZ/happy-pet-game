@@ -14,10 +14,10 @@ namespace happy_pet_game_2019
         private List<Consumable> consumableList;
         private Pet choosenPet;
 
-        public Player(string name, int coins, DateTime lastplay, Pet pet )
+        public Player(string name, DateTime lastplay, Pet pet )
         {
             Name = name;
-            Coins = coins;
+            Coins = 0;
             Lastplay = lastplay;
             ToyList = new List<Toy>();
             ConsumableList = new List<Consumable>();
