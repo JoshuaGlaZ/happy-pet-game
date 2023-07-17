@@ -32,14 +32,9 @@ namespace happy_pet_game_2019
 
         public void Clean()
         {
-            if (base.Owner.Coins >= 500)
-            {
-                base.Health += base.MaxHealth;
-                base.Happiness += base.MaxHappiness;
-                base.Owner.Coins -= 500;
-                envStatus = "Clean";
-            }
-            else { throw new Exception("not enough coins.\nClean = 500 Coins"); }
+            base.Health += base.MaxHealth;
+            base.Happiness += base.MaxHappiness;
+            envStatus = "Clean";
         }
 
         public override void Skill(Enemy target)
@@ -49,6 +44,7 @@ namespace happy_pet_game_2019
                 EnvStatus = "Clean";
                 Health = Health + (int)(0.15 * MaxHealth);
                 StatusDuration = 3;
+                SkillPoin = 0;
             }
             else { throw new Exception("skill point isn't enough"); }
         }
@@ -57,6 +53,7 @@ namespace happy_pet_game_2019
             if (base.Happiness == base.MaxHappiness)
             {
                 target.Health -= (int)(this.Energy * 1.5);
+                if (EnvStatus == "Clean") { target.Health -= (int)(this.Energy * 1.5); }
                 this.Health += (int)(this.MaxHealth / 2);
                 this.Happiness = 0;
             }

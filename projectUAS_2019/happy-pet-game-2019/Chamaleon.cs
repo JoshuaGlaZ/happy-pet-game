@@ -29,10 +29,10 @@ namespace happy_pet_game_2019
             return base.DisplayData() + "\nCurrent color :" + this.CurrentColor + "\n";
         }
 
-        public void Sleep()
+        public override void Sleep() 
         {
-            base.Happiness = base.MaxHappiness;
-            base.Health = base.MaxHealth;
+            Happiness += MaxHappiness;
+            Health += MaxHealth;
         }
 
         Random random = new Random();
@@ -41,6 +41,7 @@ namespace happy_pet_game_2019
         {
             if (SkillPoin > 0)
             {
+                this.buffRemover(target);
                 tipe = random.Next(1, 4);
                 if (tipe == 1) { CurrentColor = Color.Red; Energy = (int)(Energy * 1.25); }
                 else if (tipe == 2) { CurrentColor = Color.Blue; Defense = (int)(Defense * 1.2); }
@@ -53,6 +54,7 @@ namespace happy_pet_game_2019
         {
             if (base.Happiness == base.MaxHappiness)
             {
+                target.StatusDuration = 0;
                 CurrentColor = Color.White;
                 Energy = (int)(Energy * 1.25);
                 Defense = (int)(Defense * 1.2);
@@ -72,20 +74,19 @@ namespace happy_pet_game_2019
             else if(CurrentColor == Color.Blue) { Defense = (int)(Math.Ceiling(Defense / 1.2)); CurrentColor = Color.Green; }
             else if(CurrentColor == Color.Yellow) { AtkSpeed = AtkSpeed/1.5; CurrentColor = Color.Green; }
             
-            else if(CurrentColor == Color.White && enemy.StatusDuration==0 && enemy is EnemyDebuffer)
+            else if(CurrentColor == Color.White)
             {
                 Energy = OriginalEnergy;
                 Defense = (int)(Math.Ceiling(Defense / 1.2));
                 AtkSpeed = AtkSpeed / 1.5;
                 CurrentColor = Color.Green;
             }
-            else if (CurrentColor == Color.White && enemy.StatusDuration>0 && enemy is EnemyDebuffer)
-            {
-                Energy = OriginalEnergy-enemy.getDebuffEffect();
-                Defense = (int)(Math.Ceiling(Defense / 1.2));
-                AtkSpeed = AtkSpeed / 1.5;
-                CurrentColor = Color.Green;
-            }
+        }
+
+        public override string GetColor()
+        {
+            if(CurrentColor == Color.White) { return "white"; }
+            else { return "not white"; }
         }
         #endregion
     }

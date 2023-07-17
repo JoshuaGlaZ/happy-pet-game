@@ -26,14 +26,14 @@ namespace happy_pet_game_2019
 
         public override void specialAttack(Pet target)
         {
-            if (target.GetEnviromentStatus() != "Clean")
+            if (target.GetColor() == "white" || target.GetEnviromentStatus() == "Clean")
             {
                 base.specialAttack(target);
-                target.Happiness -= DrainEffect;
             }
             else
             {
                 base.specialAttack(target);
+                target.Happiness -= DrainEffect;
             }
             this.StatusDuration = 0;
         }

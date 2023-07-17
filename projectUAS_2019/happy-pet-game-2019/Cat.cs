@@ -30,37 +30,39 @@ namespace happy_pet_game_2019
             return base.DisplayData() + "\nVaccine Status : " + condition;
         }
 
-        public void Play()
+        public override void Play()
         {
             base.Happiness += (int)(base.MaxHappiness/2);
         } 
-        public void Sleep()
+        public override void Sleep() 
         {
-            base.Happiness = base.MaxHappiness;
-            base.Health = base.MaxHealth;
+            Happiness += MaxHappiness;
+            Health += MaxHealth;
         } 
-        public void Bath()
+        public override void Bath()
         {
             base.Health = base.MaxHealth;
         }
-
-        public void Vaccinate()
+        public override void Vaccinate()
         {
             if (VaccStatus)  { throw new Exception("already vaccinated"); }
-            else if (base.Owner.Coins < 1000) { throw new Exception("not enough coins.\nVaccinate = 1000Coins"); }
-            else{ base.Owner.Coins -= 1000; }
+            else{VaccStatus = true;}
         }
 
+        private int stack=0;
         public override void Skill(Enemy target)
         {
-            if (SkillPoin > 0)
+            if (SkillPoin > 0 && stack<2)
             {
-                Energy = (int)(Energy * 2);
+                Energy += Energy;
+                AtkSpeed = AtkSpeed * 1.25;
                 StatusDuration = 3;
                 if (VaccStatus == false) { Health -= (int)(0.05 * Health); }
                 Happiness = Happiness + HappinessGain;
+                stack += 1;
                 SkillPoin -= 1;
             }
+            else if(SkillPoin > 0 && stack >= 2) { throw new Exception("Full stack achieved"); }
             else { throw new Exception("skill point isn't enough"); }
         }
         public override void Ultimate(Enemy target)
@@ -76,9 +78,16 @@ namespace happy_pet_game_2019
 
         public override void buffRemover(Enemy enemy)
         {
-            if (enemy.StatusDuration>0 && enemy is EnemyDebuffer) 
-            { Energy = OriginalEnergy - enemy.getDebuffEffect(); }
-            else { Energy = OriginalEnergy; }
+            if(enemy is EnemyDebuffer && enemy.StatusDuration > 0)
+            {
+                Energy = OriginalEnergy-enemy.getDebuffEffect(); 
+            }
+            else
+            {
+                Energy = OriginalEnergy; 
+            }
+            AtkSpeed = AtkSpeed / Math.Pow(1.25,stack);
+            stack = 0;
         }
         #endregion
     }

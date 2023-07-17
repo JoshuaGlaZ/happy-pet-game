@@ -24,8 +24,12 @@ namespace happy_pet_game_2019
         {
             countdown = 3;
             labelBattleNumber.Text = "Battle before rest : " + countdown;
+            labelLevelPoint.Text = "level point : " + 0;
+            labelCoins.Text = "Coins : " + 0;
+            groupBoxLvUp.Enabled = false;
             groupBoxChooseEnemy.Enabled = false;
             groupBoxBattle.Enabled = false;
+            groupBoxShop.Enabled = false;
             groupBoxChoosePet.Enabled = true;
             radioButtonCat.Checked = true;
             labelSkillPoint.Text = "Skill point remaining : " + pet.SkillPoin;
@@ -38,13 +42,13 @@ namespace happy_pet_game_2019
         private void radioButtonCat_CheckedChanged(object sender, EventArgs e)
         {
             listBoxPet.Items.Clear();
-            pet = new Cat("kochenk", image, owner, 1250, 100, 150, 100);
+            pet = new Cat("kochenk", image, owner, 1250, 60, 150, 100);
             listBoxPet.Items.AddRange((pet.DisplayData() + "'\n").Split('\n'));
         }
         private void radioButtonFish_CheckedChanged(object sender, EventArgs e)
         {
             listBoxPet.Items.Clear();
-            pet = new Fish("le fische", image, owner, 1500, 120, 100, 50);
+            pet = new Fish("le fische", image, owner, 1500, 80, 100, 50);
             listBoxPet.Items.AddRange((pet.DisplayData() + "'\n").Split('\n'));
             listBoxPet.Items.AddRange("\nFish need 3 skill point to activate skill".Split('\n'));
         }
@@ -52,7 +56,7 @@ namespace happy_pet_game_2019
         private void radioButtonChameleon_CheckedChanged(object sender, EventArgs e)
         {
             listBoxPet.Items.Clear();
-            pet = new Chamaleon("kadal uarsa", image, owner, 1000, 150, 120, 120);
+            pet = new Chamaleon("kadal uarsa", image, owner, 1000, 70, 120, 120);
             listBoxPet.Items.AddRange((pet.DisplayData() + "'\n").Split('\n'));
         }
 
@@ -101,8 +105,11 @@ namespace happy_pet_game_2019
                 #endregion
 
                 #region status pet
-                if (pet.StatusDuration == 0) { pet.buffRemover(enemy); listBox1.Items.Add("pet buff removed"); }
-                else if(pet.StatusDuration>0){ pet.StatusDuration -= 1; }
+                if(pet.StatusDuration>0)
+                { 
+                    pet.StatusDuration -= 1;
+                    if (pet.StatusDuration == 0) { pet.buffRemover(enemy); }
+                }
                 #endregion
 
                 labelBuff.Text = "Buff Duration : " + pet.StatusDuration;
@@ -159,44 +166,71 @@ namespace happy_pet_game_2019
                 // buat ngilangin efek2 setelah battle
                 if (enemy.StatusDuration > 0)
                 {
-                    enemy.StatusDuration -= 1;
+                    enemy.StatusDuration = 0;
                     if (enemy is EnemyPoisonous)
                     {
-                        if (enemy.StatusDuration == 0)
-                        {
-                            listBox1.Items.Add("Poison Effect removed");
-                        }
+                        listBox1.Items.Add("Poison Effect removed");
                     }
                     if (enemy is EnemyDebuffer)
                     {
-                        if (enemy.StatusDuration == 0)
-                        {
-                            listBox1.Items.Add("Debuff removed");
-                            pet.Energy += enemy.getDebuffEffect();
-                        }
+                        listBox1.Items.Add("Debuff removed");
                     }
                 }
-                pet.buffRemover(enemy);
+                if (pet.StatusDuration > 0)
+                {
+                    pet.StatusDuration = 0;
+                    pet.buffRemover(enemy); 
+                }
 
                 groupBoxPetAction.Enabled = false;
                 listBox1.Items.AddRange("\nyou win\n".Split('\n'));
                 int CoinsReward = (int)((1 + ((double)(enemy.Level-pet.Level)/10))*((enemy.MaxHealth+enemy.Energy))/10);
                 int ExpReward = (int)(CoinsReward / 2);
+                if(enemy is EnemyPhysical == false) { CoinsReward += CoinsReward/2; ExpReward += ExpReward/2; }
                 listBox1.Items.Add("Coins Reward : " + CoinsReward);
                 listBox1.Items.Add("Exp Reward   : " + ExpReward);
                 pet.Owner.Coins += CoinsReward;
                 pet.ExpProgress += ExpReward;
+                labelCoins.Text = "coins : " + pet.Owner.Coins;
                 if (pet.ExpProgress >= pet.ExpBar)
                 {
-                    pet.levelUp(ExpReward);
+                    pet.levelUp();
+                    labelLevelPoint.Text = "level point : " + pet.LevelPoin;
                     listBox1.Items.AddRange("\nyour pet is leveled up\n".Split('\n'));
                     listBox1.Items.AddRange(pet.DisplayData().Split('\n'));
                 }
                 timerBattle.Stop();
                 countdown -= 1;
+                pet.SkillPoin = 0;
+                labelSkillPoint.Text = "skill poin remaining : " + 0;
                 labelBattleNumber.Text = "Battle before rest : " + countdown;
-                if (countdown == 0) { MessageBox.Show("Do you want to go to the shop ?","to the shop",MessageBoxButtons.YesNo); countdown = 3; }
-                groupBoxChooseEnemy.Enabled = true;
+                if (countdown == 0) 
+                { 
+                    groupBoxShop.Enabled = true;
+                    groupBoxChooseEnemy.Enabled = false;
+                    if(pet is Cat)
+                    {
+                        groupBox2.Enabled = true;
+                        groupBox3.Enabled = false;
+                        groupBox4.Enabled = false;
+                    }
+                    else if (pet is Fish)
+                    {
+                        groupBox2.Enabled = false;
+                        groupBox3.Enabled = true;
+                        groupBox4.Enabled = false;
+                    }
+                    else if (pet is Chamaleon)
+                    {
+                        groupBox2.Enabled = false;
+                        groupBox3.Enabled = false;
+                        groupBox4.Enabled = true;
+                    }
+                    countdown = 5;
+                } // ke shop
+                else { groupBoxChooseEnemy.Enabled = true; }
+                groupBoxLvUp.Enabled = true;
+                radioButtonMaxHealth.Checked = true;
                 Door1.Items.Clear();
                 Door2.Items.Clear();
                 enemy1 = RandomEnemy();
@@ -204,6 +238,7 @@ namespace happy_pet_game_2019
                 Door1.Items.AddRange(enemy1.DisplayData().Split('\n'));
                 Door2.Items.AddRange(enemy2.DisplayData().Split('\n'));
                 radioButtonDoor1.Checked = true;
+                timer = 0;
             }
             #endregion
         }
@@ -229,6 +264,7 @@ namespace happy_pet_game_2019
                 listBox1.Items.Add("pet using skill ");
                 groupBoxPetAction.Enabled = false;
                 labelSkillPoint.Text = "Skill point remaining : " + pet.SkillPoin;
+                labelBuff.Text = "Buff Duration : " + pet.StatusDuration;
                 Door1.Items.Clear();
                 Door1.Items.AddRange(("pet status\n" + pet.DisplayData()).Split('\n'));
                 Door2.Items.Clear();
@@ -254,16 +290,132 @@ namespace happy_pet_game_2019
         }
         #endregion
 
-
         private void buttonGo_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
             if (radioButtonDoor1.Checked) { enemy = enemy1; timerBattle.Start(); }
             if (radioButtonDoor2.Checked) { enemy = enemy2; timerBattle.Start(); }
             groupBoxChooseEnemy.Enabled = false;
+            groupBoxLvUp.Enabled = false;
+            listBox1.Items.AddRange((enemy.DisplayData() + "\n").Split('\n'));
+        }
+        private void buttonUpgrade_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (radioButtonMaxHealth.Checked) { pet.MaxHealthUp(); }
+                else if (radioButtonEnergy.Checked) { pet.EnergyUp(); }
+                else if (radioButtonDefense.Checked) { pet.DefenseUp(); }
+                else if (radioButtonHappinessGain.Checked) { pet.HappinessGainUp(); }
+                else if (radioButtonAtkSpeed.Checked) { pet.AtkSpeedUp(); }
+                labelLevelPoint.Text = "level point : " + pet.LevelPoin;
+                listBoxLevelUp.Items.Clear();
+                listBoxLevelUp.Items.AddRange(pet.DisplayData().Split('\n'));
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        #region method
+        #region shop
+        #region shop cat
+        private void buttonCatSleep_Click(object sender, EventArgs e)
+        {
+            if (pet.Owner.Coins >= 200)
+            {
+                pet.Sleep();
+                pet.Owner.Coins -= 200;
+                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                MessageBox.Show("+100% Health and +100% Happiness\n"+pet.DisplayData());
+            }
+            else { MessageBox.Show("not enough coins"); }
+        }
+        private void buttonCatBath_Click(object sender, EventArgs e)
+        {
+            if (pet.Owner.Coins >= 150)
+            {
+                pet.Bath();
+                pet.Owner.Coins -= 150;
+                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                MessageBox.Show("+100% Health\n" + pet.DisplayData());
+            }
+            else { MessageBox.Show("not enough coins"); }
+        }
+        private void buttonVaccinate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (pet.Owner.Coins >= 500)
+                {
+                    pet.Vaccinate();
+                    pet.Owner.Coins -= 500;
+                    labelCoins.Text = "coins : " + pet.Owner.Coins;
+                    MessageBox.Show("Cat Vaccinated \n Get new Passive Skill\nskill no longer consume Health & Ultimate gain healing effect" + pet.DisplayData());
+                }
+                else { MessageBox.Show("not enough coins"); }
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        private void buttonCatPlay_Click_1(object sender, EventArgs e)
+        {
+            if (pet.Owner.Coins >= 100)
+            {
+                pet.Play();
+                pet.Owner.Coins -= 100;
+                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                MessageBox.Show("+50% Happiness\n" + pet.DisplayData());
+            }
+            else { MessageBox.Show("not enough coins"); }
+        }
+        #endregion
+
+        #region shop fish
+        private void buttonFishClean_Click(object sender, EventArgs e)
+        {
+            if (pet.Owner.Coins >= 100)
+            {
+                pet.SkillPoin += 3;
+                pet.Skill(enemy);
+                pet.Owner.Coins -= 100;
+                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                MessageBox.Show("enviroment status --> Clean (3 turn) \n Health +100% \n" + pet.DisplayData());
+            }
+            else { MessageBox.Show("not enough coins"); }
+        }
+        #endregion
+
+        #region shop chameleon
+        private void buttonChameleonSleep_Click(object sender, EventArgs e)
+        {
+            if (pet.Owner.Coins >= 200)
+            {
+                pet.Sleep();
+                pet.Owner.Coins -= 200;
+                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                MessageBox.Show("+100% Health and +100% Happiness\n" + pet.DisplayData());
+            }
+            else { MessageBox.Show("not enough coins"); }
+        }
+        private void buttonChageColor_Click(object sender, EventArgs e)
+        {
+            if (pet.Owner.Coins >= 100)
+            {
+                pet.SkillPoin += 1;
+                pet.Skill(enemy);
+                pet.Owner.Coins -= 100;
+                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                MessageBox.Show("get random buff when battle start (3 turn)\n" + pet.DisplayData());
+            }
+            else { MessageBox.Show("not enough coins"); }
+        }
+        #endregion
+
+        private void buttonDoneShop_Click(object sender, EventArgs e)
+        {
+            groupBoxChooseEnemy.Enabled = true;
+            groupBoxShop.Enabled = false;
+        }
+        #endregion
+
+        #region enemy generator
         Enemy newEnemy;
         int tipe, enemyLevel;
         Random random = new Random();

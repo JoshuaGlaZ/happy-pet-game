@@ -69,9 +69,10 @@ namespace happy_pet_game_2019
         }
         public virtual void specialAttack(Pet target)
         {
-            target.Health -= Energy;
-            statusDuration = 3;
+            target.Health -= Energy-(target.Defense/2);
             Rage = 0;
+            if(target.GetColor()=="white" || target.GetEnviromentStatus() == "clear") { statusDuration = 0; }
+            else { statusDuration = 3; }
         }
         public virtual void attack(Pet target)
         {

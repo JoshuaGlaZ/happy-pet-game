@@ -54,11 +54,39 @@ namespace happy_pet_game_2019
             this.radioButtonFish = new System.Windows.Forms.RadioButton();
             this.radioButtonChameleon = new System.Windows.Forms.RadioButton();
             this.radioButtonCat = new System.Windows.Forms.RadioButton();
+            this.groupBoxLvUp = new System.Windows.Forms.GroupBox();
+            this.listBoxLevelUp = new System.Windows.Forms.ListBox();
+            this.buttonUpgrade = new System.Windows.Forms.Button();
+            this.radioButtonAtkSpeed = new System.Windows.Forms.RadioButton();
+            this.radioButtonHappinessGain = new System.Windows.Forms.RadioButton();
+            this.radioButtonDefense = new System.Windows.Forms.RadioButton();
+            this.radioButtonEnergy = new System.Windows.Forms.RadioButton();
+            this.radioButtonMaxHealth = new System.Windows.Forms.RadioButton();
+            this.labelLevelPoint = new System.Windows.Forms.Label();
+            this.groupBoxShop = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.buttonDoneShop = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonChageColor = new System.Windows.Forms.Button();
+            this.buttonChameleonSleep = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonFishClean = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonVaccinate = new System.Windows.Forms.Button();
+            this.buttonCatBath = new System.Windows.Forms.Button();
+            this.buttonCatSleep = new System.Windows.Forms.Button();
+            this.buttonCatPlay = new System.Windows.Forms.Button();
+            this.labelCoins = new System.Windows.Forms.Label();
             this.groupBoxChooseEnemy.SuspendLayout();
             this.groupBoxBattle.SuspendLayout();
             this.groupBoxPetAction.SuspendLayout();
             this.groupBoxChoosePet.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBoxLvUp.SuspendLayout();
+            this.groupBoxShop.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerBattle
@@ -311,15 +339,264 @@ namespace happy_pet_game_2019
             this.radioButtonCat.UseVisualStyleBackColor = true;
             this.radioButtonCat.CheckedChanged += new System.EventHandler(this.radioButtonCat_CheckedChanged);
             // 
-            // Form1
+            // groupBoxLvUp
+            // 
+            this.groupBoxLvUp.Controls.Add(this.listBoxLevelUp);
+            this.groupBoxLvUp.Controls.Add(this.buttonUpgrade);
+            this.groupBoxLvUp.Controls.Add(this.radioButtonAtkSpeed);
+            this.groupBoxLvUp.Controls.Add(this.radioButtonHappinessGain);
+            this.groupBoxLvUp.Controls.Add(this.radioButtonDefense);
+            this.groupBoxLvUp.Controls.Add(this.radioButtonEnergy);
+            this.groupBoxLvUp.Controls.Add(this.radioButtonMaxHealth);
+            this.groupBoxLvUp.Controls.Add(this.labelLevelPoint);
+            this.groupBoxLvUp.Location = new System.Drawing.Point(1271, 21);
+            this.groupBoxLvUp.Name = "groupBoxLvUp";
+            this.groupBoxLvUp.Size = new System.Drawing.Size(641, 329);
+            this.groupBoxLvUp.TabIndex = 13;
+            this.groupBoxLvUp.TabStop = false;
+            this.groupBoxLvUp.Text = "level up menu";
+            // 
+            // listBoxLevelUp
+            // 
+            this.listBoxLevelUp.FormattingEnabled = true;
+            this.listBoxLevelUp.ItemHeight = 20;
+            this.listBoxLevelUp.Location = new System.Drawing.Point(276, 18);
+            this.listBoxLevelUp.Name = "listBoxLevelUp";
+            this.listBoxLevelUp.Size = new System.Drawing.Size(334, 284);
+            this.listBoxLevelUp.TabIndex = 25;
+            // 
+            // buttonUpgrade
+            // 
+            this.buttonUpgrade.Location = new System.Drawing.Point(21, 213);
+            this.buttonUpgrade.Name = "buttonUpgrade";
+            this.buttonUpgrade.Size = new System.Drawing.Size(249, 87);
+            this.buttonUpgrade.TabIndex = 24;
+            this.buttonUpgrade.Text = "upgrade";
+            this.buttonUpgrade.UseVisualStyleBackColor = true;
+            this.buttonUpgrade.Click += new System.EventHandler(this.buttonUpgrade_Click);
+            // 
+            // radioButtonAtkSpeed
+            // 
+            this.radioButtonAtkSpeed.AutoSize = true;
+            this.radioButtonAtkSpeed.Location = new System.Drawing.Point(21, 182);
+            this.radioButtonAtkSpeed.Name = "radioButtonAtkSpeed";
+            this.radioButtonAtkSpeed.Size = new System.Drawing.Size(140, 24);
+            this.radioButtonAtkSpeed.TabIndex = 23;
+            this.radioButtonAtkSpeed.TabStop = true;
+            this.radioButtonAtkSpeed.Text = "AtkSpeed +0.1";
+            this.radioButtonAtkSpeed.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonHappinessGain
+            // 
+            this.radioButtonHappinessGain.AutoSize = true;
+            this.radioButtonHappinessGain.Location = new System.Drawing.Point(21, 152);
+            this.radioButtonHappinessGain.Name = "radioButtonHappinessGain";
+            this.radioButtonHappinessGain.Size = new System.Drawing.Size(166, 24);
+            this.radioButtonHappinessGain.TabIndex = 22;
+            this.radioButtonHappinessGain.TabStop = true;
+            this.radioButtonHappinessGain.Text = "HappinessGain +2";
+            this.radioButtonHappinessGain.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonDefense
+            // 
+            this.radioButtonDefense.AutoSize = true;
+            this.radioButtonDefense.Location = new System.Drawing.Point(21, 124);
+            this.radioButtonDefense.Name = "radioButtonDefense";
+            this.radioButtonDefense.Size = new System.Drawing.Size(126, 24);
+            this.radioButtonDefense.TabIndex = 21;
+            this.radioButtonDefense.TabStop = true;
+            this.radioButtonDefense.Text = "Defense +50";
+            this.radioButtonDefense.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonEnergy
+            // 
+            this.radioButtonEnergy.AutoSize = true;
+            this.radioButtonEnergy.Location = new System.Drawing.Point(21, 98);
+            this.radioButtonEnergy.Name = "radioButtonEnergy";
+            this.radioButtonEnergy.Size = new System.Drawing.Size(115, 24);
+            this.radioButtonEnergy.TabIndex = 20;
+            this.radioButtonEnergy.TabStop = true;
+            this.radioButtonEnergy.Text = "Energy +25";
+            this.radioButtonEnergy.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMaxHealth
+            // 
+            this.radioButtonMaxHealth.AutoSize = true;
+            this.radioButtonMaxHealth.Location = new System.Drawing.Point(21, 70);
+            this.radioButtonMaxHealth.Name = "radioButtonMaxHealth";
+            this.radioButtonMaxHealth.Size = new System.Drawing.Size(150, 24);
+            this.radioButtonMaxHealth.TabIndex = 19;
+            this.radioButtonMaxHealth.TabStop = true;
+            this.radioButtonMaxHealth.Text = "MaxHealth +250";
+            this.radioButtonMaxHealth.UseVisualStyleBackColor = true;
+            // 
+            // labelLevelPoint
+            // 
+            this.labelLevelPoint.AutoSize = true;
+            this.labelLevelPoint.Location = new System.Drawing.Point(17, 36);
+            this.labelLevelPoint.Name = "labelLevelPoint";
+            this.labelLevelPoint.Size = new System.Drawing.Size(116, 20);
+            this.labelLevelPoint.TabIndex = 18;
+            this.labelLevelPoint.Text = "label level point";
+            // 
+            // groupBoxShop
+            // 
+            this.groupBoxShop.Controls.Add(this.button9);
+            this.groupBoxShop.Controls.Add(this.buttonDoneShop);
+            this.groupBoxShop.Controls.Add(this.groupBox4);
+            this.groupBoxShop.Controls.Add(this.groupBox3);
+            this.groupBoxShop.Controls.Add(this.groupBox2);
+            this.groupBoxShop.Controls.Add(this.labelCoins);
+            this.groupBoxShop.Location = new System.Drawing.Point(1271, 356);
+            this.groupBoxShop.Name = "groupBoxShop";
+            this.groupBoxShop.Size = new System.Drawing.Size(641, 540);
+            this.groupBoxShop.TabIndex = 14;
+            this.groupBoxShop.TabStop = false;
+            this.groupBoxShop.Text = "shop";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(21, 75);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(115, 395);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Feed";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // buttonDoneShop
+            // 
+            this.buttonDoneShop.Location = new System.Drawing.Point(21, 478);
+            this.buttonDoneShop.Name = "buttonDoneShop";
+            this.buttonDoneShop.Size = new System.Drawing.Size(589, 50);
+            this.buttonDoneShop.TabIndex = 28;
+            this.buttonDoneShop.Text = "Done";
+            this.buttonDoneShop.UseVisualStyleBackColor = true;
+            this.buttonDoneShop.Click += new System.EventHandler(this.buttonDoneShop_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.buttonChageColor);
+            this.groupBox4.Controls.Add(this.buttonChameleonSleep);
+            this.groupBox4.Location = new System.Drawing.Point(142, 347);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(468, 130);
+            this.groupBox4.TabIndex = 27;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Chameleon";
+            // 
+            // buttonChageColor
+            // 
+            this.buttonChageColor.Location = new System.Drawing.Point(10, 25);
+            this.buttonChageColor.Name = "buttonChageColor";
+            this.buttonChageColor.Size = new System.Drawing.Size(108, 98);
+            this.buttonChageColor.TabIndex = 3;
+            this.buttonChageColor.Text = "Change Color (100Coins)";
+            this.buttonChageColor.UseVisualStyleBackColor = true;
+            this.buttonChageColor.Click += new System.EventHandler(this.buttonChageColor_Click);
+            // 
+            // buttonChameleonSleep
+            // 
+            this.buttonChameleonSleep.Location = new System.Drawing.Point(124, 25);
+            this.buttonChameleonSleep.Name = "buttonChameleonSleep";
+            this.buttonChameleonSleep.Size = new System.Drawing.Size(108, 98);
+            this.buttonChameleonSleep.TabIndex = 2;
+            this.buttonChameleonSleep.Text = "Sleep (200Coins)";
+            this.buttonChameleonSleep.UseVisualStyleBackColor = true;
+            this.buttonChameleonSleep.Click += new System.EventHandler(this.buttonChameleonSleep_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.buttonFishClean);
+            this.groupBox3.Location = new System.Drawing.Point(142, 211);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(468, 130);
+            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Fish";
+            // 
+            // buttonFishClean
+            // 
+            this.buttonFishClean.Location = new System.Drawing.Point(6, 25);
+            this.buttonFishClean.Name = "buttonFishClean";
+            this.buttonFishClean.Size = new System.Drawing.Size(108, 98);
+            this.buttonFishClean.TabIndex = 1;
+            this.buttonFishClean.Text = "Clean (100Coins)";
+            this.buttonFishClean.UseVisualStyleBackColor = true;
+            this.buttonFishClean.Click += new System.EventHandler(this.buttonFishClean_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonVaccinate);
+            this.groupBox2.Controls.Add(this.buttonCatBath);
+            this.groupBox2.Controls.Add(this.buttonCatSleep);
+            this.groupBox2.Controls.Add(this.buttonCatPlay);
+            this.groupBox2.Location = new System.Drawing.Point(142, 75);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(468, 130);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cat";
+            // 
+            // buttonVaccinate
+            // 
+            this.buttonVaccinate.Location = new System.Drawing.Point(345, 25);
+            this.buttonVaccinate.Name = "buttonVaccinate";
+            this.buttonVaccinate.Size = new System.Drawing.Size(117, 98);
+            this.buttonVaccinate.TabIndex = 3;
+            this.buttonVaccinate.Text = "Vaccinate (500Coins)";
+            this.buttonVaccinate.UseVisualStyleBackColor = true;
+            this.buttonVaccinate.Click += new System.EventHandler(this.buttonVaccinate_Click);
+            // 
+            // buttonCatBath
+            // 
+            this.buttonCatBath.Location = new System.Drawing.Point(231, 26);
+            this.buttonCatBath.Name = "buttonCatBath";
+            this.buttonCatBath.Size = new System.Drawing.Size(108, 98);
+            this.buttonCatBath.TabIndex = 2;
+            this.buttonCatBath.Text = "Bath (150Coins)";
+            this.buttonCatBath.UseVisualStyleBackColor = true;
+            this.buttonCatBath.Click += new System.EventHandler(this.buttonCatBath_Click);
+            // 
+            // buttonCatSleep
+            // 
+            this.buttonCatSleep.Location = new System.Drawing.Point(117, 26);
+            this.buttonCatSleep.Name = "buttonCatSleep";
+            this.buttonCatSleep.Size = new System.Drawing.Size(108, 98);
+            this.buttonCatSleep.TabIndex = 1;
+            this.buttonCatSleep.Text = "Sleep (200Coins)";
+            this.buttonCatSleep.UseVisualStyleBackColor = true;
+            this.buttonCatSleep.Click += new System.EventHandler(this.buttonCatSleep_Click);
+            // 
+            // buttonCatPlay
+            // 
+            this.buttonCatPlay.Location = new System.Drawing.Point(3, 26);
+            this.buttonCatPlay.Name = "buttonCatPlay";
+            this.buttonCatPlay.Size = new System.Drawing.Size(108, 98);
+            this.buttonCatPlay.TabIndex = 0;
+            this.buttonCatPlay.Text = "Play (100Coins)";
+            this.buttonCatPlay.UseVisualStyleBackColor = true;
+            this.buttonCatPlay.Click += new System.EventHandler(this.buttonCatPlay_Click_1);
+            // 
+            // labelCoins
+            // 
+            this.labelCoins.AutoSize = true;
+            this.labelCoins.Location = new System.Drawing.Point(17, 42);
+            this.labelCoins.Name = "labelCoins";
+            this.labelCoins.Size = new System.Drawing.Size(83, 20);
+            this.labelCoins.TabIndex = 25;
+            this.labelCoins.Text = "label coins";
+            // 
+            // FormBattle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 935);
+            this.ClientSize = new System.Drawing.Size(1924, 935);
+            this.Controls.Add(this.groupBoxShop);
+            this.Controls.Add(this.groupBoxLvUp);
             this.Controls.Add(this.groupBoxChoosePet);
             this.Controls.Add(this.groupBoxBattle);
             this.Controls.Add(this.groupBoxChooseEnemy);
-            this.Name = "Form1";
+            this.Name = "FormBattle";
             this.Text = "Form Battle";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxChooseEnemy.ResumeLayout(false);
@@ -330,6 +607,13 @@ namespace happy_pet_game_2019
             this.groupBoxChoosePet.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBoxLvUp.ResumeLayout(false);
+            this.groupBoxLvUp.PerformLayout();
+            this.groupBoxShop.ResumeLayout(false);
+            this.groupBoxShop.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -360,6 +644,29 @@ namespace happy_pet_game_2019
         private System.Windows.Forms.RadioButton radioButtonCat;
         private System.Windows.Forms.Label labelDebuff;
         private System.Windows.Forms.Label labelBuff;
+        private System.Windows.Forms.GroupBox groupBoxLvUp;
+        private System.Windows.Forms.GroupBox groupBoxShop;
+        private System.Windows.Forms.RadioButton radioButtonMaxHealth;
+        private System.Windows.Forms.Label labelLevelPoint;
+        private System.Windows.Forms.Button buttonUpgrade;
+        private System.Windows.Forms.RadioButton radioButtonAtkSpeed;
+        private System.Windows.Forms.RadioButton radioButtonHappinessGain;
+        private System.Windows.Forms.RadioButton radioButtonDefense;
+        private System.Windows.Forms.RadioButton radioButtonEnergy;
+        private System.Windows.Forms.Label labelCoins;
+        private System.Windows.Forms.ListBox listBoxLevelUp;
+        private System.Windows.Forms.Button buttonDoneShop;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button buttonChageColor;
+        private System.Windows.Forms.Button buttonChameleonSleep;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button buttonFishClean;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button buttonVaccinate;
+        private System.Windows.Forms.Button buttonCatBath;
+        private System.Windows.Forms.Button buttonCatSleep;
+        private System.Windows.Forms.Button buttonCatPlay;
     }
 }
 

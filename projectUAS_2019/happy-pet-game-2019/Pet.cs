@@ -52,10 +52,13 @@ namespace happy_pet_game_2019
 
             MaxHealth = inMaxHealth;
             Health = inMaxHealth;
+
             OriginalEnergy = inEnergy;
             Energy = OriginalEnergy;
+            
             MaxHappiness = inMaxHappiness;
             Happiness = 0;
+            
             HappinessGain = 10;
             AtkSpeed = 1;
             Defense = inDefense;
@@ -148,7 +151,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Methods
-        public void levelUp(int expGained)
+        public void levelUp()
         {
             while(ExpProgress >= ExpBar)
             {
@@ -164,12 +167,6 @@ namespace happy_pet_game_2019
             }
         }
 
-        public virtual void Feed(Consumable food)
-        {
-            this.Health += food.HealthBonus;
-            this.Happiness += food.HappinessBonus;
-            this.Energy += food.EnergyBonus;
-        }
         public virtual string DisplayData()
         {
             return "Name : " + Name +
@@ -178,6 +175,7 @@ namespace happy_pet_game_2019
                    "\nEnergy : " + Energy + 
                    "\nDefense: " + Defense +
                    "\nHappiness : " + Happiness + "/" + MaxHappiness +
+                   "\nHappiness gain : "+HappinessGain+
                    "\nAttack Speed : " + AtkSpeed;
         }
 
@@ -203,6 +201,7 @@ namespace happy_pet_game_2019
             return this.Happiness > 60 ? "Happy" : "Unhappy"; //if (this.Happiness > 60) { return "Happy"; } else { return "Unhappy"; }
         }
         public virtual string GetEnviromentStatus() { return ""; }
+        public virtual string GetColor() { return ""; } 
 
         public void GetToy(Toy equipment)
         {
@@ -217,6 +216,7 @@ namespace happy_pet_game_2019
             this.AtkSpeed += equipment.AtkSpeedMultiplier-1;
         }
 
+        #region action
         public void basicAttack(Enemy target)
         {
             target.Health -= Energy;
@@ -225,34 +225,51 @@ namespace happy_pet_game_2019
         }
         public abstract void Skill(Enemy target);
         public abstract void Ultimate(Enemy target);
+        #endregion
 
         public virtual void buffRemover(Enemy enemy) { }
 
+        #region upgrade
         public void MaxHealthUp() 
         {
-            if (LevelPoin > 0) { MaxHealth += 100; LevelPoin -= 1; }
+            if (LevelPoin > 0) { MaxHealth += 250; Health = MaxHealth; LevelPoin -= 1; }
             else { throw new Exception("Level Poin isn't enough"); }
         }
         public void EnergyUp()
         {
-            if (LevelPoin > 0) { OriginalEnergy += 10; LevelPoin -= 1; }
+            if (LevelPoin > 0) { OriginalEnergy += 25; Energy+=25 ; LevelPoin -= 1; }
             else { throw new Exception("Level Poin isn't enough"); }
         }
-        public void defenseUp()
+        public void DefenseUp()
         {
-            if (LevelPoin > 0) { Defense += 10; LevelPoin -= 1; }
+            if (LevelPoin > 0) { Defense += 50; LevelPoin -= 1; }
             else { throw new Exception("Level Poin isn't enough"); }
         }
         public void HappinessGainUp()
         {
-            if (LevelPoin > 0) { HappinessGain += 1; LevelPoin -= 1; }
+            if (LevelPoin > 0) { HappinessGain += 2; LevelPoin -= 1; }
             else { throw new Exception("Level Poin isn't enough"); }
         }
         public void AtkSpeedUp()
         {
-            if (LevelPoin > 0) { AtkSpeed += 0.05; LevelPoin -= 1; }
+            if (LevelPoin > 0) { AtkSpeed += 0.1; LevelPoin -= 1; }
             else { throw new Exception("Level Poin isn't enough"); }
         }
+        #endregion
+
+        #region shop action
+        public virtual void Feed(Consumable food)
+        {
+            this.Health += food.HealthBonus;
+            this.Happiness += food.HappinessBonus;
+            this.Energy += food.EnergyBonus;
+        }
+        public virtual void Sleep() { }
+        public virtual void Play() { }
+        public virtual void Bath() { }
+        public virtual void Vaccinate() { }
+        #endregion
+
         #endregion
     }
 }
