@@ -91,5 +91,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\Scale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\ExitFullScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\Dash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\StatusError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\FlagRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\MoneyEditor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\SearchFolderOpened.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

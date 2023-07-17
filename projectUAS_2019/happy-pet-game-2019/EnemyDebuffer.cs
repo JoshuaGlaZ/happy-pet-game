@@ -33,6 +33,7 @@ namespace happy_pet_game_2019
             if(target.GetColor() == "white" || target.GetEnviromentStatus() == "Clean")
             {
                 base.specialAttack(target);
+                target.Energy -= DebuffEffect;
             }
             else
             {
