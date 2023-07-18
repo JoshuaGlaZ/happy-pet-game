@@ -4,11 +4,13 @@ using System.Windows.Forms;
 
 namespace happy_pet_game_2019
 {
+    [Serializable]
     public abstract class Pet
     {
         #region DataMembers
         private string name;
-        private Image image;
+        private string trait;
+        private int level;
 
         private int level;
         private int expBar; //banyak exp yg dibutuhkan untuk naik level

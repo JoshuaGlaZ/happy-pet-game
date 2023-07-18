@@ -16,3 +16,4 @@ Untuk mengupload / mengupdate project di directory ini, lakukan cara berikut
    > Contoh: Jika ingin mengupdate folder projectUAS di branch main, maka upload di branch main
 2. Jika ingin mengupdate folder project, upload folder dengan nama dan path yang sama
    > Contoh: Ketika mengupdate folder projectUAS, upload folder ..\projectUAS bukan ..\happy-pet-game\projectUAS karena akan mengupload 2 folder yaitu folder                  lama projectUAS dan folder baru projectUAS
+   > \

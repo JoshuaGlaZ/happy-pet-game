@@ -61,6 +61,12 @@
     <Compile Include="FormBattle.Designer.cs">
       <DependentUpon>FormBattle.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStart.Designer.cs">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pet.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -68,6 +74,9 @@
     <Compile Include="Toy.cs" />
     <EmbeddedResource Include="FormBattle.resx">
       <DependentUpon>FormBattle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStart.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +120,111 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\logo\SearchFolderOpened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\logo\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish_happy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_happy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_happy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\buttonlarge_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\buttonlarge_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\buttonlarge_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_red.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_yellow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_blue-green.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_blue-red.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_blue-yellow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green-blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green-red.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green-yellow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_red-blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_red-green.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_red-yellow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_yellow-blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_yellow-green.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_yellow-red.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cherry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\drumsticks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fishBowl.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fishBowl_dirty.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\sodacan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\waterbottle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fishbowl_clean.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

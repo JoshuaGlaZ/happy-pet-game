@@ -6,6 +6,7 @@ using System.Text;
 
 namespace happy_pet_game_2019
 {
+    [Serializable]
     public class Toy
     {
         #region DataMembers
@@ -30,6 +31,7 @@ namespace happy_pet_game_2019
             AtkSpeedMultiplier = inAtkSpeedMultiplier;
             Image = image;
             Price = price;
+            Picture = inPicture;
         }
         #endregion
 

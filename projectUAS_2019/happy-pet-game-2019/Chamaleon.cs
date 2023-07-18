@@ -6,6 +6,7 @@ using System.Text;
 
 namespace happy_pet_game_2019
 {
+    [Serializable]
     public class Chamaleon : Pet
     {
         #region DataMembers
@@ -20,7 +21,21 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Properties
-        public Color CurrentColor { get => currentColor; set => currentColor = value; }
+        public Color CurrentColor 
+        { 
+            get => currentColor;
+            set
+            {
+                if (value == Color.Blue || value == Color.Green || value == Color.Red || value == Color.Yellow)
+                {
+                    currentColor = value;
+                }
+                else
+                {
+                    throw new Exception("Chameleon only has green, blue, red, and yellow color");
+                }
+            }
+        }
         #endregion 
 
         #region Methods
