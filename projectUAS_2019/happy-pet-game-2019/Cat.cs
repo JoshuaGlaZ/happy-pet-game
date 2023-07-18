@@ -14,7 +14,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Cat(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense) : base(inName, inPict, inOwner,inMaxHealth,inMaxHappiness,inEnergy, inDefense)
+        public Cat(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense) : base(inName,inTrait,inPict,inMaxHealth,inMaxHappiness,inEnergy, inDefense)
         {
             VaccStatus = false;
         }

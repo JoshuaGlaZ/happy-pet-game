@@ -16,7 +16,6 @@ namespace happy_pet_game_2019
 {
     public partial class FormStart : Form
     {
-        FormMenu formMenu;
         public BindingList<Player> listPlayers = new BindingList<Player>();
 
         public FormStart()
@@ -151,22 +150,16 @@ namespace happy_pet_game_2019
             {
                 pictureBoxNewChoosePet.Image = Properties.Resources.cat;
                 pictureBoxNewChoosePet.BackgroundImage = null;
-                buttonChooseColor.Enabled = false;
-                buttonChooseColor.Visible = false;
             }
             else if (radioButtonChooseFish.Checked)
             {
                 pictureBoxNewChoosePet.Image = Properties.Resources.fish;
                 pictureBoxNewChoosePet.BackgroundImage = Properties.Resources.fishbowl_clean;
-                buttonChooseColor.Enabled = false;
-                buttonChooseColor.Visible = false;
             }
             else
             {
                 pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_green;
                 pictureBoxNewChoosePet.BackgroundImage = null;
-                buttonChooseColor.Enabled = true;
-                buttonChooseColor.Visible = true;
             }
         }
         private void DisplayTraitStat()
@@ -176,29 +169,6 @@ namespace happy_pet_game_2019
             else if (radioButtonHealth.Checked) { listBoxNewStat.Items.Add("Health Stat : "); }
             else if (radioButtonEndurance.Checked) { listBoxNewStat.Items.Add("Endurance Stat : "); }
             else { listBoxNewStat.Items.Add("Willpower Stat : "); }
-        }
-        private Color SelectChameleonColor()
-        {
-            if (panelChameleonColor.Visible == true)
-            {
-                if (radioButtonGreen.Checked) { return Color.Green; }
-                else if (radioButtonBlue.Checked) { return Color.Blue; }
-                else if (radioButtonRed.Checked) { return Color.Red; }
-                else if (radioButtonYellow.Checked){ return Color.Yellow; }
-                else { throw new Exception("Please select your pet color"); }
-            }
-            else
-            {
-                if ((string)pictureBoxNewChoosePet.Tag == "green")
-                { return Color.Green; }
-                else if ((string)pictureBoxNewChoosePet.Tag == "blue")
-                { return Color.Blue; }
-                else if ((string)pictureBoxNewChoosePet.Tag == "red")
-                { return Color.Red; }
-                else if ((string)pictureBoxNewChoosePet.Tag == "yellow")
-                { return Color.Yellow; }
-                else { throw new Exception("Please choose your desired pet color"); }
-            }
         }
         private void radioButtonChooseCat_CheckedChanged(object sender, EventArgs e)
         {   ChangePictureBoxChoosePet(); }
@@ -239,228 +209,7 @@ namespace happy_pet_game_2019
         // Karena memastikan semuanya memakai thread memory yang sama (Timer membuat thread baru yang bekerja
         // di background).
 
-        private void SetChameleonImage(Image image)
-        {
-            if (pictureBoxChameleonNewColor.InvokeRequired)
-            {
-                pictureBoxChameleonNewColor.Invoke((MethodInvoker)(() => SetChameleonImage(image)));
-            }
-            else
-            {
-                pictureBoxChameleonNewColor.Image = image;
-            }
-        }
-
-        private void SetChameleonTag(string tag)
-        {
-            if (pictureBoxChameleonNewColor.InvokeRequired)
-            {
-                pictureBoxChameleonNewColor.Invoke((MethodInvoker)(() => SetChameleonTag(tag)));
-            }
-            else
-            {
-                pictureBoxChameleonNewColor.Tag = tag;
-            }
-        }
-
-        private void EnableAllRadioButtons(bool enable)
-        {
-            if (radioButtonBlue.InvokeRequired || radioButtonGreen.InvokeRequired || radioButtonRed.InvokeRequired || radioButtonYellow.InvokeRequired)
-            {
-                radioButtonBlue.Invoke(new Action<bool>(EnableAllRadioButtons), enable);
-                radioButtonGreen.Invoke(new Action<bool>(EnableAllRadioButtons), enable);
-                radioButtonRed.Invoke(new Action<bool>(EnableAllRadioButtons), enable);
-                radioButtonYellow.Invoke(new Action<bool>(EnableAllRadioButtons), enable);
-            }
-            else
-            {
-                radioButtonBlue.Enabled = enable;
-                radioButtonGreen.Enabled = enable;
-                radioButtonRed.Enabled = enable;
-                radioButtonYellow.Enabled = enable;
-            }
-        }
-        private void ChangeColorBlue(object sender, ElapsedEventArgs e)
-        {
-            SetChameleonImage(Properties.Resources.chameleon_blue);
-            SetChameleonTag("blue");
-            EnableAllRadioButtons(true);
-        }
-
-        private void ChangeColorGreen(object sender, ElapsedEventArgs e)
-        {
-            SetChameleonImage(Properties.Resources.chameleon_green);
-            SetChameleonTag("green");
-            EnableAllRadioButtons(true);
-        }
-
-        private void ChangeColorRed(object sender, ElapsedEventArgs e)
-        {
-            SetChameleonImage(Properties.Resources.chameleon_red);
-            SetChameleonTag("red");
-            EnableAllRadioButtons(true);
-        }
-
-        private void ChangeColorYellow(object sender, ElapsedEventArgs e)
-        {
-            SetChameleonImage(Properties.Resources.chameleon_yellow);
-            SetChameleonTag("yellow");
-            EnableAllRadioButtons(true);
-        }
-
-        private void radioButtonBlue_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonBlue.Checked)
-            {
-                System.Timers.Timer timerChangeColorBlue;
-                timerChangeColorBlue = new System.Timers.Timer(1200);
-                timerChangeColorBlue.AutoReset = false;
-                timerChangeColorBlue.Elapsed += ChangeColorBlue;
-                if ((string)pictureBoxChameleonNewColor.Tag == "green")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_green_blue;
-                }
-                else if ((string)pictureBoxChameleonNewColor.Tag == "red")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_red_blue;
-
-                }
-                else if ((string)pictureBoxChameleonNewColor.Tag == "yellow")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_yellow_blue;
-                }
-                EnableAllRadioButtons(false);
-                timerChangeColorBlue.Start();
-            }
-        }
-
-        private void radioButtonGreen_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonGreen.Checked)
-            {
-                System.Timers.Timer timerChangeColorGreen;
-                timerChangeColorGreen = new System.Timers.Timer(1200);
-                timerChangeColorGreen.AutoReset = false;
-                timerChangeColorGreen.Elapsed += ChangeColorGreen;
-                timerChangeColorGreen.Start();
-                if ((string)pictureBoxChameleonNewColor.Tag == "blue")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_blue_green;
-
-                }
-                else if ((string)pictureBoxChameleonNewColor.Tag == "red")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_red_green;
-
-                }
-                else if ((string)pictureBoxChameleonNewColor.Tag == "yellow")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_yellow_green;
-                }
-                EnableAllRadioButtons(false);
-                timerChangeColorGreen.Start();
-            }
-        }
         
-        private void radioButtonRed_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonRed.Checked)
-            {
-                System.Timers.Timer timerChangeColorRed;
-                timerChangeColorRed = new System.Timers.Timer(1200);
-                timerChangeColorRed.AutoReset = false;
-                timerChangeColorRed.Elapsed += ChangeColorRed;
-                timerChangeColorRed.Start();
-                if ((string)pictureBoxChameleonNewColor.Tag == "blue")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_blue_red;
-
-                }
-                else if ((string)pictureBoxChameleonNewColor.Tag == "green")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_green_red;
-
-                }
-                else if ((string)pictureBoxChameleonNewColor.Tag == "yellow")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_yellow_red;
-                }
-                EnableAllRadioButtons(false);
-                timerChangeColorRed.Start();
-            }
-        }
-
-        private void radioButtonYellow_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonYellow.Checked)
-            {
-                System.Timers.Timer timerChangeColorYellow;
-                timerChangeColorYellow = new System.Timers.Timer(1200);
-                timerChangeColorYellow.AutoReset = false;
-                timerChangeColorYellow.Start();
-                timerChangeColorYellow.Elapsed += ChangeColorYellow;
-                if ((string)pictureBoxChameleonNewColor.Tag == "blue")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_blue_yellow;
-                }
-                else if ((string)pictureBoxChameleonNewColor.Tag == "red")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_red_yellow;
-
-                }
-                else if ((string)pictureBoxChameleonNewColor.Tag == "green")
-                {
-                    pictureBoxChameleonNewColor.Image = Properties.Resources.chameleon_green_yellow;
-                }
-                EnableAllRadioButtons(false);
-                timerChangeColorYellow.Start();
-            }
-        }
-
-        private void buttonChooseColor_Click(object sender, EventArgs e)
-        {
-            if (radioButtonChooseChamaleon.Checked)
-            {
-                panelChameleonColor.Visible = true;
-                listBoxNewStat.Items.Clear();
-                if (buttonChooseColor.Text == "Accept ?")
-                {
-                    if (SelectChameleonColor() == Color.Green)
-                    {
-                        pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_green;
-                        pictureBoxNewChoosePet.Tag = "green";
-                        listBoxNewStat.Items.Add("Chameleon color now is green");
-                    }
-                    else if (SelectChameleonColor() == Color.Blue)
-                    {
-                        pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_blue;
-                        pictureBoxNewChoosePet.Tag = "blue";
-                        listBoxNewStat.Items.Add("Chameleon color now is blue");
-                    }
-                    else if (SelectChameleonColor() == Color.Red)
-                    {
-                        pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_red;
-                        pictureBoxNewChoosePet.Tag = "red";
-                        listBoxNewStat.Items.Add("Chameleon color now is red");
-                    }
-                    else
-                    {
-                        pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_yellow;
-                        pictureBoxNewChoosePet.Tag = "yellow";
-                        listBoxNewStat.Items.Add("Chameleon color now is yellow");
-                    }
-                    panelChameleonColor.Visible = false;
-                    buttonChooseColor.Text = "Choose" + "\nColor";
-                }
-                else {  buttonChooseColor.Text = "Accept ?"; }
-            }
-        }
-
-        private void buttonChooseColor_MouseEnter(object sender, EventArgs e)
-        {   buttonChooseColor.BackgroundImage = Properties.Resources.buttonlarge_pressed; }
-
-        private void buttonChooseColor_MouseLeave(object sender, EventArgs e)
-        {   buttonChooseColor.BackgroundImage = Properties.Resources.buttonlarge_normal; }
 
         private void buttonNewReady_MouseEnter(object sender, EventArgs e)
         {   buttonNewReady.BackgroundImage = Properties.Resources.buttonlarge_pressed; }
@@ -483,20 +232,21 @@ namespace happy_pet_game_2019
                 else { throw new Exception("Please choose your pet trait"); }
 
                 Player newPlayer = new Player(playerName);
-                if (radioButtonChooseCat.Checked) { newPlayer.AddPetCat(petName, petTrait, petPicture); }
+                if (radioButtonChooseCat.Checked) { newPlayer.AddPetCat(petName, petTrait, petPicture, 1250, 60, 150, 100); }//kurang variabel stat
                 else if (radioButtonChooseFish.Checked)
-                { newPlayer.AddPetFish(petName, petTrait, petPicture); }
+                { newPlayer.AddPetFish(petName, petTrait, petPicture, 1500, 80, 100, 50); }
                 else if (radioButtonChooseChamaleon.Checked)
-                { newPlayer.AddPetChamaleon(petName, petTrait, petPicture, SelectChameleonColor()); }
+                { newPlayer.AddPetChamaleon(petName, petTrait, petPicture, 1000, 60, 120, 120); }
                 else { throw new Exception("Please select your pet"); }
 
                 listPlayers.Add(newPlayer);
                 listBoxNewStat.Items.AddRange(newPlayer.DisplayPetStat().Split('\n'));
                 SerializeListPlayers();
 
-                //formMenu = new FormMenu();
-                //formMenu.Owner = this;
-                //formMenu.ShowDialog();
+                FormBattle battle = new FormBattle();
+                battle.activePlayer = newPlayer;
+                battle.Owner = this;
+                battle.ShowDialog();
             }
             catch (Exception ex)
             {   MessageBox.Show(ex.Message); }
@@ -519,6 +269,15 @@ namespace happy_pet_game_2019
                 listBoxLoadProgress.Items.Add("Last Played = " + selectedPlayer.Lastplay.ToString());
                 listBoxLoadStat.Items.AddRange(selectedPlayer.ChoosenPet.ToString().Split('\n'));
             }
+
+        }
+        private void buttonLoadReady_Click(object sender, EventArgs e)
+        {
+            Player selectedPlayer = (Player)comboBoxLoadPlayers.SelectedItem;
+            FormBattle battle = new FormBattle();
+            battle.activePlayer = selectedPlayer;
+            battle.Owner = this;
+            battle.ShowDialog();
         }
 
         private void LoadPanelState()
@@ -708,6 +467,5 @@ namespace happy_pet_game_2019
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

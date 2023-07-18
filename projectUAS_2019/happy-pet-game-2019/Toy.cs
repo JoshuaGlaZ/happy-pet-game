@@ -17,19 +17,18 @@ namespace happy_pet_game_2019
         private int happinessGain;
         private double atkSpeedMultiplier;
 
-        private Image image;
         private int price;
+        private Image picture;
         #endregion
 
         #region Constructors
-        public Toy(string name, int inBonusHealth, int inBonusEnergy, int inHappinessGain, double inAtkSpeedMultiplier, Image image, int price)
+        public Toy(string name, Image inPicture, int price, int inBonusHealth, int inBonusEnergy, int inHappinessGain, double inAtkSpeedMultiplier)
         {
             Name = name;
             BonusHealth = inBonusHealth;
             BonusEnergy = inBonusEnergy;
             HappinessGain = inHappinessGain;
             AtkSpeedMultiplier = inAtkSpeedMultiplier;
-            Image = image;
             Price = price;
             Picture = inPicture;
         }
@@ -37,7 +36,7 @@ namespace happy_pet_game_2019
 
         #region Properties
         public string Name { get => name; set => name = value; }
-        public Image Image { get => image; set => image = value; }
+        public Image Picture { get => picture; set => picture = value; }
         public int Price { get => price; set => price = value; }
         public int BonusHealth { get => bonusHealth; set => bonusHealth = value; }
         public int BonusEnergy { get => bonusEnergy; set => bonusEnergy = value; }

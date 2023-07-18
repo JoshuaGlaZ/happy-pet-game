@@ -9,10 +9,10 @@ namespace happy_pet_game_2019
     {
         #region DataMembers
         private string name;
+        private Image picture;
         private string trait;
         private int level;
 
-        private int level;
         private int expBar; //banyak exp yg dibutuhkan untuk naik level
         private int expProgress; //exp yg terkumpul
 
@@ -37,14 +37,14 @@ namespace happy_pet_game_2019
         private int maxFill; // batas kekenyangannya
 
         private Toy toy;
-        private Player owner;
         #endregion
 
         #region Constructors
-        public Pet(string inName, Image inPict, Player inOwner, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
+        public Pet(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
             Name = inName;
-            Image = inPict;
+            Trait = inTrait;
+            Picture = inPict;
 
             Level = 1;
             ExpBar = 100;
@@ -72,9 +72,9 @@ namespace happy_pet_game_2019
             Fill = 0;
             MaxFill = 100;
 
-            toy = new Toy("none", 0, 0, 0, 1, image, 0);
-            Owner = inOwner;
+            Toy = toy;
         }
+
         #endregion
 
         #region Properties
@@ -93,7 +93,7 @@ namespace happy_pet_game_2019
                 }
             }
         }
-        public Image Image { get => image;  set => image = value; }
+        public Image Picture { get => picture;  set => picture = value; }
         public int Health 
         {
             get => health; 
@@ -134,7 +134,6 @@ namespace happy_pet_game_2019
         }
         public int Energy  { get => energy; set { if (value < 0) { energy = 0; } else { energy = value; } } }
         public Toy Toy  { get => toy; set => toy = value; }
-        public Player Owner  { get => owner; set => owner = value; }
         public int MaxHealth { get => maxHealth; set => maxHealth = value; }
         public int MaxHappiness { get => maxHappiness; set => maxHappiness = value; }
         public double AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
@@ -150,6 +149,7 @@ namespace happy_pet_game_2019
         public int SkillPoin { get => skillPoin; set { if (value > 3) { skillPoin = 3; } else { skillPoin = value; } } }
 
         public int OriginalEnergy { get => originalEnergy; set => originalEnergy = value; }
+        public string Trait { get => trait; set => trait = value; }
         #endregion
 
         #region Methods
@@ -205,18 +205,7 @@ namespace happy_pet_game_2019
         public virtual string GetEnviromentStatus() { return ""; }
         public virtual string GetColor() { return ""; } 
 
-        public void GetToy(Toy equipment)
-        {
-            //ngapus efek toy lama
-            this.MaxHealth -= Toy.BonusHealth;
-            this.OriginalEnergy -= Toy.BonusEnergy;
-            this.AtkSpeed -= Toy.AtkSpeedMultiplier - 1;
-            //ngasih efek toy baru
-            this.Toy = equipment;
-            this.MaxHealth += equipment.BonusHealth;
-            this.OriginalEnergy += equipment.BonusEnergy;
-            this.AtkSpeed += equipment.AtkSpeedMultiplier-1;
-        }
+        
 
         #region action
         public void basicAttack(Enemy target)

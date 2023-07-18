@@ -16,11 +16,11 @@ namespace happy_pet_game_2019
         private List<Consumable> consumableList;
         private Pet choosenPet;
 
-        public Player(string name, DateTime lastplay, Pet pet )
+        public Player(string name)
         {
             Name = name;
             Coins = 0;
-            Lastplay = lastplay;
+            Lastplay = DateTime.Now;
             ToyList = new List<Toy>();
             ConsumableList = new List<Consumable>();
             ChoosenPet = choosenPet;
@@ -47,11 +47,11 @@ namespace happy_pet_game_2019
 
 
         #region Methods
-        public void BuyToy(string name, string benefit, int price, Image toyPicture)
+        public void BuyToy(string name, Image inPicture, int price, int inBonusHealth, int inBonusEnergy, int inHappinessGain, double inAtkSpeedMultiplier)
         {
             if (this.Coins >= price) 
             {
-                Toy NewToy = new Toy(name, benefit, price, toyPicture);
+                Toy NewToy = new Toy(name, inPicture, price, inBonusHealth, inBonusEnergy, inHappinessGain, inAtkSpeedMultiplier);
                 toyList.Add(NewToy); Coins -= NewToy.Price; 
             }
             else { throw new Exception("Not enough coins.\nPrice = " + price); }
@@ -65,11 +65,11 @@ namespace happy_pet_game_2019
             }
             return data;
         }
-        public void BuyConsumable(string name, int price, int healthBonus, int enerygBonus, int happinessBonus, Image consumablePicture)
+        public void BuyConsumable(string name, Image inPicture, int price, int healthBonus, int enerygBonus, int happinessBonus, int fullness)
         {
             if (this.Coins >= price)
             {
-                Consumable NewConsumable = new Consumable(name, price, healthBonus, enerygBonus, happinessBonus, consumablePicture);
+                Consumable NewConsumable = new Consumable(name, inPicture, price, healthBonus, enerygBonus, happinessBonus, fullness);
                 consumableList.Add(NewConsumable); Coins -= NewConsumable.Price;
             }
             else { throw new Exception("Not enough coins.\nPrice = " + price); }
@@ -83,19 +83,19 @@ namespace happy_pet_game_2019
             }
             return data;
         }
-        public void AddPetFish(string name, string trait, Image inPict)
+        public void AddPetFish(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
-            Fish newFish = new Fish(name, trait, inPict);
+            Fish newFish = new Fish(inName, inTrait, inPict, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
             ChoosenPet = newFish;
         }
-        public void AddPetCat(string name, string trait, Image inPict)
+        public void AddPetCat(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
-            Cat newCat = new Cat(name, trait, inPict);
+            Cat newCat = new Cat(inName, inTrait, inPict, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
             ChoosenPet = newCat;
         }
-        public void AddPetChamaleon(string name, string trait, Image inPict, Color currentColor)
+        public void AddPetChamaleon(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
-            Chamaleon newChamaleon = new Chamaleon(name, trait, inPict, currentColor);
+            Chamaleon newChamaleon = new Chamaleon(inName, inTrait, inPict, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
             ChoosenPet = newChamaleon;
         }
         public string DisplayPetStat()
@@ -103,15 +103,15 @@ namespace happy_pet_game_2019
             string stat = "";
             if (ChoosenPet is Cat)
             {
-                stat += "CAT" + "\n" + ChoosenPet.ToString();
+                stat += "CAT" + "\n" + ChoosenPet.DisplayData();
             }
             else if (ChoosenPet is Fish)
             {
-                stat += "FISH" + "\n" + ChoosenPet.ToString();
+                stat += "FISH" + "\n" + ChoosenPet.DisplayData();
             }
             else if (ChoosenPet is Chamaleon)
             {
-                stat += "CHAMALEON" + "\n" + ChoosenPet.ToString();
+                stat += "CHAMALEON" + "\n" + ChoosenPet.DisplayData();
             }
             else
             {
@@ -125,10 +125,22 @@ namespace happy_pet_game_2019
             //PetList.Remove(removedPet)
         }
 
-        public void feed(Pet pet, Consumable food)
+        public void Feed(Pet pet, Consumable food)
         {
             pet.Feed(food);
             consumableList.Remove(food);
+        }
+        public void GetToy(Toy equipment)
+        {
+            //ngapus efek toy lama
+            ChoosenPet.MaxHealth -= ChoosenPet.Toy.BonusHealth;
+            ChoosenPet.OriginalEnergy -= ChoosenPet.Toy.BonusEnergy;
+            ChoosenPet.AtkSpeed -= ChoosenPet.Toy.AtkSpeedMultiplier;
+            //ngasih efek toy baru
+            ChoosenPet.Toy = equipment;
+            ChoosenPet.MaxHealth += equipment.BonusHealth;
+            ChoosenPet.OriginalEnergy += equipment.BonusEnergy;
+            ChoosenPet.AtkSpeed += equipment.AtkSpeedMultiplier;
         }
         #endregion
     }

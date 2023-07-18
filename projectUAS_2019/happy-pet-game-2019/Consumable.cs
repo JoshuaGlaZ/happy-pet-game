@@ -10,7 +10,7 @@ namespace happy_pet_game_2019
     {
         #region DataMembers
         private string name;
-        private Image image;
+        private Image picture;
         private int price;
 
         private int healthBonus;
@@ -21,10 +21,10 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constuctors
-        public Consumable(string name, Image image, int price, int healthBonus, int enerygBonus, int happinessBonus, int fullness)
+        public Consumable(string name, Image inPicture, int price, int healthBonus, int enerygBonus, int happinessBonus, int fullness)
         {
             Name = name;
-            Image = image;
+            Picture = inPicture;
             Price = price;
             HealthBonus = healthBonus;
             EnergyBonus = enerygBonus;
@@ -46,7 +46,7 @@ namespace happy_pet_game_2019
                 else { name = value; }
             }
         }
-        public Image Image { get => image; set => image = value; }
+        public Image Picture { get => picture; set => picture = value; }
         public int Price { get => price; set => price = value; }
         public int HealthBonus { get => healthBonus; set => healthBonus = value; }
         public int EnergyBonus { get => enerygBonus; set => enerygBonus = value; }
