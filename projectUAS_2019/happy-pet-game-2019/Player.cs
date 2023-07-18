@@ -10,7 +10,9 @@ namespace happy_pet_game_2019
         private string name;
         private int coins;
         private DateTime lastplay;
-        private List<Toy> toyList = new List<Toy>();
+        private List<Toy> toyList;
+        private List<Consumable> consumableList;
+        private Pet choosenPet;
 
         public Player(string name, DateTime lastplay, Pet pet )
         {
@@ -84,7 +86,7 @@ namespace happy_pet_game_2019
         public void feed(Pet pet, Consumable food)
         {
             pet.Feed(food);
-            consumablesList.Remove(food);
+            consumableList.Remove(food);
         }
         #endregion
     }

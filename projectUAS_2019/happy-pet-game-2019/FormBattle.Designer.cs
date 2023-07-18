@@ -598,6 +598,7 @@ namespace happy_pet_game_2019
             this.Controls.Add(this.groupBoxChooseEnemy);
             this.Name = "FormBattle";
             this.Text = "Form Battle";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormBattle_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxChooseEnemy.ResumeLayout(false);
             this.groupBoxChooseEnemy.PerformLayout();

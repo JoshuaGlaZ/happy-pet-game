@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +14,9 @@ namespace happy_pet_game_2019
 {
     public partial class FormBattle : Form
     {
-        int timer; // timer battlenya
+        int timer=0; // timer battlenya
         int countdown; // buat ngitung berapa battle lagi untuk ke ruang istirahat
-        Player owner = new Player("player",DateTime.Now);
+        Player owner;
         Image image;
         Pet pet;
         Enemy enemy,enemy1,enemy2;
@@ -35,7 +37,26 @@ namespace happy_pet_game_2019
             labelSkillPoint.Text = "Skill point remaining : " + pet.SkillPoin;
             labelBuff.Text = "Buff Duration : " + 0;
             labelDebuff.Text = "Debuff Duration : " + 0;
-            timer = 0;
+
+            /*
+            if (File.Exists("progress.vc"))
+            {
+                DialogResult load = MessageBox.Show("Do you want to load last progress ?", "progress load", MessageBoxButtons.YesNo);
+                if (load == DialogResult.Yes)
+                {
+                    FileStream fileStream = new FileStream("progress.vc", FileMode.Open, FileAccess.Read);
+
+                    BinaryFormatter bf = new BinaryFormatter();
+                    pet = bf.Deserialize(fileStream) as Pet;
+                    owner = bf.Deserialize(fileStream) as Player;
+
+                    fileStream.Close();
+
+                    groupBoxChoosePet.Enabled = false;
+                    groupBoxBattle.Enabled = true;
+                }
+            }
+            */
         }
 
         #region choose pet
@@ -62,6 +83,7 @@ namespace happy_pet_game_2019
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            owner = new Player("bang jago", DateTime.Now, pet);
             timerBattle.Start();
             groupBoxChoosePet.Enabled = false;
             groupBoxBattle.Enabled = true;
@@ -189,9 +211,9 @@ namespace happy_pet_game_2019
                 if(enemy is EnemyPhysical == false) { CoinsReward += CoinsReward/2; ExpReward += ExpReward/2; }
                 listBox1.Items.Add("Coins Reward : " + CoinsReward);
                 listBox1.Items.Add("Exp Reward   : " + ExpReward);
-                pet.Owner.Coins += CoinsReward;
+                owner.Coins += CoinsReward;
                 pet.ExpProgress += ExpReward;
-                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                labelCoins.Text = "coins : " + owner.Coins;
                 if (pet.ExpProgress >= pet.ExpBar)
                 {
                     pet.levelUp();
@@ -319,22 +341,22 @@ namespace happy_pet_game_2019
         #region shop cat
         private void buttonCatSleep_Click(object sender, EventArgs e)
         {
-            if (pet.Owner.Coins >= 200)
+            if (owner.Coins >= 200)
             {
                 pet.Sleep();
-                pet.Owner.Coins -= 200;
-                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                owner.Coins -= 200;
+                labelCoins.Text = "coins : " + owner.Coins;
                 MessageBox.Show("+100% Health and +100% Happiness\n"+pet.DisplayData());
             }
             else { MessageBox.Show("not enough coins"); }
         }
         private void buttonCatBath_Click(object sender, EventArgs e)
         {
-            if (pet.Owner.Coins >= 150)
+            if (owner.Coins >= 150)
             {
                 pet.Bath();
-                pet.Owner.Coins -= 150;
-                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                owner.Coins -= 150;
+                labelCoins.Text = "coins : " + owner.Coins;
                 MessageBox.Show("+100% Health\n" + pet.DisplayData());
             }
             else { MessageBox.Show("not enough coins"); }
@@ -343,12 +365,12 @@ namespace happy_pet_game_2019
         {
             try
             {
-                if (pet.Owner.Coins >= 500)
+                if (owner.Coins >= 500)
                 {
                     pet.Vaccinate();
-                    pet.Owner.Coins -= 500;
-                    labelCoins.Text = "coins : " + pet.Owner.Coins;
-                    MessageBox.Show("Cat Vaccinated \n Get new Passive Skill\nskill no longer consume Health & Ultimate gain healing effect" + pet.DisplayData());
+                    owner.Coins -= 500;
+                    labelCoins.Text = "coins : " + owner.Coins;
+                    MessageBox.Show("Cat Vaccinated \nGet new Passive Skill \nskill no longer consume Health & Ultimate gain healing effect\n" + pet.DisplayData());
                 }
                 else { MessageBox.Show("not enough coins"); }
             }
@@ -356,11 +378,11 @@ namespace happy_pet_game_2019
         }
         private void buttonCatPlay_Click_1(object sender, EventArgs e)
         {
-            if (pet.Owner.Coins >= 100)
+            if (owner.Coins >= 100)
             {
                 pet.Play();
-                pet.Owner.Coins -= 100;
-                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                owner.Coins -= 100;
+                labelCoins.Text = "coins : " + owner.Coins;
                 MessageBox.Show("+50% Happiness\n" + pet.DisplayData());
             }
             else { MessageBox.Show("not enough coins"); }
@@ -370,12 +392,12 @@ namespace happy_pet_game_2019
         #region shop fish
         private void buttonFishClean_Click(object sender, EventArgs e)
         {
-            if (pet.Owner.Coins >= 100)
+            if (owner.Coins >= 100)
             {
                 pet.SkillPoin += 3;
                 pet.Skill(enemy);
-                pet.Owner.Coins -= 100;
-                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                owner.Coins -= 100;
+                labelCoins.Text = "coins : " + owner.Coins;
                 MessageBox.Show("enviroment status --> Clean (3 turn) \n Health +100% \n" + pet.DisplayData());
             }
             else { MessageBox.Show("not enough coins"); }
@@ -385,23 +407,23 @@ namespace happy_pet_game_2019
         #region shop chameleon
         private void buttonChameleonSleep_Click(object sender, EventArgs e)
         {
-            if (pet.Owner.Coins >= 200)
+            if (owner.Coins >= 200)
             {
                 pet.Sleep();
-                pet.Owner.Coins -= 200;
-                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                owner.Coins -= 200;
+                labelCoins.Text = "coins : " + owner.Coins;
                 MessageBox.Show("+100% Health and +100% Happiness\n" + pet.DisplayData());
             }
             else { MessageBox.Show("not enough coins"); }
         }
         private void buttonChageColor_Click(object sender, EventArgs e)
         {
-            if (pet.Owner.Coins >= 100)
+            if (owner.Coins >= 100)
             {
                 pet.SkillPoin += 1;
                 pet.Skill(enemy);
-                pet.Owner.Coins -= 100;
-                labelCoins.Text = "coins : " + pet.Owner.Coins;
+                owner.Coins -= 100;
+                labelCoins.Text = "coins : " + owner.Coins;
                 MessageBox.Show("get random buff when battle start (3 turn)\n" + pet.DisplayData());
             }
             else { MessageBox.Show("not enough coins"); }
@@ -412,6 +434,25 @@ namespace happy_pet_game_2019
         {
             groupBoxChooseEnemy.Enabled = true;
             groupBoxShop.Enabled = false;
+        }
+        #endregion
+
+        #region save data
+        private void FormBattle_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            /*
+            DialogResult save =  MessageBox.Show("Do you want to save the progress ?", "progress save", MessageBoxButtons.YesNo);
+            if(save == DialogResult.Yes)
+            {
+                FileStream fileStream = new FileStream("progress.vc",FileMode.Create,FileAccess.Write);
+
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(fileStream, pet);
+                bf.Serialize(fileStream, Owner);
+
+                fileStream.Close();
+            }
+            */
         }
         #endregion
 
@@ -428,17 +469,17 @@ namespace happy_pet_game_2019
             if (tipe == 1)
             {
                 newEnemy = new EnemyDebuffer("debuffer", image, (int)(1200 * (Math.Pow(1.1, enemyLevel - 1))),
-                    (int)(140 * (Math.Pow(1.1, enemyLevel - 1))), 1, 50, (int)((50 * (Math.Pow(1.1, (enemyLevel - 1) / 10)))), enemyLevel);
+                    (int)(140 * (Math.Pow(1.1, enemyLevel - 1))), 1, (int)((50 * (Math.Pow(1.1, (enemyLevel - 1) / 10)))), 30, enemyLevel);
             }// tipe debuffer
             else if (tipe == 2)
             {
                 newEnemy = new EnemyDrain("drain", image, (int)(1200 * (Math.Pow(1.1, enemyLevel - 1)))
-                    , (int)(150 * (Math.Pow(1.1, enemyLevel - 1))), 1, 50, (int)((30 * (Math.Pow(1.1, (enemyLevel - 1) / 10)))), enemyLevel);
+                    , (int)(150 * (Math.Pow(1.1, enemyLevel - 1))), 1, (int)((50 * (Math.Pow(1.1, (enemyLevel - 1) / 10)))), 30, enemyLevel);
             }// tipe drain
             else if (tipe == 3)
             {
                 newEnemy = new EnemyPoisonous("poisonous", image, (int)(1000 * (Math.Pow(1.1, enemyLevel - 1)))
-                    , (int)(130 * (Math.Pow(1.1, enemyLevel - 1))), 1, 50, (int)((50 * (Math.Pow(1.1, (enemyLevel - 1) / 10)))), enemyLevel);
+                    , (int)(130 * (Math.Pow(1.1, enemyLevel - 1))), 1, (int)((50 * (Math.Pow(1.1, (enemyLevel - 1) / 10)))), 30, enemyLevel);
             } // tipe poisonous
             else
             {
