@@ -86,6 +86,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -225,6 +226,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\img\fishbowl_clean.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_basicAttackl.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_death.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_skill.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_ult.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish_skill.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish_ult.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish_death.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish_basicAttack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fly_attack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fly_death.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fly_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fly_idle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\spider_attack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\spider_death.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\spider_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\spider_idle.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

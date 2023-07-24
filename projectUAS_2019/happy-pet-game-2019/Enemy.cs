@@ -11,7 +11,10 @@ namespace happy_pet_game_2019
     {
         #region dataMember
         private string name;
-        private Image image;
+        private Image idle;
+        private Image hurt;
+        private Image death;
+        private Image attack1;
         private double atkSpeed;
 
         private int level;
@@ -25,10 +28,13 @@ namespace happy_pet_game_2019
         #endregion
 
         #region constructor
-        public Enemy(string inName, Image inPict, int inHealth, int inEnergy, double inAtkSpeed, int inMaxRage, int level)
+        public Enemy(string inName, Image inIdle, Image inHurt, Image inDeath, Image inAttack, int inHealth, int inEnergy, double inAtkSpeed, int inMaxRage, int level)
         {
             Name = inName;
-            Image = inPict;
+            Idle = inIdle;
+            Hurt = inHurt;
+            Death = inDeath;
+            Attack1 = inAttack;
 
             Level = level;
 
@@ -44,7 +50,10 @@ namespace happy_pet_game_2019
 
         #region property
         public string Name { get => name; set => name = value; }
-        public Image Image { get => image; set => image = value; }
+        public Image Idle { get => idle; set => idle = value; }
+        public Image Hurt { get => hurt; set => hurt = value; }
+        public Image Death { get => death; set => death = value; }
+        public Image Attack1 { get => attack1; set => attack1 = value; }
         public int Health { get => health; set => health = value; }
         public int Energy { get => energy; set => energy = value; }
         public double AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
@@ -71,7 +80,7 @@ namespace happy_pet_game_2019
         {
             target.Health -= Energy-(target.Defense/2);
             Rage = 0;
-            if(target.GetColor()=="white" || target.GetEnviromentStatus() == "clear") { statusDuration = 0; }
+            if(target.GetColor()=="white" || target.GetEnviromentStatus() == "Clean") { statusDuration = 0; }
             else { statusDuration = 3; }
         }
         public virtual void attack(Pet target)

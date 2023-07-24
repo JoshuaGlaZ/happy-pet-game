@@ -13,8 +13,10 @@ namespace happy_pet_game_2019
         #endregion
 
         #region constructor
-        public EnemyPhysical(string inName, Image inPict, int inHealth, int inEnergy, double inAtkSpeed, int inMaxRage, int level) : base(inName, inPict, inHealth, inEnergy, inAtkSpeed, inMaxRage, level)
+        public EnemyPhysical(string inName, Image inIdle, Image inHurt, Image inDeath, Image inAttack, int inHealth, int inEnergy, double inAtkSpeed, int inMaxRage, int level) : 
+            base(inName, inIdle, inHurt, inDeath, inAttack, inHealth, inEnergy, inAtkSpeed, inMaxRage, level)
         {
+
         }
         #endregion
 

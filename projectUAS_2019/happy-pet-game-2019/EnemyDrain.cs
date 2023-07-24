@@ -10,15 +10,10 @@ namespace happy_pet_game_2019
     public class EnemyDrain:Enemy
     {
         private int drainEffect;
-        public EnemyDrain(string inName, Image inPict, int inHealth, int inEnergy, double inAtkSpeed, 
+        public EnemyDrain(string inName, Image inIdle, Image inHurt, Image inDeath, Image inAttack, int inHealth, int inEnergy, double inAtkSpeed, 
             int inDrainEffect, int inMaxRage,int inLevel) : 
-            base(inName, inPict, inHealth, inEnergy, inAtkSpeed, inMaxRage, inLevel)
+            base(inName, inIdle, inHurt, inDeath, inAttack, inHealth, inEnergy, inAtkSpeed, inMaxRage, inLevel)
         {
-            Name = inName;
-            Image = inPict;
-            Health = inHealth;
-            Energy = inEnergy;
-            AtkSpeed = inAtkSpeed;
             DrainEffect = inDrainEffect;
         }
 
@@ -29,7 +24,6 @@ namespace happy_pet_game_2019
             if (target.GetColor() == "white" || target.GetEnviromentStatus() == "Clean")
             {
                 base.specialAttack(target);
-                target.Happiness -= DrainEffect;
             }
             else
             {

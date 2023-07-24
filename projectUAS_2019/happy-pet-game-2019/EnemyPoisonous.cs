@@ -10,15 +10,10 @@ namespace happy_pet_game_2019
     public class EnemyPoisonous:Enemy
     {
         private int poisonEffect;
-        public EnemyPoisonous(string inName, Image inPict, int inHealth, int inEnergy,double inAtkSpeed, 
+        public EnemyPoisonous(string inName, Image inIdle, Image inHurt, Image inDeath, Image inAttack, int inHealth, int inEnergy,double inAtkSpeed, 
             int inPoisonEffect, int inMaxRage, int inLevel) : 
-            base(inName, inPict, inHealth, inEnergy, inAtkSpeed, inMaxRage, inLevel)
+            base(inName, inIdle, inHurt, inDeath, inAttack, inHealth, inEnergy, inAtkSpeed, inMaxRage, inLevel)
         {
-            Name = inName;
-            Image = inPict;
-            Health = inHealth;
-            Energy = inEnergy;
-            AtkSpeed = inAtkSpeed;
             PoisonEffect = inPoisonEffect;
         }
 

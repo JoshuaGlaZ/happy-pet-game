@@ -27,6 +27,10 @@ namespace happy_pet_game_2019
         {
             ButtonResetGameState();
             DeserializeListPlayers();
+            this.WindowState = FormWindowState.Maximized;
+            labelStart.Text = "Happy Pet";
+            panelButton.Width = panelMain.Width;
+            panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -169,15 +173,44 @@ namespace happy_pet_game_2019
             else if (radioButtonHealth.Checked) { listBoxNewStat.Items.Add("Health Stat : "); }
             else if (radioButtonEndurance.Checked) { listBoxNewStat.Items.Add("Endurance Stat : "); }
             else { listBoxNewStat.Items.Add("Willpower Stat : "); }
+            if (radioButtonChooseCat.Checked)
+            {
+                listBoxNewStat.Items.Add("CAT");
+                // original cat: health=1250 M.happiness=60 Energy=150 Defense=100
+                if (radioButtonStrength.Checked) { listBoxNewStat.Items.AddRange("Health:1150\nMaxHappiness:60\nEnergy:200\nDefense:75\n".Split('\n')); }
+                else if (radioButtonEndurance.Checked) { listBoxNewStat.Items.AddRange("Health:1150\nMaxHappiness:60\nEnergy:125\nDefense:150\n".Split('\n')); }
+                else if (radioButtonWillpower.Checked) { listBoxNewStat.Items.AddRange("Health:1050\nMaxHappiness:50\nEnergy:175\nDefense:125\n".Split('\n')); }
+                else if (radioButtonHealth.Checked) { listBoxNewStat.Items.AddRange("Health:1450\nMaxHappiness:70\nEnergy:125\nDefense:100\n".Split('\n')); }
+            }//kurang variabel stat
+            else if (radioButtonChooseFish.Checked)
+            {
+                listBoxNewStat.Items.Add("FISH");
+                // original fish: health=1500 M.Happiness=80 Energy=100 Defense=125
+                if (radioButtonStrength.Checked) { listBoxNewStat.Items.AddRange("Health:1400\nMaxHappiness:80\nEnergy:150\nDefense:100\n".Split('\n')); }
+                else if (radioButtonEndurance.Checked) { listBoxNewStat.Items.AddRange("Health:1400\nMaxHappiness:80\nEnergy:75\nDefense:175\n".Split('\n')); }
+                else if (radioButtonWillpower.Checked) { listBoxNewStat.Items.AddRange("Health:1300\nMaxHappiness:70\nEnergy:100\nDefense:150\n".Split('\n')); }
+                else if (radioButtonHealth.Checked) { listBoxNewStat.Items.AddRange("Health:1700\nMaxHappiness:90\nEnergy:75\nDefense:125\n".Split('\n')); }
+            }
+            else if (radioButtonChooseChamaleon.Checked)
+            {
+                listBoxNewStat.Items.Add("CHAMELEON");
+                // original chameleon: health=1250 M.Happiness=60 Energy=125 Defense=125
+                if (radioButtonStrength.Checked) { listBoxNewStat.Items.AddRange("Health:1150\nMaxHappiness:60\nEnergy:175\nDefense:100\n".Split('\n')); }
+                else if (radioButtonEndurance.Checked) { listBoxNewStat.Items.AddRange("Health:1150\nMaxHappiness:60\nEnergy:100\nDefense:175\n".Split('\n')); }
+                else if (radioButtonWillpower.Checked) { listBoxNewStat.Items.AddRange("Health:1050\nMaxHappiness:50\nEnergy:150\nDefense:150\n".Split('\n')); }
+                else if (radioButtonHealth.Checked) { listBoxNewStat.Items.AddRange("Health:1450\nMaxHappiness:70\nEnergy:100\nDefense:125\n".Split('\n')); }
+            }
         }
+
+        #region radio button change
         private void radioButtonChooseCat_CheckedChanged(object sender, EventArgs e)
-        {   ChangePictureBoxChoosePet(); }
+        { ChangePictureBoxChoosePet();DisplayTraitStat(); }
 
         private void radioButtonChooseFish_CheckedChanged(object sender, EventArgs e)
-        {   ChangePictureBoxChoosePet(); }
+        { ChangePictureBoxChoosePet(); DisplayTraitStat(); }
 
         private void radioButtonChooseChamaleon_CheckedChanged(object sender, EventArgs e)
-        {   ChangePictureBoxChoosePet(); }
+        { ChangePictureBoxChoosePet(); DisplayTraitStat(); }
 
         private void radioButtonStrength_CheckedChanged(object sender, EventArgs e)
         {   DisplayTraitStat(); }
@@ -190,6 +223,7 @@ namespace happy_pet_game_2019
 
         private void radioButtonWillpower_CheckedChanged(object sender, EventArgs e)
         {   DisplayTraitStat(); }
+        #endregion
 
         private void buttonNewBack_Click(object sender, EventArgs e)
         {
@@ -232,11 +266,48 @@ namespace happy_pet_game_2019
                 else { throw new Exception("Please choose your pet trait"); }
 
                 Player newPlayer = new Player(playerName);
-                if (radioButtonChooseCat.Checked) { newPlayer.AddPetCat(petName, petTrait, petPicture, 1250, 60, 150, 100); }//kurang variabel stat
+                if (radioButtonChooseCat.Checked) 
+                {
+                    Image inIdle = Properties.Resources.cat;
+                    Image inHurt = Properties.Resources.cat_hurt;
+                    Image inDeath = Properties.Resources.cat_death;
+                    Image inBasic = Properties.Resources.cat_basicAttackl;
+                    Image inSkill = Properties.Resources.cat_skill;
+                    Image inUlti = Properties.Resources.cat_ult;
+                    // original cat: health=1250 M.happiness=60 Energy=150 Defense=100
+                    if (radioButtonStrength.Checked) { newPlayer.AddPetCat(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1150, 60, 200, 75); }
+                    else if (radioButtonEndurance.Checked) { newPlayer.AddPetCat(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1150, 60, 125, 150); }
+                    else if (radioButtonWillpower.Checked) { newPlayer.AddPetCat(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1050, 50, 175, 125); }
+                    else if (radioButtonHealth.Checked) { newPlayer.AddPetCat(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1450, 70, 125, 100); }
+                }//kurang variabel stat
                 else if (radioButtonChooseFish.Checked)
-                { newPlayer.AddPetFish(petName, petTrait, petPicture, 1500, 80, 100, 50); }
+                {
+                    Image inIdle = Properties.Resources.fish;
+                    Image inHurt = Properties.Resources.fish_hurt;
+                    Image inDeath = Properties.Resources.fish_death;
+                    Image inBasic = Properties.Resources.fish_basicAttack;
+                    Image inSkill = Properties.Resources.fish_skill;
+                    Image inUlti = Properties.Resources.fish_ult;
+                    // original fish: health=1500 M.Happiness=80 Energy=100 Defense=125
+                    if (radioButtonStrength.Checked) { newPlayer.AddPetFish(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1400, 80, 150, 100); }
+                    else if (radioButtonEndurance.Checked) { newPlayer.AddPetFish(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1400, 80, 75, 175); }
+                    else if (radioButtonWillpower.Checked) { newPlayer.AddPetFish(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1300, 70, 125, 150); }
+                    else if (radioButtonHealth.Checked) { newPlayer.AddPetFish(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1700, 90, 75, 125); }
+                }
                 else if (radioButtonChooseChamaleon.Checked)
-                { newPlayer.AddPetChamaleon(petName, petTrait, petPicture, 1000, 60, 120, 120); }
+                {
+                    Image inIdle = Properties.Resources.chameleon_green;
+                    Image inHurt = Properties.Resources.cat_hurt;
+                    Image inDeath = Properties.Resources.cat_death;
+                    Image inBasic = Properties.Resources.cat_basicAttackl;
+                    Image inSkill = Properties.Resources.cat_skill;
+                    Image inUlti = Properties.Resources.cat_ult;
+                    // original chameleon: health=1250 M.Happiness=60 Energy=125 Defense=125
+                    if (radioButtonStrength.Checked) { newPlayer.AddPetChamaleon(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1150, 60, 175, 100); }
+                    else if (radioButtonEndurance.Checked) { newPlayer.AddPetChamaleon(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1150, 60, 100, 175); }
+                    else if (radioButtonWillpower.Checked) { newPlayer.AddPetChamaleon(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1050, 50, 150, 150); }
+                    else if (radioButtonHealth.Checked) { newPlayer.AddPetChamaleon(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1450, 70, 100, 125); }
+                }
                 else { throw new Exception("Please select your pet"); }
 
                 listPlayers.Add(newPlayer);
@@ -246,7 +317,7 @@ namespace happy_pet_game_2019
                 FormBattle battle = new FormBattle();
                 battle.activePlayer = newPlayer;
                 battle.Owner = this;
-                battle.ShowDialog();
+                battle.ShowDialog(this);
             }
             catch (Exception ex)
             {   MessageBox.Show(ex.Message); }
@@ -265,9 +336,9 @@ namespace happy_pet_game_2019
                 Player selectedPlayer = (Player)comboBoxLoadPlayers.SelectedItem;
                 labelLoadPetName.Text = selectedPlayer.ChoosenPet.Name;
                 labelLoadPetLevel.Text = "Lvl = "+ selectedPlayer.ChoosenPet.Level.ToString();
-                pictureBoxLoadPet.Image = selectedPlayer.ChoosenPet.Picture;
+                pictureBoxLoadPet.Image = selectedPlayer.ChoosenPet.Idle;
                 listBoxLoadProgress.Items.Add("Last Played = " + selectedPlayer.Lastplay.ToString());
-                listBoxLoadStat.Items.AddRange(selectedPlayer.ChoosenPet.ToString().Split('\n'));
+                listBoxLoadStat.Items.AddRange(selectedPlayer.ChoosenPet.DisplayData().Split('\n'));
             }
 
         }
@@ -277,7 +348,7 @@ namespace happy_pet_game_2019
             FormBattle battle = new FormBattle();
             battle.activePlayer = selectedPlayer;
             battle.Owner = this;
-            battle.ShowDialog();
+            battle.ShowDialog(this);
         }
 
         private void LoadPanelState()
@@ -430,7 +501,7 @@ namespace happy_pet_game_2019
                 labelResetRuntime.Text = selectedPlayer.Lastplay.ToString();
                 labelResetPetName.Text = selectedPlayer.ChoosenPet.Name;
                 labelResetPetLevel.Text = "Lvl = " + selectedPlayer.ChoosenPet.Level.ToString();
-                pictureBoxResetPet.Image = selectedPlayer.ChoosenPet.Picture;
+                pictureBoxResetPet.Image = selectedPlayer.ChoosenPet.Idle;
                 listBoxResetStat.Items.AddRange(selectedPlayer.ChoosenPet.ToString().Split('\n'));
             }
         }
@@ -466,6 +537,14 @@ namespace happy_pet_game_2019
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void FormStart_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FileStream fileStream = new FileStream("playerData.dat",FileMode.Create,FileAccess.Write);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            binaryFormatter.Serialize(fileStream,listPlayers);
+            fileStream.Close();
         }
     }
 }

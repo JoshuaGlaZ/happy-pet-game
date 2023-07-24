@@ -10,15 +10,10 @@ namespace happy_pet_game_2019
     public class EnemyDebuffer : Enemy
     {
         private int debuffEffect;
-        public EnemyDebuffer(string inName, Image inPict, int inHealth, int inEnergy, double inAtkSpeed, 
+        public EnemyDebuffer(string inName, Image inIdle, Image inHurt, Image inDeath, Image inAttack, int inHealth, int inEnergy, double inAtkSpeed, 
             int inMaxRage, int inDebuffEffect, int inLevel) : 
-            base(inName, inPict, inHealth, inEnergy, inAtkSpeed, inMaxRage, inLevel)
+            base(inName, inIdle, inHurt, inDeath, inAttack, inHealth, inEnergy, inAtkSpeed, inMaxRage, inLevel)
         {
-            Name = inName;
-            Image = inPict;
-            Health = inHealth;
-            Energy = inEnergy;
-            AtkSpeed = inAtkSpeed;
             DebuffEffect = inDebuffEffect;
         }
 

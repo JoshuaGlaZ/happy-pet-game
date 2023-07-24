@@ -9,7 +9,12 @@ namespace happy_pet_game_2019
     {
         #region DataMembers
         private string name;
-        private Image picture;
+        private Image idle;
+        private Image hurt;
+        private Image death;
+        private Image basic;
+        private Image skill;
+        private Image ulti;
         private string trait;
         private int level;
 
@@ -40,11 +45,17 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Pet(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
+        public Pet(string inName, string inTrait, Image inIdle, Image inHurt, Image inDeath, Image inBasic, Image inSkill, Image inUlti, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
             Name = inName;
             Trait = inTrait;
-            Picture = inPict;
+
+            Idle = inIdle;
+            Hurt = inHurt;
+            Death = inDeath;
+            Basic = inBasic;
+            Skill1 = inSkill;
+            Ulti = inUlti;
 
             Level = 1;
             ExpBar = 100;
@@ -85,7 +96,7 @@ namespace happy_pet_game_2019
             {
                 if (value == "")
                 {
-                    throw new Exception("Name can't be empty");
+                    throw new Exception("Pet name can't be empty");
                 }
                 else
                 {
@@ -93,7 +104,12 @@ namespace happy_pet_game_2019
                 }
             }
         }
-        public Image Picture { get => picture;  set => picture = value; }
+        public Image Idle { get => idle;  set => idle = value; }
+        public Image Hurt { get => hurt; set => hurt = value; }
+        public Image Death { get => death; set => death = value; }
+        public Image Basic { get => basic; set => basic = value; }
+        public Image Skill1 { get => skill; set => skill = value; }
+        public Image Ulti { get => ulti; set => ulti = value; }
         public int Health 
         {
             get => health; 
@@ -181,6 +197,7 @@ namespace happy_pet_game_2019
                    "\nAttack Speed : " + AtkSpeed;
         }
 
+        #region get condition
         public string GetHealthCondition()
         {
             string condition;
@@ -203,16 +220,16 @@ namespace happy_pet_game_2019
             return this.Happiness > 60 ? "Happy" : "Unhappy"; //if (this.Happiness > 60) { return "Happy"; } else { return "Unhappy"; }
         }
         public virtual string GetEnviromentStatus() { return ""; }
-        public virtual string GetColor() { return ""; } 
+        public virtual string GetColor() { return ""; }
+        #endregion
 
-        
 
         #region action
         public void basicAttack(Enemy target)
         {
             target.Health -= Energy;
             SkillPoin = SkillPoin + 1; // nggak pakai += biar pengecekan properties nya jalan
-            this.Happiness += HappinessGain + toy.HappinessGain;
+            this.Happiness += HappinessGain;
         }
         public abstract void Skill(Enemy target);
         public abstract void Ultimate(Enemy target);

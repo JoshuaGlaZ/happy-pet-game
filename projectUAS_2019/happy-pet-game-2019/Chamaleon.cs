@@ -14,7 +14,7 @@ namespace happy_pet_game_2019
         #endregion
 
         #region Constructors
-        public Chamaleon(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense) : base(inName,inTrait, inPict, inMaxHealth, inMaxHappiness, inEnergy, inDefense)
+        public Chamaleon(string inName, string inTrait, Image inIdle, Image inHurt, Image inDeath, Image inBasic, Image inSkill, Image inUlti, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense) : base(inName, inTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, inMaxHealth, inMaxHappiness, inEnergy, inDefense)
         {
             CurrentColor = Color.Green;
         }

@@ -83,19 +83,19 @@ namespace happy_pet_game_2019
             }
             return data;
         }
-        public void AddPetFish(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
+        public void AddPetFish(string inName, string inTrait, Image inIdle, Image inHurt, Image inDeath, Image inBasic, Image inSkill, Image inUlti, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
-            Fish newFish = new Fish(inName, inTrait, inPict, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
+            Fish newFish = new Fish(inName, inTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
             ChoosenPet = newFish;
         }
-        public void AddPetCat(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
+        public void AddPetCat(string inName, string inTrait, Image inIdle, Image inHurt, Image inDeath, Image inBasic, Image inSkill, Image inUlti, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
-            Cat newCat = new Cat(inName, inTrait, inPict, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
+            Cat newCat = new Cat(inName, inTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
             ChoosenPet = newCat;
         }
-        public void AddPetChamaleon(string inName, string inTrait, Image inPict, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
+        public void AddPetChamaleon(string inName, string inTrait, Image inIdle, Image inHurt, Image inDeath, Image inBasic, Image inSkill, Image inUlti, int inMaxHealth, int inMaxHappiness, int inEnergy, int inDefense)
         {
-            Chamaleon newChamaleon = new Chamaleon(inName, inTrait, inPict, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
+            Chamaleon newChamaleon = new Chamaleon(inName, inTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, inMaxHealth, inMaxHappiness, inEnergy, inDefense);
             ChoosenPet = newChamaleon;
         }
         public string DisplayPetStat()
