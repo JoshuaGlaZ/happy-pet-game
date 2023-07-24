@@ -362,5 +362,44 @@
   <ItemGroup>
     <None Include="assets\img\border_wide.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\borderGold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\buttonback_flip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\borderGold2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boxGloves-63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightSaber_62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magicWand-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toyHammer-63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench-61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat_sleep.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chameleon_sleep.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vaccine.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bath.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battle_background.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

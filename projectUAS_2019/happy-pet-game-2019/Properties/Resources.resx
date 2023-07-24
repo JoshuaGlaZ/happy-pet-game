@@ -337,4 +337,40 @@
   <data name="border_wide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\border_wide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bath" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bath.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battle_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battle_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="borderGold2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\borderGold2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boxGloves_63" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boxGloves-63.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonback_flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\buttonback_flip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cat_sleep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cat_sleep.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_sleep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chameleon_sleep.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lightSaber_62" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lightSaber_62.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magicWand_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magicWand-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toyHammer_63" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toyHammer-63.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vaccine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vaccine.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wrench_61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wrench-61.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
