@@ -113,16 +113,17 @@ namespace happy_pet_game_2019
             this.panelBattle.Controls.Add(this.groupBoxPetAction);
             this.panelBattle.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBattle.Location = new System.Drawing.Point(0, 0);
-            this.panelBattle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelBattle.Name = "panelBattle";
-            this.panelBattle.Size = new System.Drawing.Size(1500, 769);
+            this.panelBattle.Size = new System.Drawing.Size(1000, 500);
             this.panelBattle.TabIndex = 26;
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(1331, 30);
+            this.buttonExit.Font = new System.Drawing.Font("Pixeloid Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.Location = new System.Drawing.Point(887, 19);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(109, 65);
+            this.buttonExit.Size = new System.Drawing.Size(73, 42);
             this.buttonExit.TabIndex = 34;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -130,29 +131,32 @@ namespace happy_pet_game_2019
             // 
             // listBox2
             // 
+            this.listBox2.Font = new System.Drawing.Font("Pixeloid Sans", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(1145, 161);
+            this.listBox2.Location = new System.Drawing.Point(763, 105);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(248, 224);
+            this.listBox2.Size = new System.Drawing.Size(167, 147);
             this.listBox2.TabIndex = 33;
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Pixeloid Sans", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(121, 160);
+            this.listBox1.Location = new System.Drawing.Point(81, 104);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(248, 224);
+            this.listBox1.Size = new System.Drawing.Size(167, 147);
             this.listBox1.TabIndex = 32;
             // 
             // labelBattleResult
             // 
             this.labelBattleResult.AutoSize = true;
-            this.labelBattleResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.labelBattleResult.Location = new System.Drawing.Point(480, 316);
+            this.labelBattleResult.Font = new System.Drawing.Font("Press Start 2P", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBattleResult.Location = new System.Drawing.Point(274, 194);
+            this.labelBattleResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBattleResult.Name = "labelBattleResult";
-            this.labelBattleResult.Size = new System.Drawing.Size(583, 69);
+            this.labelBattleResult.Size = new System.Drawing.Size(460, 27);
             this.labelBattleResult.TabIndex = 31;
             this.labelBattleResult.Text = "(GAME OVER/ WIN)";
             this.labelBattleResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,10 +164,11 @@ namespace happy_pet_game_2019
             // labelTurn
             // 
             this.labelTurn.AutoSize = true;
-            this.labelTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.labelTurn.Location = new System.Drawing.Point(637, 215);
+            this.labelTurn.Font = new System.Drawing.Font("Press Start 2P", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTurn.Location = new System.Drawing.Point(351, 154);
+            this.labelTurn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTurn.Name = "labelTurn";
-            this.labelTurn.Size = new System.Drawing.Size(277, 46);
+            this.labelTurn.Size = new System.Drawing.Size(252, 21);
             this.labelTurn.TabIndex = 29;
             this.labelTurn.Text = "(PET/ENEMY)";
             this.labelTurn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,46 +176,55 @@ namespace happy_pet_game_2019
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(693, 160);
+            this.label1.Font = new System.Drawing.Font("Press Start 2P", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(420, 109);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 46);
+            this.label1.Size = new System.Drawing.Size(142, 21);
             this.label1.TabIndex = 28;
             this.label1.Text = "TURN :";
             // 
             // labelDebuff
             // 
             this.labelDebuff.AutoSize = true;
-            this.labelDebuff.Location = new System.Drawing.Point(630, 75);
+            this.labelDebuff.Font = new System.Drawing.Font("Pixeloid Mono", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDebuff.Location = new System.Drawing.Point(728, 49);
+            this.labelDebuff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDebuff.Name = "labelDebuff";
-            this.labelDebuff.Size = new System.Drawing.Size(92, 20);
+            this.labelDebuff.Size = new System.Drawing.Size(116, 16);
             this.labelDebuff.TabIndex = 23;
             this.labelDebuff.Text = "label debuff";
             // 
             // labelBuff
             // 
             this.labelBuff.AutoSize = true;
-            this.labelBuff.Location = new System.Drawing.Point(488, 75);
+            this.labelBuff.Font = new System.Drawing.Font("Pixeloid Mono", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBuff.Location = new System.Drawing.Point(522, 49);
+            this.labelBuff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBuff.Name = "labelBuff";
-            this.labelBuff.Size = new System.Drawing.Size(74, 20);
+            this.labelBuff.Size = new System.Drawing.Size(98, 16);
             this.labelBuff.TabIndex = 22;
             this.labelBuff.Text = "label buff";
             // 
             // labelBattleNumber
             // 
             this.labelBattleNumber.AutoSize = true;
-            this.labelBattleNumber.Location = new System.Drawing.Point(94, 75);
+            this.labelBattleNumber.Font = new System.Drawing.Font("Pixeloid Mono", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBattleNumber.Location = new System.Drawing.Point(63, 49);
+            this.labelBattleNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBattleNumber.Name = "labelBattleNumber";
-            this.labelBattleNumber.Size = new System.Drawing.Size(144, 20);
+            this.labelBattleNumber.Size = new System.Drawing.Size(179, 16);
             this.labelBattleNumber.TabIndex = 19;
             this.labelBattleNumber.Text = "label battle number";
             // 
             // labelSkillPoint
             // 
             this.labelSkillPoint.AutoSize = true;
-            this.labelSkillPoint.Location = new System.Drawing.Point(303, 75);
+            this.labelSkillPoint.Font = new System.Drawing.Font("Pixeloid Mono", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSkillPoint.Location = new System.Drawing.Point(298, 49);
+            this.labelSkillPoint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSkillPoint.Name = "labelSkillPoint";
-            this.labelSkillPoint.Size = new System.Drawing.Size(105, 20);
+            this.labelSkillPoint.Size = new System.Drawing.Size(152, 16);
             this.labelSkillPoint.TabIndex = 21;
             this.labelSkillPoint.Text = "label skill poin";
             // 
@@ -219,18 +233,23 @@ namespace happy_pet_game_2019
             this.groupBoxPetAction.Controls.Add(this.buttonBasicAttack);
             this.groupBoxPetAction.Controls.Add(this.buttonSkill);
             this.groupBoxPetAction.Controls.Add(this.buttonUlti);
-            this.groupBoxPetAction.Location = new System.Drawing.Point(86, 591);
+            this.groupBoxPetAction.Font = new System.Drawing.Font("Pixeloid Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxPetAction.Location = new System.Drawing.Point(57, 384);
+            this.groupBoxPetAction.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxPetAction.Name = "groupBoxPetAction";
-            this.groupBoxPetAction.Size = new System.Drawing.Size(1334, 126);
+            this.groupBoxPetAction.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxPetAction.Size = new System.Drawing.Size(889, 82);
             this.groupBoxPetAction.TabIndex = 20;
             this.groupBoxPetAction.TabStop = false;
             this.groupBoxPetAction.Text = "pet attack";
             // 
             // buttonBasicAttack
             // 
-            this.buttonBasicAttack.Location = new System.Drawing.Point(12, 25);
+            this.buttonBasicAttack.Font = new System.Drawing.Font("Pixeloid Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBasicAttack.Location = new System.Drawing.Point(8, 16);
+            this.buttonBasicAttack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBasicAttack.Name = "buttonBasicAttack";
-            this.buttonBasicAttack.Size = new System.Drawing.Size(420, 95);
+            this.buttonBasicAttack.Size = new System.Drawing.Size(280, 62);
             this.buttonBasicAttack.TabIndex = 15;
             this.buttonBasicAttack.Text = "Basic Attack";
             this.buttonBasicAttack.UseVisualStyleBackColor = true;
@@ -238,9 +257,11 @@ namespace happy_pet_game_2019
             // 
             // buttonSkill
             // 
-            this.buttonSkill.Location = new System.Drawing.Point(466, 25);
+            this.buttonSkill.Font = new System.Drawing.Font("Pixeloid Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSkill.Location = new System.Drawing.Point(311, 16);
+            this.buttonSkill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSkill.Name = "buttonSkill";
-            this.buttonSkill.Size = new System.Drawing.Size(420, 95);
+            this.buttonSkill.Size = new System.Drawing.Size(280, 62);
             this.buttonSkill.TabIndex = 14;
             this.buttonSkill.Text = "Skill";
             this.buttonSkill.UseVisualStyleBackColor = true;
@@ -248,9 +269,11 @@ namespace happy_pet_game_2019
             // 
             // buttonUlti
             // 
-            this.buttonUlti.Location = new System.Drawing.Point(908, 25);
+            this.buttonUlti.Font = new System.Drawing.Font("Pixeloid Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUlti.Location = new System.Drawing.Point(605, 16);
+            this.buttonUlti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonUlti.Name = "buttonUlti";
-            this.buttonUlti.Size = new System.Drawing.Size(420, 95);
+            this.buttonUlti.Size = new System.Drawing.Size(280, 62);
             this.buttonUlti.TabIndex = 13;
             this.buttonUlti.Text = "Ulti";
             this.buttonUlti.UseVisualStyleBackColor = true;
@@ -264,10 +287,9 @@ namespace happy_pet_game_2019
             this.panelAfterBattle.Controls.Add(this.buttonExit2);
             this.panelAfterBattle.Controls.Add(this.pictureBoxProgress);
             this.panelAfterBattle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelAfterBattle.Location = new System.Drawing.Point(1500, 0);
-            this.panelAfterBattle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelAfterBattle.Location = new System.Drawing.Point(1000, 0);
             this.panelAfterBattle.Name = "panelAfterBattle";
-            this.panelAfterBattle.Size = new System.Drawing.Size(0, 769);
+            this.panelAfterBattle.Size = new System.Drawing.Size(0, 500);
             this.panelAfterBattle.TabIndex = 26;
             // 
             // groupBoxChooseEnemy
@@ -277,9 +299,11 @@ namespace happy_pet_game_2019
             this.groupBoxChooseEnemy.Controls.Add(this.radioButtonDoor2);
             this.groupBoxChooseEnemy.Controls.Add(this.radioButtonDoor1);
             this.groupBoxChooseEnemy.Controls.Add(this.buttonGo);
-            this.groupBoxChooseEnemy.Location = new System.Drawing.Point(728, 169);
+            this.groupBoxChooseEnemy.Location = new System.Drawing.Point(485, 110);
+            this.groupBoxChooseEnemy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxChooseEnemy.Name = "groupBoxChooseEnemy";
-            this.groupBoxChooseEnemy.Size = new System.Drawing.Size(641, 570);
+            this.groupBoxChooseEnemy.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxChooseEnemy.Size = new System.Drawing.Size(427, 370);
             this.groupBoxChooseEnemy.TabIndex = 35;
             this.groupBoxChooseEnemy.TabStop = false;
             this.groupBoxChooseEnemy.Text = "Choose next enemy";
@@ -287,27 +311,28 @@ namespace happy_pet_game_2019
             // Door2
             // 
             this.Door2.FormattingEnabled = true;
-            this.Door2.ItemHeight = 20;
-            this.Door2.Location = new System.Drawing.Point(317, 53);
+            this.Door2.Location = new System.Drawing.Point(211, 34);
+            this.Door2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Door2.Name = "Door2";
-            this.Door2.Size = new System.Drawing.Size(300, 404);
+            this.Door2.Size = new System.Drawing.Size(201, 264);
             this.Door2.TabIndex = 38;
             // 
             // Door1
             // 
             this.Door1.FormattingEnabled = true;
-            this.Door1.ItemHeight = 20;
-            this.Door1.Location = new System.Drawing.Point(11, 53);
+            this.Door1.Location = new System.Drawing.Point(7, 34);
+            this.Door1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Door1.Name = "Door1";
-            this.Door1.Size = new System.Drawing.Size(300, 404);
+            this.Door1.Size = new System.Drawing.Size(201, 264);
             this.Door1.TabIndex = 37;
             // 
             // radioButtonDoor2
             // 
             this.radioButtonDoor2.AutoSize = true;
-            this.radioButtonDoor2.Location = new System.Drawing.Point(317, 23);
+            this.radioButtonDoor2.Location = new System.Drawing.Point(211, 15);
+            this.radioButtonDoor2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonDoor2.Name = "radioButtonDoor2";
-            this.radioButtonDoor2.Size = new System.Drawing.Size(82, 24);
+            this.radioButtonDoor2.Size = new System.Drawing.Size(57, 17);
             this.radioButtonDoor2.TabIndex = 36;
             this.radioButtonDoor2.TabStop = true;
             this.radioButtonDoor2.Text = "Door 2";
@@ -316,9 +341,10 @@ namespace happy_pet_game_2019
             // radioButtonDoor1
             // 
             this.radioButtonDoor1.AutoSize = true;
-            this.radioButtonDoor1.Location = new System.Drawing.Point(11, 23);
+            this.radioButtonDoor1.Location = new System.Drawing.Point(7, 15);
+            this.radioButtonDoor1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonDoor1.Name = "radioButtonDoor1";
-            this.radioButtonDoor1.Size = new System.Drawing.Size(82, 24);
+            this.radioButtonDoor1.Size = new System.Drawing.Size(57, 17);
             this.radioButtonDoor1.TabIndex = 35;
             this.radioButtonDoor1.TabStop = true;
             this.radioButtonDoor1.Text = "Door 1";
@@ -326,9 +352,10 @@ namespace happy_pet_game_2019
             // 
             // buttonGo
             // 
-            this.buttonGo.Location = new System.Drawing.Point(11, 463);
+            this.buttonGo.Location = new System.Drawing.Point(7, 301);
+            this.buttonGo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonGo.Name = "buttonGo";
-            this.buttonGo.Size = new System.Drawing.Size(606, 98);
+            this.buttonGo.Size = new System.Drawing.Size(404, 64);
             this.buttonGo.TabIndex = 39;
             this.buttonGo.Text = "GO !";
             this.buttonGo.UseVisualStyleBackColor = true;
@@ -347,9 +374,11 @@ namespace happy_pet_game_2019
             this.groupBoxPetStat.Controls.Add(this.radioButtonAtkSpeed);
             this.groupBoxPetStat.Controls.Add(this.buttonUpgrade);
             this.groupBoxPetStat.Controls.Add(this.pictureBoxPetDisplay);
-            this.groupBoxPetStat.Location = new System.Drawing.Point(62, 160);
+            this.groupBoxPetStat.Location = new System.Drawing.Point(41, 104);
+            this.groupBoxPetStat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxPetStat.Name = "groupBoxPetStat";
-            this.groupBoxPetStat.Size = new System.Drawing.Size(660, 579);
+            this.groupBoxPetStat.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxPetStat.Size = new System.Drawing.Size(440, 376);
             this.groupBoxPetStat.TabIndex = 42;
             this.groupBoxPetStat.TabStop = false;
             this.groupBoxPetStat.Text = "pet stat";
@@ -357,18 +386,20 @@ namespace happy_pet_game_2019
             // labelExpReward
             // 
             this.labelExpReward.AutoSize = true;
-            this.labelExpReward.Location = new System.Drawing.Point(257, 32);
+            this.labelExpReward.Location = new System.Drawing.Point(171, 21);
+            this.labelExpReward.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelExpReward.Name = "labelExpReward";
-            this.labelExpReward.Size = new System.Drawing.Size(103, 20);
+            this.labelExpReward.Size = new System.Drawing.Size(71, 13);
             this.labelExpReward.TabIndex = 36;
             this.labelExpReward.Text = "Exp Reward :";
             // 
             // labelCoinsReward
             // 
             this.labelCoinsReward.AutoSize = true;
-            this.labelCoinsReward.Location = new System.Drawing.Point(38, 32);
+            this.labelCoinsReward.Location = new System.Drawing.Point(25, 21);
+            this.labelCoinsReward.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoinsReward.Name = "labelCoinsReward";
-            this.labelCoinsReward.Size = new System.Drawing.Size(116, 20);
+            this.labelCoinsReward.Size = new System.Drawing.Size(79, 13);
             this.labelCoinsReward.TabIndex = 35;
             this.labelCoinsReward.Text = "Coins Reward :";
             // 
@@ -376,19 +407,20 @@ namespace happy_pet_game_2019
             // 
             this.listBoxLevelUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxLevelUp.FormattingEnabled = true;
-            this.listBoxLevelUp.ItemHeight = 20;
-            this.listBoxLevelUp.Location = new System.Drawing.Point(294, 329);
+            this.listBoxLevelUp.Location = new System.Drawing.Point(196, 214);
+            this.listBoxLevelUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxLevelUp.Name = "listBoxLevelUp";
-            this.listBoxLevelUp.Size = new System.Drawing.Size(331, 244);
+            this.listBoxLevelUp.Size = new System.Drawing.Size(222, 160);
             this.listBoxLevelUp.TabIndex = 33;
             // 
             // labelLevelPoint
             // 
             this.labelLevelPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelLevelPoint.AutoSize = true;
-            this.labelLevelPoint.Location = new System.Drawing.Point(34, 336);
+            this.labelLevelPoint.Location = new System.Drawing.Point(23, 218);
+            this.labelLevelPoint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLevelPoint.Name = "labelLevelPoint";
-            this.labelLevelPoint.Size = new System.Drawing.Size(116, 20);
+            this.labelLevelPoint.Size = new System.Drawing.Size(80, 13);
             this.labelLevelPoint.TabIndex = 26;
             this.labelLevelPoint.Text = "label level point";
             // 
@@ -396,9 +428,10 @@ namespace happy_pet_game_2019
             // 
             this.radioButtonMaxHealth.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonMaxHealth.AutoSize = true;
-            this.radioButtonMaxHealth.Location = new System.Drawing.Point(38, 369);
+            this.radioButtonMaxHealth.Location = new System.Drawing.Point(25, 240);
+            this.radioButtonMaxHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonMaxHealth.Name = "radioButtonMaxHealth";
-            this.radioButtonMaxHealth.Size = new System.Drawing.Size(150, 24);
+            this.radioButtonMaxHealth.Size = new System.Drawing.Size(103, 17);
             this.radioButtonMaxHealth.TabIndex = 27;
             this.radioButtonMaxHealth.TabStop = true;
             this.radioButtonMaxHealth.Text = "MaxHealth +250";
@@ -408,9 +441,10 @@ namespace happy_pet_game_2019
             // 
             this.radioButtonEnergy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonEnergy.AutoSize = true;
-            this.radioButtonEnergy.Location = new System.Drawing.Point(38, 399);
+            this.radioButtonEnergy.Location = new System.Drawing.Point(25, 259);
+            this.radioButtonEnergy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonEnergy.Name = "radioButtonEnergy";
-            this.radioButtonEnergy.Size = new System.Drawing.Size(115, 24);
+            this.radioButtonEnergy.Size = new System.Drawing.Size(79, 17);
             this.radioButtonEnergy.TabIndex = 28;
             this.radioButtonEnergy.TabStop = true;
             this.radioButtonEnergy.Text = "Energy +25";
@@ -420,9 +454,10 @@ namespace happy_pet_game_2019
             // 
             this.radioButtonDefense.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonDefense.AutoSize = true;
-            this.radioButtonDefense.Location = new System.Drawing.Point(38, 425);
+            this.radioButtonDefense.Location = new System.Drawing.Point(25, 276);
+            this.radioButtonDefense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonDefense.Name = "radioButtonDefense";
-            this.radioButtonDefense.Size = new System.Drawing.Size(126, 24);
+            this.radioButtonDefense.Size = new System.Drawing.Size(86, 17);
             this.radioButtonDefense.TabIndex = 29;
             this.radioButtonDefense.TabStop = true;
             this.radioButtonDefense.Text = "Defense +50";
@@ -432,9 +467,10 @@ namespace happy_pet_game_2019
             // 
             this.radioButtonHappinessGain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonHappinessGain.AutoSize = true;
-            this.radioButtonHappinessGain.Location = new System.Drawing.Point(38, 453);
+            this.radioButtonHappinessGain.Location = new System.Drawing.Point(25, 294);
+            this.radioButtonHappinessGain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonHappinessGain.Name = "radioButtonHappinessGain";
-            this.radioButtonHappinessGain.Size = new System.Drawing.Size(166, 24);
+            this.radioButtonHappinessGain.Size = new System.Drawing.Size(112, 17);
             this.radioButtonHappinessGain.TabIndex = 30;
             this.radioButtonHappinessGain.TabStop = true;
             this.radioButtonHappinessGain.Text = "HappinessGain +2";
@@ -444,9 +480,10 @@ namespace happy_pet_game_2019
             // 
             this.radioButtonAtkSpeed.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonAtkSpeed.AutoSize = true;
-            this.radioButtonAtkSpeed.Location = new System.Drawing.Point(38, 482);
+            this.radioButtonAtkSpeed.Location = new System.Drawing.Point(25, 313);
+            this.radioButtonAtkSpeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButtonAtkSpeed.Name = "radioButtonAtkSpeed";
-            this.radioButtonAtkSpeed.Size = new System.Drawing.Size(140, 24);
+            this.radioButtonAtkSpeed.Size = new System.Drawing.Size(96, 17);
             this.radioButtonAtkSpeed.TabIndex = 31;
             this.radioButtonAtkSpeed.TabStop = true;
             this.radioButtonAtkSpeed.Text = "AtkSpeed +0.1";
@@ -455,9 +492,10 @@ namespace happy_pet_game_2019
             // buttonUpgrade
             // 
             this.buttonUpgrade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonUpgrade.Location = new System.Drawing.Point(38, 513);
+            this.buttonUpgrade.Location = new System.Drawing.Point(25, 333);
+            this.buttonUpgrade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonUpgrade.Name = "buttonUpgrade";
-            this.buttonUpgrade.Size = new System.Drawing.Size(200, 57);
+            this.buttonUpgrade.Size = new System.Drawing.Size(133, 37);
             this.buttonUpgrade.TabIndex = 32;
             this.buttonUpgrade.Text = "upgrade";
             this.buttonUpgrade.UseVisualStyleBackColor = true;
@@ -465,9 +503,10 @@ namespace happy_pet_game_2019
             // 
             // buttonExit2
             // 
-            this.buttonExit2.Location = new System.Drawing.Point(1406, 30);
+            this.buttonExit2.Location = new System.Drawing.Point(937, 19);
+            this.buttonExit2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExit2.Name = "buttonExit2";
-            this.buttonExit2.Size = new System.Drawing.Size(75, 65);
+            this.buttonExit2.Size = new System.Drawing.Size(50, 42);
             this.buttonExit2.TabIndex = 41;
             this.buttonExit2.Text = "Exit";
             this.buttonExit2.UseVisualStyleBackColor = true;
@@ -477,18 +516,20 @@ namespace happy_pet_game_2019
             // 
             this.pictureBoxPetDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.pictureBoxPetDisplay.Image = global::happy_pet_game_2019.Properties.Resources.cat;
-            this.pictureBoxPetDisplay.Location = new System.Drawing.Point(38, 62);
+            this.pictureBoxPetDisplay.Location = new System.Drawing.Point(25, 40);
+            this.pictureBoxPetDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPetDisplay.Name = "pictureBoxPetDisplay";
-            this.pictureBoxPetDisplay.Size = new System.Drawing.Size(587, 261);
+            this.pictureBoxPetDisplay.Size = new System.Drawing.Size(391, 170);
             this.pictureBoxPetDisplay.TabIndex = 34;
             this.pictureBoxPetDisplay.TabStop = false;
             // 
             // pictureBoxProgress
             // 
             this.pictureBoxProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pictureBoxProgress.Location = new System.Drawing.Point(62, 30);
+            this.pictureBoxProgress.Location = new System.Drawing.Point(41, 19);
+            this.pictureBoxProgress.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxProgress.Name = "pictureBoxProgress";
-            this.pictureBoxProgress.Size = new System.Drawing.Size(1307, 114);
+            this.pictureBoxProgress.Size = new System.Drawing.Size(871, 74);
             this.pictureBoxProgress.TabIndex = 40;
             this.pictureBoxProgress.TabStop = false;
             // 
@@ -496,10 +537,10 @@ namespace happy_pet_game_2019
             // 
             this.pictureBoxEnemyHealth.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxEnemyHealth.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEnemyHealth.Image")));
-            this.pictureBoxEnemyHealth.Location = new System.Drawing.Point(1262, 117);
-            this.pictureBoxEnemyHealth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxEnemyHealth.Location = new System.Drawing.Point(841, 76);
             this.pictureBoxEnemyHealth.Name = "pictureBoxEnemyHealth";
-            this.pictureBoxEnemyHealth.Size = new System.Drawing.Size(158, 24);
+            this.pictureBoxEnemyHealth.Size = new System.Drawing.Size(105, 16);
+            this.pictureBoxEnemyHealth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxEnemyHealth.TabIndex = 30;
             this.pictureBoxEnemyHealth.TabStop = false;
             // 
@@ -507,9 +548,10 @@ namespace happy_pet_game_2019
             // 
             this.pictureBoxEnemy.ErrorImage = null;
             this.pictureBoxEnemy.Image = global::happy_pet_game_2019.Properties.Resources.cat;
-            this.pictureBoxEnemy.Location = new System.Drawing.Point(1211, 389);
+            this.pictureBoxEnemy.Location = new System.Drawing.Point(807, 253);
+            this.pictureBoxEnemy.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxEnemy.Name = "pictureBoxEnemy";
-            this.pictureBoxEnemy.Size = new System.Drawing.Size(182, 150);
+            this.pictureBoxEnemy.Size = new System.Drawing.Size(121, 97);
             this.pictureBoxEnemy.TabIndex = 27;
             this.pictureBoxEnemy.TabStop = false;
             // 
@@ -519,18 +561,20 @@ namespace happy_pet_game_2019
             this.pictureBoxPet.ErrorImage = null;
             this.pictureBoxPet.Image = global::happy_pet_game_2019.Properties.Resources.cat;
             this.pictureBoxPet.InitialImage = global::happy_pet_game_2019.Properties.Resources.cat;
-            this.pictureBoxPet.Location = new System.Drawing.Point(121, 389);
+            this.pictureBoxPet.Location = new System.Drawing.Point(81, 253);
+            this.pictureBoxPet.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxPet.Name = "pictureBoxPet";
-            this.pictureBoxPet.Size = new System.Drawing.Size(182, 150);
+            this.pictureBoxPet.Size = new System.Drawing.Size(121, 97);
             this.pictureBoxPet.TabIndex = 26;
             this.pictureBoxPet.TabStop = false;
             // 
             // pictureBoxBattle
             // 
             this.pictureBoxBattle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.pictureBoxBattle.Location = new System.Drawing.Point(86, 149);
+            this.pictureBoxBattle.Location = new System.Drawing.Point(57, 97);
+            this.pictureBoxBattle.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxBattle.Name = "pictureBoxBattle";
-            this.pictureBoxBattle.Size = new System.Drawing.Size(1334, 416);
+            this.pictureBoxBattle.Size = new System.Drawing.Size(889, 270);
             this.pictureBoxBattle.TabIndex = 25;
             this.pictureBoxBattle.TabStop = false;
             // 
@@ -538,21 +582,22 @@ namespace happy_pet_game_2019
             // 
             this.pictureBoxPetHealth.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxPetHealth.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPetHealth.Image")));
-            this.pictureBoxPetHealth.Location = new System.Drawing.Point(86, 117);
-            this.pictureBoxPetHealth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxPetHealth.Location = new System.Drawing.Point(57, 76);
             this.pictureBoxPetHealth.Name = "pictureBoxPetHealth";
-            this.pictureBoxPetHealth.Size = new System.Drawing.Size(158, 24);
+            this.pictureBoxPetHealth.Size = new System.Drawing.Size(105, 16);
+            this.pictureBoxPetHealth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPetHealth.TabIndex = 24;
             this.pictureBoxPetHealth.TabStop = false;
             // 
             // FormBattle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1500, 769);
+            this.ClientSize = new System.Drawing.Size(1000, 500);
             this.Controls.Add(this.panelAfterBattle);
             this.Controls.Add(this.panelBattle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBattle";
             this.Text = "Form Battle";
             this.Load += new System.EventHandler(this.FormBattle_Load);

@@ -27,7 +27,6 @@ namespace happy_pet_game_2019
         {
             ButtonResetGameState();
             DeserializeListPlayers();
-            this.WindowState = FormWindowState.Maximized;
             labelStart.Text = "Happy Pet";
             panelButton.Width = panelMain.Width;
             panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
@@ -68,7 +67,7 @@ namespace happy_pet_game_2019
 
         private void ButtonResetGameState()
         {
-            if (File.Exists("playerData.dat"))
+            if (File.Exists("playerData.dat") && listPlayers.Count > 0)
             {
                 buttonResetGame.Enabled = true;
                 buttonResetGame.BackgroundImage = Properties.Resources.buttonlarge_normal;
@@ -83,8 +82,8 @@ namespace happy_pet_game_2019
         private void buttonNewGame_Click(object sender, EventArgs e)
         {
             labelStart.Text = "Creating Player";
-            panelNewPlayer.Width = panelMain.Width;
             panelButton.Width = panelLoadPlayer.Width = panelReset.Width = 0;
+            panelNewPlayer.Width = panelMain.Width;
             NewPanelState();
         }
 
@@ -239,11 +238,6 @@ namespace happy_pet_game_2019
         private void buttonNewBack_MouseLeave(object sender, EventArgs e)
         {   buttonNewBack.BackgroundImage = Properties.Resources.buttonback; }
 
-        // Method dibawah dipakai untuk mengubah gambar, tag gambar, dan radioButton dengan aman 
-        // Karena memastikan semuanya memakai thread memory yang sama (Timer membuat thread baru yang bekerja
-        // di background).
-
-        
 
         private void buttonNewReady_MouseEnter(object sender, EventArgs e)
         {   buttonNewReady.BackgroundImage = Properties.Resources.buttonlarge_pressed; }

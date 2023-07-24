@@ -47,8 +47,6 @@ namespace happy_pet_game_2019
             enemy = RandomEnemy();
             pictureBoxEnemy.Image = enemy.Idle;
             timerBattle.Start();
-
-            this.WindowState = FormWindowState.Maximized;
         }
 
         System.Timers.Timer animation = new System.Timers.Timer(2000);
