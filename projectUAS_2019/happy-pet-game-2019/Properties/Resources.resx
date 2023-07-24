@@ -136,11 +136,11 @@
   <data name="cat_idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\cat_idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chameleon_green_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\chameleon_green-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="buttonback" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\buttonback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fish_ult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\fish_ult.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buttonlarge_disable" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\buttonlarge_disable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +148,8 @@
   <data name="fish_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\fish_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\cat.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buttonback_pressed_flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonback_pressed_flip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chameleon_green_basicAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_green_basicAttack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +172,11 @@
   <data name="apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\apple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="progress" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\progress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="border_wide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\border_wide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\cat.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="spider_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\spider_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,11 +199,11 @@
   <data name="crow_idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\crow_idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonback_pressed_flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonback_pressed_flip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="chameleon_yellow_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_yellow-red.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="progress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\progress.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coffee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\coffee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -225,6 +228,9 @@
   </data>
   <data name="chameleon_red_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_red-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="border" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\border.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cobra_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\cobra_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,9 +271,6 @@
   <data name="chameleon_blue_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_blue-yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fishbowl_clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\fishbowl_clean.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cat_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\cat_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -283,8 +286,11 @@
   <data name="chameleon_green_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_green-red.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fish_ult" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\fish_ult.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chameleon_green_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green-blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green_hurt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green_hurt.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buttonBorder3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonBorder3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,8 +319,8 @@
   <data name="cobra_idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\cobra_idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chameleon_green_hurt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\chameleon_green_hurt.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fishbowl_clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\fishbowl_clean.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chameleon_red_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_red-yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,10 +337,37 @@
   <data name="cobra_hurt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\cobra_hurt.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="border" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\border.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="health_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="border_wide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\border_wide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="health_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_10.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_20.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_30.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="health_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\health_100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

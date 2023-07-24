@@ -30,6 +30,10 @@ namespace happy_pet_game_2019
         {
             start = (FormStart)this.Owner;
             pet = activePlayer.ChoosenPet;
+            comboBoxToy.DataSource = activePlayer.ToyList;
+            comboBoxToy.DisplayMember = "Name";
+            comboBoxConsumable.DataSource = activePlayer.ConsumableList;
+            comboBoxConsumable.DisplayMember = "Name";
             countdown = 5;
             labelBattleResult.Text = "";
             labelTurn.Text = "";
@@ -46,6 +50,8 @@ namespace happy_pet_game_2019
 
             enemy = RandomEnemy();
             pictureBoxEnemy.Image = enemy.Idle;
+            pictureBoxPetHealth.Image = Properties.Resources.health_100;
+            pictureBoxEnemyHealth.Image = Properties.Resources.health_100;
             timerBattle.Start();
         }
 
@@ -58,6 +64,26 @@ namespace happy_pet_game_2019
             listBox1.Items.AddRange(pet.DisplayData().Split('\n'));
             listBox2.Items.AddRange(enemy.DisplayData().Split('\n'));
 
+            if (pet.Health < pet.MaxHealth && pet.Health >= (pet.Health / 10) * 9) { pictureBoxPetHealth.Image = Properties.Resources.health_90; }
+            else if (pet.Health >= ((pet.MaxHealth / 10) * 8)) { pictureBoxPetHealth.Image = Properties.Resources.health_80; }
+            else if (pet.Health >= ((pet.MaxHealth / 10) * 7)) { pictureBoxPetHealth.Image = Properties.Resources.health_70; }
+            else if (pet.Health >= ((pet.MaxHealth / 10) * 6)) { pictureBoxPetHealth.Image = Properties.Resources.health_60; }
+            else if (pet.Health >= ((pet.MaxHealth / 10) * 5)) { pictureBoxPetHealth.Image = Properties.Resources.health_50; }
+            else if (pet.Health >= ((pet.MaxHealth / 10) * 4)) { pictureBoxPetHealth.Image = Properties.Resources.health_40; }
+            else if (pet.Health >= ((pet.MaxHealth / 10) * 3)) { pictureBoxPetHealth.Image = Properties.Resources.health_30; }
+            else if (pet.Health >= ((pet.MaxHealth / 10) * 2)) { pictureBoxPetHealth.Image = Properties.Resources.health_20; }
+            else if (pet.Health >= (pet.MaxHealth / 10) ) { pictureBoxPetHealth.Image = Properties.Resources.health_10; }
+
+            if (enemy.Health < enemy.MaxHealth && enemy.Health >= (enemy.Health / 10) * 9) { pictureBoxEnemyHealth.Image = Properties.Resources.health_90; }
+            else if (enemy.Health >= ((enemy.MaxHealth / 10) * 8)) { pictureBoxEnemyHealth.Image = Properties.Resources.health_80; }
+            else if (enemy.Health >= ((enemy.MaxHealth / 10) * 7)) { pictureBoxEnemyHealth.Image = Properties.Resources.health_70; }
+            else if (enemy.Health >= ((enemy.MaxHealth / 10) * 6)) { pictureBoxEnemyHealth.Image = Properties.Resources.health_60; }
+            else if (enemy.Health >= ((enemy.MaxHealth / 10) * 5)) { pictureBoxEnemyHealth.Image = Properties.Resources.health_50; }
+            else if (enemy.Health >= ((enemy.MaxHealth / 10) * 4)) { pictureBoxEnemyHealth.Image = Properties.Resources.health_40; }
+            else if (enemy.Health >= ((enemy.MaxHealth / 10) * 3)) { pictureBoxEnemyHealth.Image = Properties.Resources.health_30; }
+            else if (enemy.Health >= ((enemy.MaxHealth / 10) * 2)) { pictureBoxEnemyHealth.Image = Properties.Resources.health_20; }
+            else if (enemy.Health >= ((enemy.MaxHealth / 10))) { pictureBoxEnemyHealth.Image = Properties.Resources.health_10; }
+
             #region battle
             //bagian mekanik enemy attack
             if (timer % (int)((1 / enemy.AtkSpeed) * 100) == 0 && enemy.Health > 0)
@@ -67,33 +93,35 @@ namespace happy_pet_game_2019
                 if (enemy.Rage == enemy.MaxRage) // special attack musuh
                 {
                     enemy.specialAttack(pet);
-                    // kasih pemberitahuan debuff
+                    if(enemy is EnemyDrain) { MessageBox.Show("happiness drained (-50)"); }
+                    else if(enemy is EnemyPoisonous) { MessageBox.Show("got poison effect \n(-100 at the start of your turn (3 turn))"); }
+                    else if(enemy is EnemyDebuffer) { MessageBox.Show("Energy -50 (3 turn)"); }
 
-                    /*
-                    animation = new System.Timers.Timer(1000);
-                    animation.Elapsed += EnemyAttack;
-                    animation.Start();
+                    pictureBoxEnemy.Image = enemy.Attack1;
+                    System.Timers.Timer animationAttack = new System.Timers.Timer(1000);
+                    animationAttack.AutoReset = false;
+                    animationAttack.Elapsed += EnemyIdle;
+                    animationAttack.Start();
 
-                    animation = new System.Timers.Timer(2000);
-                    animation.Elapsed += PetHurt;
-                    animation.Start();
-                    */
+                    System.Timers.Timer animationHurt = new System.Timers.Timer(550); //durasi frame attack cat mengenai target
+                    animationHurt.AutoReset = false;
+                    animationHurt.Elapsed += HurtPet;
+                    animationHurt.Start();
                 }
                 else // normal attack musuh
                 {
                     enemy.attack(pet);
+                    pictureBoxEnemy.Image = enemy.Attack1;
+                    System.Timers.Timer animationAttack = new System.Timers.Timer(1000);
+                    animationAttack.AutoReset = false;
+                    animationAttack.Elapsed += EnemyIdle;
+                    animationAttack.Start();
 
-                    /*
-                    animation = new System.Timers.Timer(1000);
-                    animation.Elapsed += EnemyAttack;
-                    animation.Start();
-
-                    animation = new System.Timers.Timer(2000);
-                    animation.Elapsed += PetHurt;
-                    animation.Start();
-                    */
+                    System.Timers.Timer animationHurt = new System.Timers.Timer(550); //durasi frame attack cat mengenai target
+                    animationHurt.AutoReset = false;
+                    animationHurt.Elapsed += HurtPet;
+                    animationHurt.Start();
                 }
-                //Idle();
             }
             //bagian mekanik pet attack
             if (timer % (int)(((1 / pet.AtkSpeed) * 100)) == 0)
@@ -117,7 +145,7 @@ namespace happy_pet_game_2019
                         }
                         if (enemy.StatusDuration == 0)
                         {
-                            // masukan pemberitahuan efek poison removed
+                            MessageBox.Show("poison effect removed");
                         }
                     }
                     if (enemy is EnemyDebuffer)
@@ -125,7 +153,7 @@ namespace happy_pet_game_2019
                         if (enemy.StatusDuration == 0)
                         {
                             pet.Energy += enemy.getDebuffEffect();
-                            // masukan pemberitahuan efek debuff removed
+                            MessageBox.Show("debuff effect removed");
                         }
                     }
                 }
@@ -149,13 +177,15 @@ namespace happy_pet_game_2019
             #region battle result
             if (pet.Health <= 0) 
             { 
-                timerBattle.Stop(); 
+                timerBattle.Stop();
+                pictureBoxPetHealth.Image = Properties.Resources.health_0;
                 groupBoxPetAction.Enabled = false; 
                 labelBattleResult.Text = "GAME OVER"; 
                 pictureBoxPet.Image = pet.Death; 
             }
             else if (enemy.Health <= 0)
             {
+                pictureBoxEnemyHealth.Image = Properties.Resources.health_0;
                 countdown -= 1;
                 pet.SkillPoin = 0;
                 labelSkillPoint.Text = "skill poin remaining : " + 0;
@@ -231,19 +261,15 @@ namespace happy_pet_game_2019
             pet.basicAttack(enemy);
             groupBoxPetAction.Enabled = false;
             labelSkillPoint.Text = "Skill point remaining : " + pet.SkillPoin;
-
-            /*
-            animation = new System.Timers.Timer(2000);
-            animation.Elapsed += PetBasic;
-            animation.Start();
-
-            //Idle();
-            animation = new System.Timers.Timer(1000);
-            animation.Elapsed += EnemyHurt;
-            animation.Start();
-            */
-
-            //Idle();
+            pictureBoxPet.Image = pet.Basic;
+            System.Timers.Timer animationAttack = new System.Timers.Timer(800);
+            animationAttack.AutoReset = false;
+            animationAttack.Elapsed += PetIdle;
+            animationAttack.Start();
+            System.Timers.Timer animationHurt = new System.Timers.Timer(500); //durasi frame attack cat mengenai target
+            animationHurt.AutoReset = false;
+            animationHurt.Elapsed += HurtEnemy;
+            animationHurt.Start();
             timerBattle.Start();
             labelTurn.Text = "";
         } 
@@ -255,14 +281,11 @@ namespace happy_pet_game_2019
                 groupBoxPetAction.Enabled = false;
                 labelSkillPoint.Text = "Skill point remaining : " + pet.SkillPoin;
                 labelBuff.Text = "Buff Duration : " + pet.StatusDuration;
-
-                /*
-                animation = new System.Timers.Timer(1000);
-                animation.Elapsed += PetSkill;
-                animation.Start();
-                */
-
-                //Idle();
+                pictureBoxPet.Image = pet.Skill1;
+                System.Timers.Timer animationAttack = new System.Timers.Timer(1000);
+                animationAttack.AutoReset = false;
+                animationAttack.Elapsed += PetIdle;
+                animationAttack.Start();
                 timerBattle.Start();
                 labelTurn.Text = "";
             }
@@ -274,19 +297,15 @@ namespace happy_pet_game_2019
             {
                 pet.Ultimate(enemy);
                 groupBoxPetAction.Enabled = false;
-
-                /*
-                animation = new System.Timers.Timer(2000);
-                animation.Elapsed += PetUlti;
-                animation.Start();
-
-                //Idle();
-                animation = new System.Timers.Timer(1000);
-                animation.Elapsed += EnemyHurt;
-                animation.Start();
-                */
-
-                //Idle();
+                pictureBoxPet.Image = pet.Ulti;
+                System.Timers.Timer animationAttack = new System.Timers.Timer(2000);
+                animationAttack.AutoReset = false;
+                animationAttack.Elapsed += PetIdle;
+                animationAttack.Start();
+                System.Timers.Timer animationHurt = new System.Timers.Timer(500); //durasi frame attack cat mengenai target
+                animationHurt.AutoReset = false;
+                animationHurt.Elapsed += HurtEnemy;
+                animationHurt.Start();
                 timerBattle.Start();
                 labelTurn.Text = "";
             }
@@ -318,6 +337,38 @@ namespace happy_pet_game_2019
             }
             catch(Exception ex) { MessageBox.Show(ex.Message); }
         } // buat upgrade stat pet kalau naik level
+
+        private void buttonEquip_Click(object sender, EventArgs e)
+        {
+            Toy toy = (Toy)comboBoxToy.SelectedItem;
+            activePlayer.GetToy(toy);
+            listBoxLevelUp.Items.Clear();
+            listBoxLevelUp.Items.AddRange(pet.DisplayData().Split('\n'));
+        }
+        private void comboBoxConsumable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Consumable consumable = (Consumable)comboBoxConsumable.SelectedItem;
+            pictureBoxConsumable.Image = consumable.Picture;
+            listBoxConsumableInfo.Items.AddRange(consumable.ToString().Split('\n'));
+        }
+        private void buttonConsume_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Consumable consumable = (Consumable)comboBoxConsumable.SelectedItem;
+                activePlayer.Feed(pet, consumable);
+                listBoxLevelUp.Items.Clear();
+                listBoxLevelUp.Items.AddRange(pet.DisplayData().Split('\n'));
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        private void comboBoxToy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Toy toy = (Toy)comboBoxToy.SelectedItem;
+            pictureBoxToy.Image = toy.Picture;
+            listBoxToyInfo.Items.Clear();
+            listBoxToyInfo.Items.AddRange(toy.DisplayData().Split('\n'));
+        }
 
         #region button exit
         private void buttonExit_Click(object sender, EventArgs e)
@@ -366,19 +417,19 @@ namespace happy_pet_game_2019
             }// tipe drain
             else if (tipe == 3)
             {
-                Image inIdle = Properties.Resources.cat;
-                Image inHurt = Properties.Resources.cat_hurt;
-                Image inDeath = Properties.Resources.cat_death;
-                Image inAttack = Properties.Resources.cat_basicAttack;
+                Image inIdle = Properties.Resources.cobra_idle;
+                Image inHurt = Properties.Resources.cobra_hurt;
+                Image inDeath = Properties.Resources.cobra_death;
+                Image inAttack = Properties.Resources.cobra_attack;
                 newEnemy = new EnemyPoisonous("poisonous", inIdle, inHurt, inDeath, inAttack, (int)(1000 * (Math.Pow(1.1, enemyLevel - 1)))
                     , (int)(150 * (Math.Pow(1.1, enemyLevel - 1))), 1, (int)((100 * (Math.Pow(1.1, (enemyLevel - 1) / 10)))), 30, enemyLevel);
             } // tipe poisonous
             else
             {
-                Image inIdle = Properties.Resources.cat;
-                Image inHurt = Properties.Resources.cat_hurt;
-                Image inDeath = Properties.Resources.cat_death;
-                Image inAttack = Properties.Resources.cat_basicAttack;
+                Image inIdle = Properties.Resources.crow_idle;
+                Image inHurt = Properties.Resources.crow_hurt;
+                Image inDeath = Properties.Resources.crow_death;
+                Image inAttack = Properties.Resources.crow_attack;
                 newEnemy = new EnemyPhysical("physical", inIdle, inHurt, inDeath, inAttack, (int)(1500 * (Math.Pow(1.1, enemyLevel - 1)))
                     , (int)(160 * (Math.Pow(1.1, enemyLevel - 1))), 1, 30, enemyLevel);
             } // tipe physical
@@ -400,33 +451,31 @@ namespace happy_pet_game_2019
         }
         private void Attack_IdleEnemy(object sender, ElapsedEventArgs e) //attacknya enemy
         {
-            pictureBoxEnemy.Image = Properties.Resources.cobra_idle;
+            pictureBoxEnemy.Image = enemy.Idle;
         }
         private void HurtPet(object sender, ElapsedEventArgs e) //hurtnya enemy yang kena damage dari pet
         {
-            pictureBoxEnemy.Image = Properties.Resources.cobra_hurt;
-            animationIdle = new System.Timers.Timer(durasiHurt) { AutoReset = false } ;
+            pictureBoxEnemy.Image = enemy.Hurt;
+            animationIdle = new System.Timers.Timer(500) { AutoReset = false } ;
             animationIdle.Elapsed += IdlePet;
             animationIdle.Start();
         }
         private void HurtEnemy(object sender, ElapsedEventArgs e) //hurtnya pet yang kena damage dari enemy
         {
-            pictureBoxPet.Image = Properties.Resources.cat_hurt;
-            animationIdle = new System.Timers.Timer(durasiHurt) { AutoReset = false };
+            pictureBoxPet.Image = pet.Hurt;
+            animationIdle = new System.Timers.Timer(500) { AutoReset = false };
             animationIdle.Elapsed += IdleEnemy;
             animationIdle.Start();
         }
 
         private void IdlePet(object sender, ElapsedEventArgs e) //idle enemy setelah kena hurt
         {
-            pictureBoxEnemy.Image = Properties.Resources.cobra_idle;
+            pictureBoxEnemy.Image = enemy.Idle;
         }
         private void IdleEnemy(object sender, ElapsedEventArgs e) //idle pet setelah kena hurt
         {
-            pictureBoxPet.Image = Properties.Resources.cat_idle;
+            pictureBoxPet.Image = pet.Idle;
         }
-
-
 
         private void PetIdle(object sender, ElapsedEventArgs e)
         {
@@ -435,12 +484,12 @@ namespace happy_pet_game_2019
         private void PetBasic(object sender, ElapsedEventArgs e)
         {
             pictureBoxPet.Image = pet.Basic;
-            System.Timers.Timer animationAttack = new System.Timers.Timer(durasiAttack) { AutoReset = false }; 
+            System.Timers.Timer animationAttack = new System.Timers.Timer(1500) { AutoReset = false }; 
             animationAttack.AutoReset = false;
             animationAttack.Elapsed += Attack_IdlePet;
             animationAttack.Start();
 
-            System.Timers.Timer animationHurt = new System.Timers.Timer(durasiHitEnemy) { AutoReset = false };
+            System.Timers.Timer animationHurt = new System.Timers.Timer(500) { AutoReset = false };
             animationHurt.AutoReset = false;
             animationHurt.Elapsed += HurtPet;
             animationHurt.Start();
@@ -452,19 +501,8 @@ namespace happy_pet_game_2019
         private void PetUlti(object sender, ElapsedEventArgs e)
         {
             pictureBoxPet.Image = pet.Ulti;
-            //if cat
-            //pictureBoxPet.Image = pet.Basic;
-            //System.Timers.Timer animationAttack = new System.Timers.Timer(durasiAttack) { AutoReset = false };
-            //animationAttack.AutoReset = false;
-            //animationAttack.Elapsed += Attack_IdlePet;
-            //animationAttack.Start();
-
-            //System.Timers.Timer animationHurt = new System.Timers.Timer(durasiHitEnemy) { AutoReset = false };
-            //animationHurt.AutoReset = false;
-            //animationHurt.Elapsed += HurtPet;
-            //animationHurt.Start();
         }
-        
+
         private void EnemyIdle(object sender, ElapsedEventArgs e)
         {
             pictureBoxEnemy.Image = enemy.Idle;
@@ -472,12 +510,12 @@ namespace happy_pet_game_2019
         private void EnemyAttack(object sender, ElapsedEventArgs e)
         {
             pictureBoxEnemy.Image = enemy.Attack1;
-            System.Timers.Timer animationAttack = new System.Timers.Timer(durasiAttack) { AutoReset = false };
+            System.Timers.Timer animationAttack = new System.Timers.Timer(1500) { AutoReset = false };
             animationAttack.AutoReset = false;
             animationAttack.Elapsed += Attack_IdlePet;
             animationAttack.Start();
 
-            System.Timers.Timer animationHurt = new System.Timers.Timer(durasiHitEnemy) { AutoReset = false };
+            System.Timers.Timer animationHurt = new System.Timers.Timer(500) { AutoReset = false };
             animationHurt.AutoReset = false;
             animationHurt.Elapsed += HurtPet;
             animationHurt.Start();

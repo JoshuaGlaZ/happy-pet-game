@@ -362,5 +362,38 @@
   <ItemGroup>
     <None Include="assets\img\border_wide.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_10.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_20.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_30.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\health_100.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

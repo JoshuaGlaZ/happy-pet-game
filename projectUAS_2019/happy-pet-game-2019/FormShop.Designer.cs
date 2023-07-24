@@ -62,13 +62,13 @@ namespace happy_pet_game_2019
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.buttonBuyCherry = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCherry = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label34 = new System.Windows.Forms.Label();
             this.buttonBuyApple = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxApple = new System.Windows.Forms.PictureBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.buttonToConsumable2 = new System.Windows.Forms.Button();
@@ -136,9 +136,9 @@ namespace happy_pet_game_2019
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCherry)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxApple)).BeginInit();
             this.panelToy3.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMagicWand)).BeginInit();
@@ -450,7 +450,7 @@ namespace happy_pet_game_2019
             this.panelConsumable1.Controls.Add(this.buttonToConsumable2);
             this.panelConsumable1.Location = new System.Drawing.Point(0, 119);
             this.panelConsumable1.Name = "panelConsumable1";
-            this.panelConsumable1.Size = new System.Drawing.Size(0, 590);
+            this.panelConsumable1.Size = new System.Drawing.Size(1474, 590);
             this.panelConsumable1.TabIndex = 32;
             // 
             // groupBox4
@@ -543,7 +543,7 @@ namespace happy_pet_game_2019
             // 
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.buttonBuyCherry);
-            this.groupBox5.Controls.Add(this.pictureBox4);
+            this.groupBox5.Controls.Add(this.pictureBoxCherry);
             this.groupBox5.Controls.Add(this.label29);
             this.groupBox5.Controls.Add(this.label30);
             this.groupBox5.Location = new System.Drawing.Point(586, 35);
@@ -585,14 +585,14 @@ namespace happy_pet_game_2019
             this.buttonBuyCherry.Visible = false;
             this.buttonBuyCherry.Click += new System.EventHandler(this.buttonBuyCherry_Click);
             // 
-            // pictureBox4
+            // pictureBoxCherry
             // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pictureBox4.Location = new System.Drawing.Point(21, 25);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.pictureBoxCherry.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pictureBoxCherry.Location = new System.Drawing.Point(21, 25);
+            this.pictureBoxCherry.Name = "pictureBoxCherry";
+            this.pictureBoxCherry.Size = new System.Drawing.Size(250, 250);
+            this.pictureBoxCherry.TabIndex = 0;
+            this.pictureBoxCherry.TabStop = false;
             // 
             // label29
             // 
@@ -618,7 +618,7 @@ namespace happy_pet_game_2019
             // 
             this.groupBox6.Controls.Add(this.label34);
             this.groupBox6.Controls.Add(this.buttonBuyApple);
-            this.groupBox6.Controls.Add(this.pictureBox5);
+            this.groupBox6.Controls.Add(this.pictureBoxApple);
             this.groupBox6.Controls.Add(this.label35);
             this.groupBox6.Controls.Add(this.label36);
             this.groupBox6.Location = new System.Drawing.Point(189, 35);
@@ -660,14 +660,14 @@ namespace happy_pet_game_2019
             this.buttonBuyApple.Visible = false;
             this.buttonBuyApple.Click += new System.EventHandler(this.buttonBuyApple_Click);
             // 
-            // pictureBox5
+            // pictureBoxApple
             // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pictureBox5.Location = new System.Drawing.Point(21, 25);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.pictureBoxApple.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pictureBoxApple.Location = new System.Drawing.Point(21, 25);
+            this.pictureBoxApple.Name = "pictureBoxApple";
+            this.pictureBoxApple.Size = new System.Drawing.Size(250, 250);
+            this.pictureBoxApple.TabIndex = 0;
+            this.pictureBoxApple.TabStop = false;
             // 
             // label35
             // 
@@ -702,7 +702,7 @@ namespace happy_pet_game_2019
             this.buttonToConsumable2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonToConsumable2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
             this.buttonToConsumable2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonToConsumable2.Location = new System.Drawing.Point(613, 274);
+            this.buttonToConsumable2.Location = new System.Drawing.Point(1350, 274);
             this.buttonToConsumable2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonToConsumable2.Name = "buttonToConsumable2";
             this.buttonToConsumable2.Size = new System.Drawing.Size(45, 45);
@@ -1412,10 +1412,10 @@ namespace happy_pet_game_2019
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCherry)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxApple)).EndInit();
             this.panelToy3.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
@@ -1499,13 +1499,13 @@ namespace happy_pet_game_2019
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button buttonBuyCherry;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBoxCherry;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button buttonBuyApple;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBoxApple;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button buttonToConsumable2;

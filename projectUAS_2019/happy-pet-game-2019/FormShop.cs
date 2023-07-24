@@ -13,7 +13,6 @@ namespace happy_pet_game_2019
     public partial class FormShop : Form
     {
         FormBattle battle;
-        Image image;
 
         public FormShop()
         {
@@ -168,6 +167,7 @@ namespace happy_pet_game_2019
         private void FormShop_Load(object sender, EventArgs e)
         {
             battle = (FormBattle)this.Owner;
+            pictureBoxApple.Image = Properties.Resources.apple;
         }
 
         private void panelReset()

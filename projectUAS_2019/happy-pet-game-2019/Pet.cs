@@ -83,7 +83,7 @@ namespace happy_pet_game_2019
             Fill = 0;
             MaxFill = 100;
 
-            Toy = toy;
+            Toy = new Toy("none", Properties.Resources.border, 0, 0, 0, 0, 0);
         }
 
         #endregion
@@ -188,7 +188,8 @@ namespace happy_pet_game_2019
         public virtual string DisplayData()
         {
             return "Name : " + Name +
-                   "\nLevel  : " + Level  + "\t\tNext level up : " + ExpProgress + "/" + expBar +
+                   "\nToy : "+ toy.Name +
+                   "\nLevel  : " + Level  + " Next level up : " + ExpProgress + "/" + expBar +
                    "\nHealth : " + Health + "/"+ MaxHealth +
                    "\nEnergy : " + Energy + 
                    "\nDefense: " + Defense +
@@ -268,9 +269,14 @@ namespace happy_pet_game_2019
         #region shop action
         public virtual void Feed(Consumable food)
         {
-            this.Health += food.HealthBonus;
-            this.Happiness += food.HappinessBonus;
-            this.Energy += food.EnergyBonus;
+            if (Fill+food.Fullness<=100)
+            {
+                this.Health += food.HealthBonus;
+                this.Happiness += food.HappinessBonus;
+                this.Energy += food.EnergyBonus;
+                this.Fill += food.Fullness;
+            }
+            else { throw new Exception("pet already full"); }
         }
         public virtual void Sleep() { }
         public virtual void Play() { }
