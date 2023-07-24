@@ -58,3 +58,15 @@ C:\Users\user\Desktop\happy pet game clone 2\happy-pet-game\projectUAS_2019\happ
 C:\Users\user\Desktop\happy pet game clone 2\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.exe
 D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.AssemblyReference.cache
 D:\Joshua\Coding Repo\Github\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.FormShop.resources
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe.config
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.exe
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\bin\Debug\happy-pet-game-2019.pdb
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.FormBattle.resources
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.FormShop.resources
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.FormStart.resources
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy_pet_game_2019.Properties.Resources.resources
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.GenerateResource.cache
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.exe
+C:\Users\user\Desktop\happy pet game clone 3\happy-pet-game\projectUAS_2019\happy-pet-game-2019\obj\Debug\happy-pet-game-2019.pdb

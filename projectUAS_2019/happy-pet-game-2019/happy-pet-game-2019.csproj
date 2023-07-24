@@ -353,5 +353,11 @@
   <ItemGroup>
     <None Include="Resources\buttonBorder3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonback_pressed_flip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
