@@ -592,7 +592,7 @@ namespace happy_pet_game_2019
             // 
             // panelProgressBattle
             // 
-            this.panelProgressBattle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelProgressBattle.BackgroundImage")));
+            this.panelProgressBattle.BackgroundImage = global::happy_pet_game_2019.Properties.Resources.progress;
             this.panelProgressBattle.Location = new System.Drawing.Point(50, 50);
             this.panelProgressBattle.Name = "panelProgressBattle";
             this.panelProgressBattle.Size = new System.Drawing.Size(1000, 100);
@@ -611,7 +611,7 @@ namespace happy_pet_game_2019
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::happy_pet_game_2019.Properties.Resources.battleBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1100, 600);
             this.Controls.Add(this.buttonExit);

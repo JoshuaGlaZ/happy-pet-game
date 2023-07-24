@@ -320,5 +320,38 @@
   <ItemGroup>
     <None Include="assets\img\Exit_pressed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cobra_attack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cobra_death.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cobra_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cobra_idle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\crow_attack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\crow_death.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\crow_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\crow_idle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\battleBorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\progress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonBorder3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

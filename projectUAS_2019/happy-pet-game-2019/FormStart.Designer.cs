@@ -158,20 +158,20 @@ namespace happy_pet_game_2019
             this.panelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelButton.Controls.Add(this.panelButtonBorder);
             this.panelButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelButton.Location = new System.Drawing.Point(1000, 0);
+            this.panelButton.Location = new System.Drawing.Point(0, 0);
             this.panelButton.Name = "panelButton";
-            this.panelButton.Size = new System.Drawing.Size(0, 398);
+            this.panelButton.Size = new System.Drawing.Size(1000, 398);
             this.panelButton.TabIndex = 21;
             // 
             // panelButtonBorder
             // 
             this.panelButtonBorder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelButtonBorder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelButtonBorder.BackgroundImage")));
+            this.panelButtonBorder.BackgroundImage = global::happy_pet_game_2019.Properties.Resources.buttonBorder3;
             this.panelButtonBorder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelButtonBorder.Controls.Add(this.buttonNewGame);
             this.panelButtonBorder.Controls.Add(this.buttonLoadGame);
             this.panelButtonBorder.Controls.Add(this.buttonResetGame);
-            this.panelButtonBorder.Location = new System.Drawing.Point(-154, 18);
+            this.panelButtonBorder.Location = new System.Drawing.Point(346, 18);
             this.panelButtonBorder.Name = "panelButtonBorder";
             this.panelButtonBorder.Size = new System.Drawing.Size(350, 348);
             this.panelButtonBorder.TabIndex = 20;
@@ -262,7 +262,7 @@ namespace happy_pet_game_2019
             this.panelNewPlayer.Controls.Add(this.pictureBoxNewPet);
             this.panelNewPlayer.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelNewPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelNewPlayer.Location = new System.Drawing.Point(1000, 0);
+            this.panelNewPlayer.Location = new System.Drawing.Point(0, 0);
             this.panelNewPlayer.Name = "panelNewPlayer";
             this.panelNewPlayer.Size = new System.Drawing.Size(0, 398);
             this.panelNewPlayer.TabIndex = 22;
@@ -559,7 +559,7 @@ namespace happy_pet_game_2019
             this.panelLoadPlayer.Controls.Add(this.label1);
             this.panelLoadPlayer.Controls.Add(this.pictureBoxLoadBorder);
             this.panelLoadPlayer.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLoadPlayer.Location = new System.Drawing.Point(1000, 0);
+            this.panelLoadPlayer.Location = new System.Drawing.Point(0, 0);
             this.panelLoadPlayer.Name = "panelLoadPlayer";
             this.panelLoadPlayer.Size = new System.Drawing.Size(0, 398);
             this.panelLoadPlayer.TabIndex = 21;
@@ -802,7 +802,7 @@ namespace happy_pet_game_2019
             this.panelReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelReset.Location = new System.Drawing.Point(0, 0);
             this.panelReset.Name = "panelReset";
-            this.panelReset.Size = new System.Drawing.Size(1000, 398);
+            this.panelReset.Size = new System.Drawing.Size(0, 398);
             this.panelReset.TabIndex = 23;
             // 
             // labelResetPetLevel
@@ -812,7 +812,7 @@ namespace happy_pet_game_2019
             this.labelResetPetLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.labelResetPetLevel.Font = new System.Drawing.Font("Pixeloid Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelResetPetLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.labelResetPetLevel.Location = new System.Drawing.Point(290, 130);
+            this.labelResetPetLevel.Location = new System.Drawing.Point(-210, 130);
             this.labelResetPetLevel.Name = "labelResetPetLevel";
             this.labelResetPetLevel.Size = new System.Drawing.Size(136, 23);
             this.labelResetPetLevel.TabIndex = 46;
@@ -826,7 +826,7 @@ namespace happy_pet_game_2019
             this.listBoxResetStat.BackColor = System.Drawing.SystemColors.Info;
             this.listBoxResetStat.Font = new System.Drawing.Font("Pixeloid Sans", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxResetStat.FormattingEnabled = true;
-            this.listBoxResetStat.Location = new System.Drawing.Point(331, 179);
+            this.listBoxResetStat.Location = new System.Drawing.Point(-169, 179);
             this.listBoxResetStat.Name = "listBoxResetStat";
             this.listBoxResetStat.Size = new System.Drawing.Size(165, 134);
             this.listBoxResetStat.TabIndex = 41;
@@ -849,7 +849,7 @@ namespace happy_pet_game_2019
             this.pictureBoxResetPet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxResetPet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(212)))), ((int)(((byte)(170)))));
             this.pictureBoxResetPet.Image = global::happy_pet_game_2019.Properties.Resources.cat;
-            this.pictureBoxResetPet.Location = new System.Drawing.Point(156, 177);
+            this.pictureBoxResetPet.Location = new System.Drawing.Point(-344, 177);
             this.pictureBoxResetPet.Name = "pictureBoxResetPet";
             this.pictureBoxResetPet.Size = new System.Drawing.Size(135, 135);
             this.pictureBoxResetPet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -875,7 +875,7 @@ namespace happy_pet_game_2019
             this.labelResetRuntime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.labelResetRuntime.Font = new System.Drawing.Font("Pixeloid Sans", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelResetRuntime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.labelResetRuntime.Location = new System.Drawing.Point(380, 130);
+            this.labelResetRuntime.Location = new System.Drawing.Point(-120, 130);
             this.labelResetRuntime.Name = "labelResetRuntime";
             this.labelResetRuntime.Size = new System.Drawing.Size(130, 27);
             this.labelResetRuntime.TabIndex = 39;
@@ -890,7 +890,7 @@ namespace happy_pet_game_2019
             this.labelResetPetName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(40)))), ((int)(((byte)(50)))));
             this.labelResetPetName.Font = new System.Drawing.Font("Pixeloid Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelResetPetName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.labelResetPetName.Location = new System.Drawing.Point(142, 130);
+            this.labelResetPetName.Location = new System.Drawing.Point(-358, 130);
             this.labelResetPetName.Name = "labelResetPetName";
             this.labelResetPetName.Size = new System.Drawing.Size(122, 23);
             this.labelResetPetName.TabIndex = 38;
@@ -909,7 +909,7 @@ namespace happy_pet_game_2019
             this.comboBoxResetPlayers.FormattingEnabled = true;
             this.comboBoxResetPlayers.Items.AddRange(new object[] {
             "8"});
-            this.comboBoxResetPlayers.Location = new System.Drawing.Point(335, 28);
+            this.comboBoxResetPlayers.Location = new System.Drawing.Point(-165, 28);
             this.comboBoxResetPlayers.MaxDropDownItems = 3;
             this.comboBoxResetPlayers.MaximumSize = new System.Drawing.Size(277, 0);
             this.comboBoxResetPlayers.Name = "comboBoxResetPlayers";
@@ -923,7 +923,7 @@ namespace happy_pet_game_2019
             this.labelResetPlayer.AutoSize = true;
             this.labelResetPlayer.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelResetPlayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.labelResetPlayer.Location = new System.Drawing.Point(84, 25);
+            this.labelResetPlayer.Location = new System.Drawing.Point(-416, 25);
             this.labelResetPlayer.Name = "labelResetPlayer";
             this.labelResetPlayer.Size = new System.Drawing.Size(237, 26);
             this.labelResetPlayer.TabIndex = 34;
@@ -952,7 +952,7 @@ namespace happy_pet_game_2019
             this.buttonResetYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResetYes.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResetYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.buttonResetYes.Location = new System.Drawing.Point(624, 210);
+            this.buttonResetYes.Location = new System.Drawing.Point(124, 210);
             this.buttonResetYes.Name = "buttonResetYes";
             this.buttonResetYes.Size = new System.Drawing.Size(123, 41);
             this.buttonResetYes.TabIndex = 25;
@@ -974,7 +974,7 @@ namespace happy_pet_game_2019
             this.buttonResetBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResetBack.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResetBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.buttonResetBack.Location = new System.Drawing.Point(14, 184);
+            this.buttonResetBack.Location = new System.Drawing.Point(-486, 184);
             this.buttonResetBack.Name = "buttonResetBack";
             this.buttonResetBack.Size = new System.Drawing.Size(30, 30);
             this.buttonResetBack.TabIndex = 24;
@@ -995,7 +995,7 @@ namespace happy_pet_game_2019
             this.buttonResetNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonResetNo.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonResetNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.buttonResetNo.Location = new System.Drawing.Point(795, 210);
+            this.buttonResetNo.Location = new System.Drawing.Point(295, 210);
             this.buttonResetNo.Name = "buttonResetNo";
             this.buttonResetNo.Size = new System.Drawing.Size(123, 41);
             this.buttonResetNo.TabIndex = 22;
@@ -1011,7 +1011,7 @@ namespace happy_pet_game_2019
             this.labelAreYouSure.AutoSize = true;
             this.labelAreYouSure.Font = new System.Drawing.Font("Pixeloid Mono", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAreYouSure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
-            this.labelAreYouSure.Location = new System.Drawing.Point(617, 122);
+            this.labelAreYouSure.Location = new System.Drawing.Point(117, 122);
             this.labelAreYouSure.Name = "labelAreYouSure";
             this.labelAreYouSure.Size = new System.Drawing.Size(325, 39);
             this.labelAreYouSure.TabIndex = 19;
