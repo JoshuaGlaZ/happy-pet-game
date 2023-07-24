@@ -31,8 +31,17 @@ namespace happy_pet_game_2019
             panelButton.Width = panelMain.Width;
             panelNewPlayer.Width = panelLoadPlayer.Width = panelReset.Width = 0;
         }
+        private void buttonExit_MouseEnter(object sender, EventArgs e)
+        {
+            buttonExit.BackgroundImage = Properties.Resources.Exit_pressed;
+        }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void buttonExit_MouseLeave(object sender, EventArgs e)
+        {
+            buttonExit.BackgroundImage = Properties.Resources.Exit_normal;
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
         { this.Close(); }
 
         #region PanelButton

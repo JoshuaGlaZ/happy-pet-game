@@ -90,8 +90,7 @@ namespace happy_pet_game_2019
             this.buttonResetBack = new System.Windows.Forms.Button();
             this.buttonResetNo = new System.Windows.Forms.Button();
             this.labelAreYouSure = new System.Windows.Forms.Label();
-            this.menuStripAll = new System.Windows.Forms.MenuStrip();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.panelProgress.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelButton.SuspendLayout();
@@ -114,7 +113,6 @@ namespace happy_pet_game_2019
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetPetBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetBorder)).BeginInit();
-            this.menuStripAll.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelProgress
@@ -122,9 +120,9 @@ namespace happy_pet_game_2019
             this.panelProgress.BackColor = System.Drawing.Color.Transparent;
             this.panelProgress.Controls.Add(this.labelStart);
             this.panelProgress.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelProgress.Location = new System.Drawing.Point(0, 24);
+            this.panelProgress.Location = new System.Drawing.Point(0, 0);
             this.panelProgress.Name = "panelProgress";
-            this.panelProgress.Size = new System.Drawing.Size(1000, 78);
+            this.panelProgress.Size = new System.Drawing.Size(1000, 102);
             this.panelProgress.TabIndex = 20;
             // 
             // labelStart
@@ -134,8 +132,9 @@ namespace happy_pet_game_2019
             this.labelStart.ForeColor = System.Drawing.SystemColors.MenuText;
             this.labelStart.Location = new System.Drawing.Point(0, 0);
             this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(1000, 78);
+            this.labelStart.Size = new System.Drawing.Size(1000, 102);
             this.labelStart.TabIndex = 0;
+            this.labelStart.Tag = "";
             this.labelStart.Text = "Happy Pet";
             this.labelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1019,32 +1018,27 @@ namespace happy_pet_game_2019
             this.labelAreYouSure.Text = "Are you sure ?";
             this.labelAreYouSure.Visible = false;
             // 
-            // menuStripAll
+            // buttonExit
             // 
-            this.menuStripAll.BackColor = System.Drawing.Color.Transparent;
-            this.menuStripAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.menuStripAll.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStripAll.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.menuStripAll.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStripAll.Location = new System.Drawing.Point(0, 0);
-            this.menuStripAll.Name = "menuStripAll";
-            this.menuStripAll.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStripAll.Size = new System.Drawing.Size(1000, 24);
-            this.menuStripAll.TabIndex = 22;
-            this.menuStripAll.Text = "menuStrip1";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitToolStripMenuItem.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 1, 5, 1);
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(54, 22);
-            this.exitToolStripMenuItem.Text = "EXIT";
-            this.exitToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.buttonExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(127)))), ((int)(((byte)(198)))));
+            this.buttonExit.BackgroundImage = global::happy_pet_game_2019.Properties.Resources.Exit_normal;
+            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Pixeloid Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(231)))));
+            this.buttonExit.Location = new System.Drawing.Point(966, 12);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(22, 22);
+            this.buttonExit.TabIndex = 47;
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.MouseEnter += new System.EventHandler(this.buttonExit_MouseEnter);
+            this.buttonExit.MouseLeave += new System.EventHandler(this.buttonExit_MouseLeave);
             // 
             // FormStart
             // 
@@ -1054,9 +1048,9 @@ namespace happy_pet_game_2019
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelProgress);
-            this.Controls.Add(this.menuStripAll);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormStart";
@@ -1092,10 +1086,7 @@ namespace happy_pet_game_2019
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetPet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetPetBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResetBorder)).EndInit();
-            this.menuStripAll.ResumeLayout(false);
-            this.menuStripAll.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1105,8 +1096,6 @@ namespace happy_pet_game_2019
         private System.Windows.Forms.Button buttonLoadBack;
         private System.Windows.Forms.ListBox listBoxLoadProgress;
         private System.Windows.Forms.Label labelStart;
-        private System.Windows.Forms.MenuStrip menuStripAll;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Panel panelButton;
         private System.Windows.Forms.Panel panelNewPlayer;
         private System.Windows.Forms.Button buttonNewBack;
@@ -1162,5 +1151,6 @@ namespace happy_pet_game_2019
         private System.Windows.Forms.Label labelLoadPetLevel;
         private System.Windows.Forms.Label labelResetPetLevel;
         private System.Windows.Forms.Panel panelButtonBorder;
+        private System.Windows.Forms.Button buttonExit;
     }
 }

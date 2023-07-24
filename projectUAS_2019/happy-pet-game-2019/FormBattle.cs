@@ -320,14 +320,19 @@ namespace happy_pet_game_2019
         } // buat upgrade stat pet kalau naik level
 
         #region button exit
-        private void buttonExit_Click(object sender, EventArgs e) // di panel battle
+        private void buttonExit_Click(object sender, EventArgs e)
         {
-            Close();
+            System.Windows.Forms.Application.Exit();
         }
 
-        private void buttonExit2_Click(object sender, EventArgs e) // di panel afterbattle
+        private void buttonExit_MouseEnter(object sender, EventArgs e)
         {
-            Close();
+            buttonExit.BackgroundImage = Properties.Resources.Exit_pressed;
+        }
+
+        private void buttonExit_MouseLeave(object sender, EventArgs e)
+        {
+            buttonExit.BackgroundImage = Properties.Resources.Exit_normal;
         }
         #endregion
 
@@ -422,7 +427,7 @@ namespace happy_pet_game_2019
         {
             pictureBoxPet.Image = pet.Hurt;
         }
-
+        
         private void EnemyIdle(object sender, ElapsedEventArgs e)
         {
             pictureBoxEnemy.Image = enemy.Idle;

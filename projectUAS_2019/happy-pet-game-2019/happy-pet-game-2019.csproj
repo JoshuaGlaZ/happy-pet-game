@@ -314,5 +314,11 @@
   <ItemGroup>
     <None Include="assets\img\chameleon_green_hurt.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\Exit_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\Exit_pressed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
