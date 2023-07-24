@@ -388,24 +388,45 @@ namespace happy_pet_game_2019
         #endregion
 
         #region animation
-        private void Idle()
-        {
-            animation.Dispose();
-            animation.Stop();
-            pictureBoxPet.Image = pet.Idle;
-            pictureBoxEnemy.Image = enemy.Idle;
-            /*
-            animation = new System.Timers.Timer(1000);
-            animation.AutoReset = false;
-            animation.Elapsed += EnemyIdle;
-            animation.Start();
-
-            animation = new System.Timers.Timer(1000);
-            animation.AutoReset = false;
-            animation.Elapsed += PetIdle;
-            animation.Start();
-            */
+        int durasiAttack;
+        int durasiHitEnemy;
+        int durasiHurt;
+        System.Timers.Timer animationAttack;
+        System.Timers.Timer animationHurt;
+        System.Timers.Timer animationIdle;
+        private void Attack_IdlePet(object sender, ElapsedEventArgs e) //attacknya pet
+        { 
+            pictureBoxPet.Image = Properties.Resources.cat_idle;
         }
+        private void Attack_IdleEnemy(object sender, ElapsedEventArgs e) //attacknya enemy
+        {
+            pictureBoxEnemy.Image = Properties.Resources.cobra_idle;
+        }
+        private void HurtPet(object sender, ElapsedEventArgs e) //hurtnya enemy yang kena damage dari pet
+        {
+            pictureBoxEnemy.Image = Properties.Resources.cobra_hurt;
+            animationIdle = new System.Timers.Timer(durasiHurt) { AutoReset = false } ;
+            animationIdle.Elapsed += IdlePet;
+            animationIdle.Start();
+        }
+        private void HurtEnemy(object sender, ElapsedEventArgs e) //hurtnya pet yang kena damage dari enemy
+        {
+            pictureBoxPet.Image = Properties.Resources.cat_hurt;
+            animationIdle = new System.Timers.Timer(durasiHurt) { AutoReset = false };
+            animationIdle.Elapsed += IdleEnemy;
+            animationIdle.Start();
+        }
+
+        private void IdlePet(object sender, ElapsedEventArgs e) //idle enemy setelah kena hurt
+        {
+            pictureBoxEnemy.Image = Properties.Resources.cobra_idle;
+        }
+        private void IdleEnemy(object sender, ElapsedEventArgs e) //idle pet setelah kena hurt
+        {
+            pictureBoxPet.Image = Properties.Resources.cat_idle;
+        }
+
+
 
         private void PetIdle(object sender, ElapsedEventArgs e)
         {
@@ -414,6 +435,15 @@ namespace happy_pet_game_2019
         private void PetBasic(object sender, ElapsedEventArgs e)
         {
             pictureBoxPet.Image = pet.Basic;
+            System.Timers.Timer animationAttack = new System.Timers.Timer(durasiAttack) { AutoReset = false }; 
+            animationAttack.AutoReset = false;
+            animationAttack.Elapsed += Attack_IdlePet;
+            animationAttack.Start();
+
+            System.Timers.Timer animationHurt = new System.Timers.Timer(durasiHitEnemy) { AutoReset = false };
+            animationHurt.AutoReset = false;
+            animationHurt.Elapsed += HurtPet;
+            animationHurt.Start();
         }
         private void PetSkill(object sender, ElapsedEventArgs e)
         {
@@ -422,10 +452,17 @@ namespace happy_pet_game_2019
         private void PetUlti(object sender, ElapsedEventArgs e)
         {
             pictureBoxPet.Image = pet.Ulti;
-        }
-        private void PetHurt(object sender, ElapsedEventArgs e)
-        {
-            pictureBoxPet.Image = pet.Hurt;
+            //if cat
+            //pictureBoxPet.Image = pet.Basic;
+            //System.Timers.Timer animationAttack = new System.Timers.Timer(durasiAttack) { AutoReset = false };
+            //animationAttack.AutoReset = false;
+            //animationAttack.Elapsed += Attack_IdlePet;
+            //animationAttack.Start();
+
+            //System.Timers.Timer animationHurt = new System.Timers.Timer(durasiHitEnemy) { AutoReset = false };
+            //animationHurt.AutoReset = false;
+            //animationHurt.Elapsed += HurtPet;
+            //animationHurt.Start();
         }
         
         private void EnemyIdle(object sender, ElapsedEventArgs e)
@@ -435,10 +472,15 @@ namespace happy_pet_game_2019
         private void EnemyAttack(object sender, ElapsedEventArgs e)
         {
             pictureBoxEnemy.Image = enemy.Attack1;
-        }
-        private void EnemyHurt(object sender, ElapsedEventArgs e)
-        {
-            pictureBoxEnemy.Image = enemy.Hurt;
+            System.Timers.Timer animationAttack = new System.Timers.Timer(durasiAttack) { AutoReset = false };
+            animationAttack.AutoReset = false;
+            animationAttack.Elapsed += Attack_IdlePet;
+            animationAttack.Start();
+
+            System.Timers.Timer animationHurt = new System.Timers.Timer(durasiHitEnemy) { AutoReset = false };
+            animationHurt.AutoReset = false;
+            animationHurt.Elapsed += HurtPet;
+            animationHurt.Start();
         }
         #endregion
     }

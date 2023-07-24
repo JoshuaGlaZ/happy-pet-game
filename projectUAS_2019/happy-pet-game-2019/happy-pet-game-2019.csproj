@@ -359,5 +359,8 @@
   <ItemGroup>
     <None Include="Resources\border.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\border_wide.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
