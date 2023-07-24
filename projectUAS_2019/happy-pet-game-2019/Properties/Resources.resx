@@ -133,17 +133,11 @@
   <data name="chameleon_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_green.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonlarge_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\buttonlarge_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cherry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\cherry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chameleon_red_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_red-green.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cat_basicAttackl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\img\cat_basicAttackl.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chameleon_green_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\chameleon_green-yellow.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -267,5 +261,32 @@
   </data>
   <data name="spider_idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\spider_idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonlarge_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\buttonlarge_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cat_basicAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\cat_basicAttack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cat_idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\cat_idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green_basicAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green_basicAttack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green_hurt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green_hurt.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_green_idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_green_idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chameleon_ult" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\chameleon_ult.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fish_idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\img\fish_idle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

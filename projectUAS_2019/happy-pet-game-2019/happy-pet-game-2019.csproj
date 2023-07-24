@@ -290,5 +290,29 @@
   <ItemGroup>
     <None Include="assets\img\spider_idle.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_basicAttack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\cat_idle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green_idle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_ult.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\fish_idle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green_basicAttack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green_death.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\img\chameleon_green_hurt.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

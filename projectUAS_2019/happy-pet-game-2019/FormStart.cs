@@ -151,17 +151,17 @@ namespace happy_pet_game_2019
         {
             if (radioButtonChooseCat.Checked)
             {
-                pictureBoxNewChoosePet.Image = Properties.Resources.cat;
+                pictureBoxNewChoosePet.Image = Properties.Resources.cat_idle;
                 pictureBoxNewChoosePet.BackgroundImage = null;
             }
             else if (radioButtonChooseFish.Checked)
             {
-                pictureBoxNewChoosePet.Image = Properties.Resources.fish;
+                pictureBoxNewChoosePet.Image = Properties.Resources.fish_idle;
                 pictureBoxNewChoosePet.BackgroundImage = Properties.Resources.fishbowl_clean;
             }
             else
             {
-                pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_green;
+                pictureBoxNewChoosePet.Image = Properties.Resources.chameleon_green_idle;
                 pictureBoxNewChoosePet.BackgroundImage = null;
             }
         }
@@ -262,10 +262,10 @@ namespace happy_pet_game_2019
                 Player newPlayer = new Player(playerName);
                 if (radioButtonChooseCat.Checked) 
                 {
-                    Image inIdle = Properties.Resources.cat;
+                    Image inIdle = Properties.Resources.cat_idle;
                     Image inHurt = Properties.Resources.cat_hurt;
                     Image inDeath = Properties.Resources.cat_death;
-                    Image inBasic = Properties.Resources.cat_basicAttackl;
+                    Image inBasic = Properties.Resources.cat_basicAttack;
                     Image inSkill = Properties.Resources.cat_skill;
                     Image inUlti = Properties.Resources.cat_ult;
                     // original cat: health=1250 M.happiness=60 Energy=150 Defense=100
@@ -276,7 +276,7 @@ namespace happy_pet_game_2019
                 }//kurang variabel stat
                 else if (radioButtonChooseFish.Checked)
                 {
-                    Image inIdle = Properties.Resources.fish;
+                    Image inIdle = Properties.Resources.fish_idle;
                     Image inHurt = Properties.Resources.fish_hurt;
                     Image inDeath = Properties.Resources.fish_death;
                     Image inBasic = Properties.Resources.fish_basicAttack;
@@ -290,12 +290,12 @@ namespace happy_pet_game_2019
                 }
                 else if (radioButtonChooseChamaleon.Checked)
                 {
-                    Image inIdle = Properties.Resources.chameleon_green;
-                    Image inHurt = Properties.Resources.cat_hurt;
-                    Image inDeath = Properties.Resources.cat_death;
-                    Image inBasic = Properties.Resources.cat_basicAttackl;
-                    Image inSkill = Properties.Resources.cat_skill;
-                    Image inUlti = Properties.Resources.cat_ult;
+                    Image inIdle = Properties.Resources.chameleon_green_idle;
+                    Image inHurt = Properties.Resources.chameleon_green_hurt;
+                    Image inDeath = Properties.Resources.chameleon_green_death;
+                    Image inBasic = Properties.Resources.chameleon_green_basicAttack;
+                    Image inSkill = Properties.Resources.chameleon_green_blue;
+                    Image inUlti = Properties.Resources.chameleon_ult;
                     // original chameleon: health=1250 M.Happiness=60 Energy=125 Defense=125
                     if (radioButtonStrength.Checked) { newPlayer.AddPetChamaleon(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1150, 60, 175, 100); }
                     else if (radioButtonEndurance.Checked) { newPlayer.AddPetChamaleon(petName, petTrait, inIdle, inHurt, inDeath, inBasic, inSkill, inUlti, 1150, 60, 100, 175); }

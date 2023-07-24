@@ -364,7 +364,7 @@ namespace happy_pet_game_2019
                 Image inIdle = Properties.Resources.cat;
                 Image inHurt = Properties.Resources.cat_hurt;
                 Image inDeath = Properties.Resources.cat_death;
-                Image inAttack = Properties.Resources.cat_basicAttackl;
+                Image inAttack = Properties.Resources.cat_basicAttack;
                 newEnemy = new EnemyPoisonous("poisonous", inIdle, inHurt, inDeath, inAttack, (int)(1000 * (Math.Pow(1.1, enemyLevel - 1)))
                     , (int)(150 * (Math.Pow(1.1, enemyLevel - 1))), 1, (int)((100 * (Math.Pow(1.1, (enemyLevel - 1) / 10)))), 30, enemyLevel);
             } // tipe poisonous
@@ -373,7 +373,7 @@ namespace happy_pet_game_2019
                 Image inIdle = Properties.Resources.cat;
                 Image inHurt = Properties.Resources.cat_hurt;
                 Image inDeath = Properties.Resources.cat_death;
-                Image inAttack = Properties.Resources.cat_basicAttackl;
+                Image inAttack = Properties.Resources.cat_basicAttack;
                 newEnemy = new EnemyPhysical("physical", inIdle, inHurt, inDeath, inAttack, (int)(1500 * (Math.Pow(1.1, enemyLevel - 1)))
                     , (int)(160 * (Math.Pow(1.1, enemyLevel - 1))), 1, 30, enemyLevel);
             } // tipe physical

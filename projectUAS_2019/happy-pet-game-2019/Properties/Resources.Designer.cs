@@ -143,9 +143,9 @@ namespace happy_pet_game_2019.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cat_basicAttackl {
+        internal static System.Drawing.Bitmap cat_basicAttack {
             get {
-                object obj = ResourceManager.GetObject("cat_basicAttackl", resourceCulture);
+                object obj = ResourceManager.GetObject("cat_basicAttack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +166,16 @@ namespace happy_pet_game_2019.Properties {
         internal static System.Drawing.Bitmap cat_hurt {
             get {
                 object obj = ResourceManager.GetObject("cat_hurt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cat_idle {
+            get {
+                object obj = ResourceManager.GetObject("cat_idle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +253,49 @@ namespace happy_pet_game_2019.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chameleon_green_basicAttack {
+            get {
+                object obj = ResourceManager.GetObject("chameleon_green_basicAttack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chameleon_green_blue {
             get {
                 object obj = ResourceManager.GetObject("chameleon_green_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chameleon_green_death {
+            get {
+                object obj = ResourceManager.GetObject("chameleon_green_death", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chameleon_green_hurt {
+            get {
+                object obj = ResourceManager.GetObject("chameleon_green_hurt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chameleon_green_idle {
+            get {
+                object obj = ResourceManager.GetObject("chameleon_green_idle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +356,16 @@ namespace happy_pet_game_2019.Properties {
         internal static System.Drawing.Bitmap chameleon_red_yellow {
             get {
                 object obj = ResourceManager.GetObject("chameleon_red_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chameleon_ult {
+            get {
+                object obj = ResourceManager.GetObject("chameleon_ult", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -416,6 +476,16 @@ namespace happy_pet_game_2019.Properties {
         internal static System.Drawing.Bitmap fish_hurt {
             get {
                 object obj = ResourceManager.GetObject("fish_hurt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fish_idle {
+            get {
+                object obj = ResourceManager.GetObject("fish_idle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
