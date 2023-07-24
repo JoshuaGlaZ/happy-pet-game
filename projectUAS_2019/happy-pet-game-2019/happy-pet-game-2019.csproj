@@ -395,5 +395,98 @@
   <ItemGroup>
     <None Include="assets\img\health_100.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battleBorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borderGold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borderGold2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonback_flip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonExit_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonExit_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonGold_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonGold_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat_basicAttack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cat_ult.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chameleon_green_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fish_hurt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\progress_here.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop_current.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop_next.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vs_current.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vs_next.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vs_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonBorder5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battle_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bath.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vaccine.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borderGoldGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boxGloves-63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightSaber_62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magicWand-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toyHammer-63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench-61.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

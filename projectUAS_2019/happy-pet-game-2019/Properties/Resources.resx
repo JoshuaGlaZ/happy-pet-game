@@ -370,4 +370,70 @@
   <data name="health_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\img\health_100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bath" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bath.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battle_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\battle_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="borderGold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\borderGold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="borderGold2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\borderGold2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="borderGoldGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\borderGoldGroup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boxGloves_63" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boxGloves-63.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonback_flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonback_flip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonBorder5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonBorder5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonExit_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonExit_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonExit_pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonExit_pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonGold_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonGold_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonGold_pressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonGold_pressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lightSaber_62" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lightSaber_62.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magicWand_60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magicWand-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="progress_here" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\progress_here.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shop_current" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop_current.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shop_next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop_next.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toyHammer_63" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toyHammer-63.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vaccine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vaccine.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vs_current" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vs_current.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vs_next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vs_next.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wrench_61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wrench-61.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
